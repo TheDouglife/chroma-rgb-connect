@@ -1,7 +1,6 @@
 [![GitHub license](https://img.shields.io/github/license/TheDouglife/chroma-rgb-connect?style=for-the-badge&color=00bb00)](https://github.com/TheDouglife/chroma-rgb-connect/blob/main/LICENSE)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa?style=for-the-badge)](CODE_OF_CONDUCT.md)
 [![GitHub issues](https://img.shields.io/github/issues/TheDouglife/chroma-rgb-connect?style=for-the-badge)](https://github.com/TheDouglife/chroma-rgb-connect/issues)
-[![Discord](https://img.shields.io/discord/800996203609194517?style=for-the-badge&logo=discord&label=Discord&color=7289DA)](https://discord.gg/6xGy7cycrt)
 
 # Chroma RGB Connect
 Chroma Connector App for other 3rd party RGB LED providers.

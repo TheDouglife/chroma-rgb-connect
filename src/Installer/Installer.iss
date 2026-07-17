@@ -28,12 +28,12 @@ Name: "{group}\{#Product}"; Filename: "{app}\ChromaControl.App.exe"; WorkingDir:
 Name: "{commonstartup}\{#Product}"; Filename: "{app}\ChromaRGBConnect.Service.exe"; WorkingDir: "{app}"
 
 [Run]
-Filename: "{app}\ChromaRGBConnect.Service.exe"; WorkingDir: "{app}"; StatusMsg: "Starting Chroma Control Service..."; Flags: runhidden nowait
-Filename: "{app}\ChromaControl.App.exe"; WorkingDir: "{app}"; Description: "Start Chroma Control"; Flags: postinstall nowait skipifsilent
+Filename: "{app}\ChromaRGBConnect.Service.exe"; WorkingDir: "{app}"; StatusMsg: "Starting Chroma RGB Connect service..."; Flags: runhidden nowait
+Filename: "{app}\ChromaControl.App.exe"; WorkingDir: "{app}"; Description: "Start Chroma RGB Connect"; Flags: postinstall nowait skipifsilent
 
 [UninstallRun]
-Filename: "{sys}\taskkill.exe"; Parameters: "/F /IM ChromaControl.App.exe"; StatusMsg: "Stopping Chroma Control..."; Flags: runhidden
-Filename: "{sys}\taskkill.exe"; Parameters: "/F /IM ChromaRGBConnect.Service.exe"; StatusMsg: "Stopping Chroma Control Service..."; Flags: runhidden
+Filename: "{sys}\taskkill.exe"; Parameters: "/F /IM ChromaControl.App.exe"; StatusMsg: "Stopping Chroma RGB Connect..."; Flags: runhidden
+Filename: "{sys}\taskkill.exe"; Parameters: "/F /IM ChromaRGBConnect.Service.exe"; StatusMsg: "Stopping Chroma RGB Connect service..."; Flags: runhidden
 
 [Code]
 const

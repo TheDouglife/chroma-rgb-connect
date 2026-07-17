@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "t3vZOCD36ww=",
+  "dgSpecHash": "81pOqLOE9ZQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\src\\AppHost\\ChromaControl.AppHost.csproj",
+  "projectFilePath": "C:\\Users\\douga\\OneDrive\\Documents\\chroma-rgb-connect\\src\\AppHost\\ChromaControl.AppHost.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\douga\\.nuget\\packages\\aspire.dashboard.sdk.win-x64\\8.2.2\\aspire.dashboard.sdk.win-x64.8.2.2.nupkg.sha512",
     "C:\\Users\\douga\\.nuget\\packages\\aspire.hosting\\8.2.2\\aspire.hosting.8.2.2.nupkg.sha512",

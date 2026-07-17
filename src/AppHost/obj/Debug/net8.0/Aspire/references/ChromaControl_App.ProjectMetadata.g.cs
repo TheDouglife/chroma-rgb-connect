@@ -7,5 +7,5 @@ namespace Projects;
 [global::System.Diagnostics.DebuggerDisplay("Type = {GetType().Name,nq}, ProjectPath = {ProjectPath}")]
 public class ChromaControl_App : global::Aspire.Hosting.IProjectMetadata
 {
-    public string ProjectPath => """C:\Users\douga\chroma-control-manager\ChromaControl-main\src\App\ChromaControl.App.csproj""";
+    public string ProjectPath => """C:\Users\douga\OneDrive\Documents\chroma-rgb-connect\src\App\ChromaControl.App.csproj""";
 }

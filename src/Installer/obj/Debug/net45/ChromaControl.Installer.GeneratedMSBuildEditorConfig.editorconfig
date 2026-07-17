@@ -1,0 +1,6 @@
+is_global = true
+build_property.RootNamespace = ChromaControl.Installer
+build_property.ProjectDir = C:\Users\douga\OneDrive\Documents\chroma-rgb-connect\src\Installer\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.EffectiveAnalysisLevelStyle = 8.0

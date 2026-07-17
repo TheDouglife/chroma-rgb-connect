@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "t7BooZ48go4=",
+  "dgSpecHash": "Ycphy51VvuE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\src\\App\\ChromaControl.App.csproj",
+  "projectFilePath": "C:\\Users\\douga\\OneDrive\\Documents\\chroma-rgb-connect\\src\\App\\ChromaControl.App.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\douga\\.nuget\\packages\\asmresolver\\5.5.1\\asmresolver.5.5.1.nupkg.sha512",
     "C:\\Users\\douga\\.nuget\\packages\\asmresolver.dotnet\\5.5.1\\asmresolver.dotnet.5.5.1.nupkg.sha512",

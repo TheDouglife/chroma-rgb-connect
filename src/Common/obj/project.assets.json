@@ -1165,11 +1165,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\src\\Common\\ChromaControl.Common.csproj",
+      "projectUniqueName": "C:\\Users\\douga\\OneDrive\\Documents\\chroma-rgb-connect\\src\\Common\\ChromaControl.Common.csproj",
       "projectName": "ChromaRGBConnect.Common",
-      "projectPath": "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\src\\Common\\ChromaControl.Common.csproj",
+      "projectPath": "C:\\Users\\douga\\OneDrive\\Documents\\chroma-rgb-connect\\src\\Common\\ChromaControl.Common.csproj",
       "packagesPath": "C:\\Users\\douga\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\src\\Common\\obj\\",
+      "outputPath": "C:\\Users\\douga\\OneDrive\\Documents\\chroma-rgb-connect\\src\\Common\\obj\\",
       "projectStyle": "PackageReference",
       "centralPackageVersionsManagementEnabled": true,
       "configFilePaths": [

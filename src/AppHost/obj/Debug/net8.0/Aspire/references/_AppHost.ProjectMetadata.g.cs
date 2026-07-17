@@ -8,5 +8,5 @@ namespace Projects;
 public class ChromaControl_AppHost
 {
     private ChromaControl_AppHost() { }
-    public static string ProjectPath => """C:\Users\douga\chroma-control-manager\ChromaControl-main\src\AppHost""";
+    public static string ProjectPath => """C:\Users\douga\OneDrive\Documents\chroma-rgb-connect\src\AppHost""";
 }

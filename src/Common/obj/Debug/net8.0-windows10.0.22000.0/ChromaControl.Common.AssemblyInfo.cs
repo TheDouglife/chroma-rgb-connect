@@ -10,16 +10,16 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("Chroma Control Contributors")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Douglife (Doug Montgomery)")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
-[assembly: System.Reflection.AssemblyCopyrightAttribute("© Chroma Control Contributors. All rights reserved.")]
+[assembly: System.Reflection.AssemblyCopyrightAttribute("© Douglife (Doug Montgomery). All rights reserved.")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("3rd party device lighting support for Razer Synapse.")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+87d761a58ee200f95a830a06dd5f0d795f292751")]
-[assembly: System.Reflection.AssemblyProductAttribute("Chroma Control")]
-[assembly: System.Reflection.AssemblyTitleAttribute("ChromaControl.Common")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+30313af78a89a328880df98c90ed7cf1bc44869d")]
+[assembly: System.Reflection.AssemblyProductAttribute("Chroma RGB Connect")]
+[assembly: System.Reflection.AssemblyTitleAttribute("ChromaRGBConnect.Common")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyMetadataAttribute("RepositoryUrl", "https://github.com/ChromaControl/ChromaControl")]
+[assembly: System.Reflection.AssemblyMetadataAttribute("RepositoryUrl", "https://github.com/TheDouglife/chroma-rgb-connect")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows10.0.22000.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows10.0.22000.0")]
 

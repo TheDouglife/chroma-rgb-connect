@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SImECyxd0B0=",
+  "dgSpecHash": "9mc/vR39lO8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\tests\\ChromaControl.Service.Tests\\ChromaControl.Service.Tests.csproj",
+  "projectFilePath": "C:\\Users\\douga\\OneDrive\\Documents\\chroma-rgb-connect\\tests\\ChromaControl.Service.Tests\\ChromaControl.Service.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\douga\\.nuget\\packages\\chromacontrol.keys\\1.0.3\\chromacontrol.keys.1.0.3.nupkg.sha512",
     "C:\\Users\\douga\\.nuget\\packages\\chromacontrol.native.openrgb\\1.0.5\\chromacontrol.native.openrgb.1.0.5.nupkg.sha512",

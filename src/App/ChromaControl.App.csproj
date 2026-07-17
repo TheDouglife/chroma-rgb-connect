@@ -5,7 +5,7 @@
     <AssemblyTitle>Chroma RGB Connect</AssemblyTitle>
     <OutputType>WinExe</OutputType>
     <UseWPF>true</UseWPF>
-    <SelfContained>true</SelfContained>
+    <SelfContained>false</SelfContained>
   </PropertyGroup>
 
   <ItemGroup>

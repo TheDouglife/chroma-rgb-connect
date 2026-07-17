@@ -5,7 +5,7 @@
     <AssemblyTitle>Chroma RGB Connect Service</AssemblyTitle>
     <AssemblyName>ChromaRGBConnect.Service</AssemblyName>
     <OutputType>WinExe</OutputType>
-    <SelfContained>true</SelfContained>
+    <SelfContained>false</SelfContained>
   </PropertyGroup>
 
   <ItemGroup>

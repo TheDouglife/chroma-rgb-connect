@@ -70,7 +70,7 @@ public class UpdateInfoHandler : IAppCastHandler
 
         var installed = SemVerLike.Parse(version);
 
-        return _items.Where(x =>
+        return [.. _items.Where(x =>
         {
             if (FilterAppCastItem(installed, x) == FilterItemResult.Valid)
             {
@@ -84,7 +84,7 @@ public class UpdateInfoHandler : IAppCastHandler
             }
 
             return false;
-        }).ToList();
+        })];
     }
 
     private FilterItemResult FilterAppCastItem(SemVerLike installed, AppCastItem item)
@@ -138,8 +138,7 @@ public class UpdateInfoHandler : IAppCastHandler
         var items = JsonSerializer.Deserialize<ReleaseItem[]>(data)!
             .Select(r =>
             {
-                r.Assets = r.Assets.Where(a => a.Name == $"ChromaRGBConnectSetup-{r.TagName}.exe")
-                    .ToArray();
+                r.Assets = [.. r.Assets.Where(a => a.Name == $"ChromaRGBConnectSetup-{r.TagName}.exe")];
 
                 return r;
             })

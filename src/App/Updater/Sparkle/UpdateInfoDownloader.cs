@@ -29,7 +29,7 @@ public class UpdateInfoDownloader : IAppCastDataDownloader
     {
         var result = _httpClient.GetAsync(url).Result;
 
-        return result.Content.ReadAsStringAsync().Result!;
+        return result.Content.ReadAsStringAsync().Result;
     }
 
     /// <inheritdoc/>

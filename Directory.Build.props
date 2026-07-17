@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <Product>Chroma RGB Connect</Product>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
     <Authors>Douglife (Doug Montgomery)</Authors>
     <Description>3rd party device lighting support for Razer Synapse.</Description>
     <RepositoryUrl>https://github.com/TheDouglife/chroma-rgb-connect</RepositoryUrl>

@@ -126,7 +126,7 @@ jobs:
       - name: Publish GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: release/ChromaControlSetup-*.exe
+          files: release/**/ChromaControlSetup-*.exe
 
   package-check:
     runs-on: ubuntu-latest

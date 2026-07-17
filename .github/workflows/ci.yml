@@ -33,39 +33,41 @@ jobs:
       - name: Show .NET info
         run: dotnet --info
 
-      - name: Restore
-        run: |
-          if [ "${{ matrix.os }}" = "windows-latest" ]; then
-            dotnet restore ChromaControl.sln
-          else
-            dotnet restore ChromaControl.sln -p:EnableWindowsTargeting=true -p:ManagePackageVersionsCentrally=false
-          fi
+      - name: Restore (Windows)
+        if: matrix.os == 'windows-latest'
+        run: dotnet restore ChromaControl.sln
 
-      - name: Publish for runtime
-        run: |
-          if [ "${{ matrix.os }}" = "windows-latest" ]; then
-            dotnet publish src/Service/ChromaControl.Service.csproj -c Release -r win-${{ matrix.arch }} --self-contained true --no-restore
-            dotnet publish src/App/ChromaControl.App.csproj -c Release -r win-${{ matrix.arch }} --self-contained true --no-restore
-          else
-            dotnet publish src/Service/ChromaControl.Service.csproj -c Release -r linux-${{ matrix.arch }} --self-contained true --no-restore || true
-            dotnet publish src/App/ChromaControl.App.csproj -c Release -r linux-${{ matrix.arch }} --self-contained true --no-restore || true
-          fi
+      - name: Restore (Non-Windows)
+        if: matrix.os != 'windows-latest'
+        run: dotnet restore ChromaControl.sln -p:EnableWindowsTargeting=true -p:ManagePackageVersionsCentrally=false
 
-      - name: Build
+      - name: Publish for runtime (Windows)
+        if: matrix.os == 'windows-latest'
         run: |
-          if [ "${{ matrix.os }}" = "windows-latest" ]; then
-            dotnet build ChromaControl.sln -c Release --no-restore
-          else
-            dotnet build ChromaControl.sln -c Release --no-restore -p:EnableWindowsTargeting=true
-          fi
+          dotnet publish src/Service/ChromaControl.Service.csproj -c Release -r win-${{ matrix.arch }} --self-contained true --no-restore
+          dotnet publish src/App/ChromaControl.App.csproj -c Release -r win-${{ matrix.arch }} --self-contained true --no-restore
 
-      - name: Test
+      - name: Publish for runtime (Non-Windows)
+        if: matrix.os != 'windows-latest'
         run: |
-          if [ "${{ matrix.os }}" = "windows-latest" ]; then
-            dotnet test tests/ChromaControl.App.Tests/ChromaControl.App.Tests.csproj -c Release --no-build --verbosity normal
-          else
-            dotnet test tests/ChromaControl.App.Tests/ChromaControl.App.Tests.csproj -c Release --no-build --verbosity normal -p:EnableWindowsTargeting=true || true
-          fi
+          dotnet publish src/Service/ChromaControl.Service.csproj -c Release -r linux-${{ matrix.arch }} --self-contained true --no-restore || true
+          dotnet publish src/App/ChromaControl.App.csproj -c Release -r linux-${{ matrix.arch }} --self-contained true --no-restore || true
+
+      - name: Build (Windows)
+        if: matrix.os == 'windows-latest'
+        run: dotnet build ChromaControl.sln -c Release --no-restore
+
+      - name: Build (Non-Windows)
+        if: matrix.os != 'windows-latest'
+        run: dotnet build ChromaControl.sln -c Release --no-restore -p:EnableWindowsTargeting=true
+
+      - name: Test (Windows)
+        if: matrix.os == 'windows-latest'
+        run: dotnet test tests/ChromaControl.App.Tests/ChromaControl.App.Tests.csproj -c Release --no-build --verbosity normal
+
+      - name: Test (Non-Windows)
+        if: matrix.os != 'windows-latest'
+        run: dotnet test tests/ChromaControl.App.Tests/ChromaControl.App.Tests.csproj -c Release --no-build --verbosity normal -p:EnableWindowsTargeting=true || true
 
       - name: Pack (optional)
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'

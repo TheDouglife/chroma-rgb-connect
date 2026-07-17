@@ -4,8 +4,8 @@
     <InnoSetupCompilerPath Condition="'$(InnoSetupCompilerPath)' == '' and Exists('$(MSBuildProgramFiles32)\Inno Setup 6\ISCC.exe')">$(MSBuildProgramFiles32)\Inno Setup 6\ISCC.exe</InnoSetupCompilerPath>
     <InnoSetupCompilerPath Condition="'$(InnoSetupCompilerPath)' == '' and Exists('$(ProgramFiles)\Inno Setup 6\ISCC.exe')">$(ProgramFiles)\Inno Setup 6\ISCC.exe</InnoSetupCompilerPath>
     <InnoSetupCompilerPath Condition="'$(InnoSetupCompilerPath)' == '' and Exists('$(LOCALAPPDATA)\Programs\Inno Setup 6\ISCC.exe')">$(LOCALAPPDATA)\Programs\Inno Setup 6\ISCC.exe</InnoSetupCompilerPath>
-    <AppPublishDir>$(MSBuildThisFileDirectory)..\..\bin\ChromaRGBConnect.App\$(Configuration)\net8.0-windows10.0.22000.0\win-x64\publish\</AppPublishDir>
-    <ServicePublishDir>$(MSBuildThisFileDirectory)..\..\bin\ChromaRGBConnect.Service\$(Configuration)\net8.0-windows10.0.22000.0\win-x64\publish\</ServicePublishDir>
+    <AppPublishDir>$(MSBuildThisFileDirectory)..\..\bin\ChromaControl.App\$(Configuration)\net8.0-windows10.0.22000.0\win-x64\publish\</AppPublishDir>
+    <ServicePublishDir>$(MSBuildThisFileDirectory)..\..\bin\ChromaControl.Service\$(Configuration)\net8.0-windows10.0.22000.0\win-x64\publish\</ServicePublishDir>
     <InstallerInputDir>$(MSBuildProjectExtensionsPath)installer-input\</InstallerInputDir>
   </PropertyGroup>
 
@@ -37,7 +37,7 @@
     <ItemGroup>
       <DebugFiles Include="$(InstallerInputDir)\*.pdb"/>
       <DocumentFiles Include="$(InstallerInputDir)\*.xml"/>
-      <InstallerFiles Include="$(PublishDir)\ChromaRGBConnectSetup-*.exe"/>
+      <InstallerFiles Include="$(PublishDir)\ChromaControlSetup-*.exe"/>
     </ItemGroup>
 
     <Delete Files="@(DebugFiles)"/>
@@ -61,7 +61,7 @@
     <RemoveDir Directories="$(PublishDir)"/>
     <MakeDir Directories="$(PublishDir)"/>
 
-    <Move SourceFiles="$(MSBuildProjectExtensionsPath)ChromaRGBConnectSetup-$(Version).exe"
+    <Move SourceFiles="$(MSBuildProjectExtensionsPath)ChromaControlSetup-$(Version).exe"
           DestinationFolder="$(PublishDir)"/>
 
     <Message Text="$(ProjectName) -> $(PublishDir)\"

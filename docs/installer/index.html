@@ -3,185 +3,51 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chroma RGB Connect</title>
+  <meta name="description" content="Download Chroma RGB Connect for Windows." />
+  <title>Download | Chroma RGB Connect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      color-scheme: light;
-      --bg: #eff5eb;
-      --card: rgba(255, 255, 255, 0.92);
-      --text: #153016;
-      --muted: #516853;
-      --accent: #5aad28;
-      --accent-deep: #437f20;
-      --line: rgba(67, 127, 32, 0.16);
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: "Segoe UI", system-ui, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 20% 20%, rgba(90, 173, 40, 0.16), transparent 28%),
-        radial-gradient(circle at 80% 0%, rgba(67, 127, 32, 0.12), transparent 24%),
-        linear-gradient(180deg, #fbfdf9 0%, var(--bg) 100%);
-      display: grid;
-      place-items: center;
-      padding: 28px;
-    }
-
-    .shell {
-      width: min(980px, 100%);
-      display: grid;
-      grid-template-columns: 1.4fr 1fr;
-      gap: 24px;
-      align-items: stretch;
-    }
-
-    .hero, .panel {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      box-shadow: 0 30px 70px rgba(21, 48, 22, 0.12);
-      backdrop-filter: blur(8px);
-    }
-
-    .hero {
-      padding: 42px;
-    }
-
-    .panel {
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 18px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      width: fit-content;
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--accent-deep);
-      background: rgba(90, 173, 40, 0.12);
-    }
-
-    h1 {
-      margin: 18px 0 12px;
-      font-size: clamp(2.4rem, 5vw, 4.6rem);
-      line-height: 0.98;
-    }
-
-    .lead {
-      margin: 0;
-      max-width: 60ch;
-      color: var(--muted);
-      font-size: 1.04rem;
-      line-height: 1.7;
-    }
-
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 24px;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 14px 18px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 700;
-      border: 1px solid transparent;
-    }
-
-    .button.primary {
-      color: #fff;
-      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
-      box-shadow: 0 16px 30px rgba(67, 127, 32, 0.24);
-    }
-
-    .button.secondary {
-      color: var(--accent-deep);
-      border-color: var(--line);
-      background: #fff;
-    }
-
-    .list {
-      display: grid;
-      gap: 12px;
-      margin: 0;
-    }
-
-    .item {
-      padding: 16px;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.72);
-      border: 1px solid var(--line);
-    }
-
-    .item strong {
-      display: block;
-      margin-bottom: 4px;
-      font-size: 1rem;
-    }
-
-    .item span {
-      color: var(--muted);
-      line-height: 1.5;
-      font-size: 0.96rem;
-    }
-
-    code {
-      padding: 0.15rem 0.35rem;
-      border-radius: 0.35rem;
-      background: rgba(21, 48, 22, 0.08);
-    }
-
-    @media (max-width: 860px) {
-      .shell { grid-template-columns: 1fr; }
-      .hero, .panel { padding: 24px; }
-    }
+    :root { --base:#111613; --panel:#19211b; --ink:#e9f1e8; --muted:#9eada0; --line:rgba(220,241,220,.13); --lime:#c3f53c; }
+    * { box-sizing:border-box; }
+    body { margin:0; min-height:100vh; background:var(--base); color:var(--ink); font-family:"Space Grotesk",sans-serif; }
+    body::before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.26; background-image:linear-gradient(rgba(220,241,220,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(220,241,220,.05) 1px,transparent 1px); background-size:42px 42px; mask-image:linear-gradient(to bottom,black,transparent 74%); }
+    .page { width:min(960px,calc(100% - 40px)); margin:auto; position:relative; }
+    nav { display:flex; justify-content:space-between; padding:28px 0; border-bottom:1px solid var(--line); }
+    nav a { color:var(--muted); text-decoration:none; font-size:.9rem; } nav a:hover { color:var(--lime); }
+    .brand { color:var(--ink); font-weight:700; }
+    main { padding:86px 0; }
+    .kicker, .mono { font-family:"DM Mono",monospace; text-transform:uppercase; letter-spacing:.12em; font-size:.72rem; }
+    .kicker { color:var(--lime); }
+    h1 { max-width:680px; margin:20px 0; font-size:clamp(3.6rem,9vw,7rem); line-height:.88; letter-spacing:-.08em; }
+    .lead { max-width:620px; margin:0; color:var(--muted); font-size:1.2rem; line-height:1.6; }
+    .download-card { display:grid; grid-template-columns:1fr auto; gap:30px; align-items:end; margin-top:48px; padding:30px; background:var(--lime); color:var(--base); }
+    .download-card h2 { margin:14px 0 8px; font-size:2rem; letter-spacing:-.05em; }
+    .download-card p { max-width:520px; margin:0; line-height:1.5; }
+    .button { display:inline-flex; align-items:center; justify-content:center; gap:12px; min-height:50px; padding:0 20px; background:var(--base); color:var(--ink); text-decoration:none; font-weight:700; }
+    .button:hover { background:#29352b; }
+    .details { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:12px; }
+    .detail { padding:22px; border:1px solid var(--line); background:var(--panel); }
+    .detail strong { display:block; margin-bottom:8px; }
+    .detail span { color:var(--muted); line-height:1.45; font-size:.94rem; }
+    .detail a { color:var(--lime); }
+    footer { padding:26px 0 42px; border-top:1px solid var(--line); color:var(--muted); font-size:.86rem; }
+    footer a { color:var(--muted); }
+    @media (max-width:680px) { .page{width:min(100% - 28px,560px)} main{padding:62px 0} .download-card,.details{grid-template-columns:1fr} .download-card{padding:24px} }
   </style>
 </head>
 <body>
-  <div class="shell">
-    <section class="hero">
-      <div class="eyebrow">Chroma Connector App for other 3rd party RGB LED providers</div>
-      <h1>Chroma RGB Connect</h1>
-      <p class="lead">Chroma Connector App for other 3rd party RGB LED providers. Use this page to download the Windows installer for the maintained Chroma RGB Connect release.</p>
-      <div class="cta-row">
-        <a class="button primary" href="https://github.com/TheDouglife/chroma-rgb-connect/releases/download/v1.0.0/ChromaRGBConnectSetup-1.0.0.exe">Download installer</a>
-        <a class="button secondary" href="https://github.com/TheDouglife/chroma-rgb-connect/releases">View releases</a>
-      </div>
-    </section>
-
-    <aside class="panel">
-      <div class="item">
-        <strong>Direct download</strong>
-        <span>Publishes the current installer as a GitHub Release asset. Update the version segment when you ship a new release.</span>
-      </div>
-      <div class="item">
-        <strong>Source repository</strong>
-        <span><a href="https://github.com/TheDouglife/chroma-rgb-connect">github.com/TheDouglife/chroma-rgb-connect</a></span>
-      </div>
-      <div class="item">
-        <strong>Platform support</strong>
-        <span>Designed to connect Chroma RGB Connect with supported third-party RGB LED providers through the branded Windows installer.</span>
-      </div>
-    </aside>
+  <div class="page">
+    <nav><a class="brand" href="../">Chroma RGB Connect</a><a href="https://github.com/TheDouglife/chroma-rgb-connect/releases">All releases -&gt;</a></nav>
+    <main>
+      <div class="kicker">Stable channel / Windows x64</div>
+      <h1>Download the control layer.</h1>
+      <p class="lead">One focused Windows app for supported third-party RGB lighting. Install once, connect your providers, and keep your setup in sync.</p>
+      <section class="download-card"><div><div class="mono">Chroma RGB Connect / v1.0.3</div><h2>Ready for Windows.</h2><p>The setup package installs the app and local lighting service. It also checks for required Microsoft components during setup.</p></div><a class="button" href="https://github.com/TheDouglife/chroma-rgb-connect/releases/download/v1.0.3/ChromaControlSetup-1.0.3.exe">Download .exe <span aria-hidden="true">v</span></a></section>
+      <div class="details"><div class="detail"><strong>Platform</strong><span>Windows 10 or later<br />64-bit systems</span></div><div class="detail"><strong>Package</strong><span>Self-contained installer<br />v1.0.3 stable release</span></div><div class="detail"><strong>Need the source?</strong><span><a href="https://github.com/TheDouglife/chroma-rgb-connect">View the repository -&gt;</a></span></div></div>
+    </main>
+    <footer>Chroma RGB Connect - <a href="../">Back to product page</a></footer>
   </div>
 </body>
 </html>

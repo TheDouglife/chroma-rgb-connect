@@ -20,8 +20,4 @@
     <PackageReference Include="NReco.Logging.File" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Protobuf Include="Protos/*.proto" />
-  </ItemGroup>
-
 </Project>

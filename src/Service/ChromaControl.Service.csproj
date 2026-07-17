@@ -2,10 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0-windows10.0.22000.0</TargetFramework>
+    <RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
     <AssemblyTitle>Chroma RGB Connect Service</AssemblyTitle>
     <AssemblyName>ChromaRGBConnect.Service</AssemblyName>
     <OutputType>WinExe</OutputType>
-    <SelfContained>true</SelfContained>
+    <SelfContained>false</SelfContained>
   </PropertyGroup>
 
   <ItemGroup>

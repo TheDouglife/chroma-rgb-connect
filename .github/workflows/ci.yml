@@ -3,6 +3,7 @@
 on:
   push:
     branches: [ main, master ]
+    tags: [ 'v*' ]
   pull_request:
   workflow_dispatch:
     inputs:
@@ -17,16 +18,16 @@ jobs:
     strategy:
       matrix:
         os: [windows-latest]
-        arch: [x64, arm64]
+        arch: [x64]
         dotnet-version: [10.0.x]
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: ${{ github.event.inputs.target_ref || github.ref }}
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v5
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
 
@@ -35,7 +36,7 @@ jobs:
 
       - name: Restore (Windows)
         if: matrix.os == 'windows-latest'
-        run: dotnet restore ChromaControl.sln
+        run: dotnet restore ChromaControl.sln -r win-${{ matrix.arch }}
 
       - name: Restore (Non-Windows)
         if: matrix.os != 'windows-latest'
@@ -77,37 +78,100 @@ jobs:
           dotnet pack src/Service/ChromaControl.Service.csproj -c Release --no-build -o ./artifacts
 
       - name: Upload artifacts
-        if: always()
-        uses: actions/upload-artifact@v4
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: actions/upload-artifact@v5
         with:
           name: build-artifacts
-          path: ./artifacts || .
+          path: ./artifacts
+          if-no-files-found: error
 
-  package-msix:
+  package-installer:
     runs-on: windows-latest
     needs: build
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v'))
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Setup .NET
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v5
         with:
           dotnet-version: 10.0.x
-      - name: Build
-        run: dotnet build ChromaControl.sln -c Release
-      - name: MSIX package placeholder
+      - name: Install Inno Setup
+        shell: pwsh
+        run: choco install innosetup --no-progress --yes
+      - name: Build installer
+        shell: pwsh
+        run: >-
+          dotnet publish src/Installer/ChromaControl.Installer.csproj
+          -c Release -r win-x64 --self-contained true
+          /p:InnoSetupCompilerPath="${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe"
+      - name: Sign release executables
+        if: startsWith(github.ref, 'refs/tags/v')
+        shell: pwsh
+        env:
+          WINDOWS_CERTIFICATE_BASE64: ${{ secrets.WINDOWS_CERTIFICATE_BASE64 }}
+          WINDOWS_CERTIFICATE_PASSWORD: ${{ secrets.WINDOWS_CERTIFICATE_PASSWORD }}
         run: |
-          echo "MSIX packaging not fully automated. Replace this step with your MSIX packaging commands, signing, and AppxManifest adjustments."
+          if ([string]::IsNullOrWhiteSpace($env:WINDOWS_CERTIFICATE_BASE64) -or [string]::IsNullOrWhiteSpace($env:WINDOWS_CERTIFICATE_PASSWORD)) {
+            throw 'Release signing is required for version tags. Configure WINDOWS_CERTIFICATE_BASE64 and WINDOWS_CERTIFICATE_PASSWORD repository secrets.'
+          }
+
+          $certificatePath = Join-Path $env:RUNNER_TEMP 'chroma-rgb-connect-signing.pfx'
+          [IO.File]::WriteAllBytes($certificatePath, [Convert]::FromBase64String($env:WINDOWS_CERTIFICATE_BASE64))
+
+          $signTool = Get-ChildItem "${env:ProgramFiles(x86)}\Windows Kits\10\bin\*\x64\signtool.exe" |
+            Sort-Object LastWriteTime -Descending |
+            Select-Object -First 1
+
+          if ($null -eq $signTool) {
+            throw 'Windows SDK signtool.exe was not found on the runner.'
+          }
+
+          $executables = @(Get-ChildItem 'src/Installer/bin' -Filter '*.exe' -Recurse)
+          if ($executables.Count -eq 0) {
+            throw 'No release executables were found to sign.'
+          }
+
+          foreach ($executable in $executables) {
+            & $signTool.FullName sign /fd SHA256 /f $certificatePath /p $env:WINDOWS_CERTIFICATE_PASSWORD /tr http://timestamp.digicert.com /td SHA256 $executable.FullName
+            if ($LASTEXITCODE -ne 0) {
+              throw "Signing failed for $($executable.FullName)."
+            }
+          }
+
+          Remove-Item $certificatePath -Force
+      - name: Upload installer
+        uses: actions/upload-artifact@v5
+        with:
+          name: chroma-rgb-connect-installer
+          path: src/Installer/bin/**/publish/ChromaControlSetup-*.exe
+          if-no-files-found: error
+
+  release-installer:
+    runs-on: ubuntu-latest
+    needs: package-installer
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    permissions:
+      contents: write
+    steps:
+      - name: Download installer
+        uses: actions/download-artifact@v5
+        with:
+          name: chroma-rgb-connect-installer
+          path: release
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: release/**/ChromaControlSetup-*.exe
 
   package-check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v5
         with:
           dotnet-version: 10.0.x
 
@@ -124,7 +188,7 @@ jobs:
           done
 
       - name: Upload outdated report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: outdated-packages
           path: outdated.txt

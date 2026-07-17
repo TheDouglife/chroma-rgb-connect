@@ -1,5 +1,3 @@
-#include "CodeDependencies.iss"
-
 [Setup]
 AppId=ChromaControl
 AppName={#Product}
@@ -21,25 +19,69 @@ CloseApplications=force
 SetupIconFile={#PublishDir}\wwwroot\favicon.ico
 LicenseFile={#LicenseFile}
 MissingRunOnceIdsWarning=no
-WizardImageFile=images\WizardImage0.bmp,images\WizardImage1.bmp
-WizardSmallImageFile=images\WizardSmallImage0.bmp,images\WizardSmallImage1.bmp,images\WizardSmallImage2.bmp,images\WizardSmallImage3.bmp,images\WizardSmallImage4.bmp,images\WizardSmallImage5.bmp,images\WizardSmallImage6.bmp
 
 [Files]
 Source: "{#PublishDir}\**"; DestDir: "{app}"; Flags: recursesubdirs ignoreversion
 
 [Icons]
 Name: "{group}\{#Product}"; Filename: "{app}\ChromaControl.App.exe"; WorkingDir: "{app}"
-Name: "{commonstartup}\{#Product}"; Filename: "{app}\ChromaControl.Service.exe"; WorkingDir: "{app}"
+Name: "{commonstartup}\{#Product}"; Filename: "{app}\ChromaRGBConnect.Service.exe"; WorkingDir: "{app}"
 
 [Run]
-Filename: "{app}\ChromaControl.Service.exe"; WorkingDir: "{app}"; StatusMsg: "Starting Chroma Control Service..."; Flags: runhidden nowait
+Filename: "{app}\ChromaRGBConnect.Service.exe"; WorkingDir: "{app}"; StatusMsg: "Starting Chroma Control Service..."; Flags: runhidden nowait
 Filename: "{app}\ChromaControl.App.exe"; WorkingDir: "{app}"; Description: "Start Chroma Control"; Flags: postinstall nowait skipifsilent
 
 [UninstallRun]
 Filename: "{sys}\taskkill.exe"; Parameters: "/F /IM ChromaControl.App.exe"; StatusMsg: "Stopping Chroma Control..."; Flags: runhidden
-Filename: "{sys}\taskkill.exe"; Parameters: "/F /IM ChromaControl.Service.exe"; StatusMsg: "Stopping Chroma Control Service..."; Flags: runhidden
+Filename: "{sys}\taskkill.exe"; Parameters: "/F /IM ChromaRGBConnect.Service.exe"; StatusMsg: "Stopping Chroma Control Service..."; Flags: runhidden
 
 [Code]
+const
+  VCRedistUrl = 'https://aka.ms/vs/17/release/vc_redist.x64.exe';
+  WebView2BootstrapperUrl = 'https://go.microsoft.com/fwlink/p/?LinkId=2124703';
+
+function InstallPrerequisite(const Url, FileName, Parameters, Description: String): Boolean;
+var
+  InstallerPath: String;
+  DownloadSize: Int64;
+  ResultCode: Integer;
+begin
+  Result := True;
+  InstallerPath := ExpandConstant('{tmp}\' + FileName);
+  DownloadSize := DownloadTemporaryFile(Url, FileName, '', nil);
+
+  if DownloadSize < 0 then
+  begin
+    MsgBox('Unable to download ' + Description + '. Check your internet connection and try again.', mbError, MB_OK);
+    Result := False;
+    exit;
+  end;
+
+  if not Exec(InstallerPath, Parameters, '', SW_HIDE, ewWaitUntilTerminated, ResultCode) or (ResultCode <> 0) then
+  begin
+    MsgBox('Unable to install ' + Description + '.', mbError, MB_OK);
+    Result := False;
+  end;
+end;
+
+function InstallPrerequisites: Boolean;
+begin
+  Result := InstallPrerequisite(
+    VCRedistUrl,
+    'vc_redist.x64.exe',
+    '/install /quiet /norestart',
+    'the Microsoft Visual C++ runtime');
+
+  if Result then
+  begin
+    Result := InstallPrerequisite(
+      WebView2BootstrapperUrl,
+      'MicrosoftEdgeWebview2Setup.exe',
+      '/silent /install',
+      'Microsoft Edge WebView2 Runtime');
+  end;
+end;
+
 procedure StopProcess(const ImageName: String);
 var
   ResultCode: Integer;
@@ -57,12 +99,10 @@ end;
 function InitializeSetup: Boolean;
 begin
   StopProcess('ChromaControl.App.exe');
-  StopProcess('ChromaControl.Service.exe');
+  StopProcess('ChromaRGBConnect.Service.exe');
   StopProcess('ChromaControl.OpenRGB.exe');
   StopService('WinRing0x64');
   StopService('WinRing0_1_2_0');
 
-  Dependency_AddVC2015To2022;
-  Dependency_AddWebView2;
-  Result := True;
+  Result := InstallPrerequisites;
 end;

@@ -50,7 +50,7 @@ public partial class ServiceMonitor : IHostedService
     /// <param name="logger">The <see cref="ILogger{TCategoryName}"/>.</param>
     public ServiceMonitor(IConfiguration configuration, ILogger<ServiceMonitor> logger)
     {
-        _servicePath = Path.Combine(configuration.GetChromaControlPath("app"), "ChromaControl.Service.exe");
+        _servicePath = Path.Combine(configuration.GetChromaControlPath("app"), "ChromaRGBConnect.Service.exe");
         _logger = logger;
     }
 
@@ -129,7 +129,7 @@ public partial class ServiceMonitor : IHostedService
     private Process? TryFindMatchingServiceProcess()
     {
         var expectedPath = Path.GetFullPath(_servicePath);
-        var processes = Process.GetProcessesByName("ChromaControl.Service");
+        var processes = Process.GetProcessesByName("ChromaRGBConnect.Service");
         var candidates = new List<(Process Process, string? ProcessPath)>();
 
         foreach (var process in processes)

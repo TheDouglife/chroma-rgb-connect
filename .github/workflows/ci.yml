@@ -71,15 +71,15 @@ jobs:
         run: dotnet test tests/ChromaControl.App.Tests/ChromaControl.App.Tests.csproj -c Release --no-build --verbosity normal -p:EnableWindowsTargeting=true || true
 
       - name: Pack (optional)
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || (github.event_name == 'workflow_dispatch' && inputs.target_ref == 'main')
         run: |
           dotnet pack src/Common/ChromaControl.Common.csproj -c Release --no-build -o ./artifacts
           dotnet pack src/App/ChromaControl.App.csproj -c Release --no-build -o ./artifacts
           dotnet pack src/Service/ChromaControl.Service.csproj -c Release --no-build -o ./artifacts
 
       - name: Upload artifacts
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        uses: actions/upload-artifact@v5
+        if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || (github.event_name == 'workflow_dispatch' && inputs.target_ref == 'main')
+        uses: actions/upload-artifact@v7
         with:
           name: build-artifacts
           path: ./artifacts
@@ -88,7 +88,7 @@ jobs:
   package-installer:
     runs-on: windows-latest
     needs: build
-    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v'))
+    if: (github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v'))) || (github.event_name == 'workflow_dispatch' && inputs.target_ref == 'main')
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -141,7 +141,7 @@ jobs:
 
           Remove-Item $certificatePath -Force
       - name: Upload installer
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with:
           name: chroma-rgb-connect-installer
           path: src/Installer/bin/**/publish/ChromaControlSetup-*.exe
@@ -155,7 +155,7 @@ jobs:
       contents: write
     steps:
       - name: Download installer
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v8
         with:
           name: chroma-rgb-connect-installer
           path: release
@@ -188,7 +188,7 @@ jobs:
           done
 
       - name: Upload outdated report
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with:
           name: outdated-packages
           path: outdated.txt

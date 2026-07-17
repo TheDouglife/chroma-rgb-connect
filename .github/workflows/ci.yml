@@ -38,7 +38,7 @@ jobs:
           if [ "${{ matrix.os }}" = "windows-latest" ]; then
             dotnet restore ChromaControl.sln
           else
-            dotnet restore ChromaControl.sln -p:EnableWindowsTargeting=true
+            dotnet restore ChromaControl.sln -p:EnableWindowsTargeting=true -p:ManagePackageVersionsCentrally=false
           fi
 
       - name: Publish for runtime
@@ -118,7 +118,7 @@ jobs:
         run: |
           for proj in $(find src -name "*.csproj"); do
             echo "\n== $proj ==\n" >> outdated.txt
-            dotnet list "$proj" package --outdated -p:EnableWindowsTargeting=true >> outdated.txt || true
+            dotnet list "$proj" package --outdated -p:EnableWindowsTargeting=true -p:ManagePackageVersionsCentrally=false >> outdated.txt || true
           done
 
       - name: Upload outdated report

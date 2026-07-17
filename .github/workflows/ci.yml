@@ -36,7 +36,7 @@ jobs:
 
       - name: Restore (Windows)
         if: matrix.os == 'windows-latest'
-        run: dotnet restore ChromaControl.sln
+        run: dotnet restore ChromaControl.sln -r win-${{ matrix.arch }}
 
       - name: Restore (Non-Windows)
         if: matrix.os != 'windows-latest'
@@ -108,7 +108,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: chroma-rgb-connect-installer
-          path: src/Installer/bin/**/publish/ChromaRGBConnectSetup-*.exe
+          path: src/Installer/bin/**/publish/ChromaControlSetup-*.exe
           if-no-files-found: error
 
   release-installer:
@@ -126,7 +126,7 @@ jobs:
       - name: Publish GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: release/ChromaRGBConnectSetup-*.exe
+          files: release/ChromaControlSetup-*.exe
 
   package-check:
     runs-on: ubuntu-latest

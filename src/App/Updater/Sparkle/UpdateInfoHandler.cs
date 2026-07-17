@@ -138,7 +138,7 @@ public class UpdateInfoHandler : IAppCastHandler
         var items = JsonSerializer.Deserialize<ReleaseItem[]>(data)!
             .Select(r =>
             {
-                r.Assets = [.. r.Assets.Where(a => a.Name == $"ChromaRGBConnectSetup-{r.TagName}.exe")];
+                r.Assets = [.. r.Assets.Where(a => a.Name == $"ChromaControlSetup-{r.TagName}.exe")];
 
                 return r;
             })

@@ -37,7 +37,7 @@
     <ItemGroup>
       <DebugFiles Include="$(InstallerInputDir)\*.pdb"/>
       <DocumentFiles Include="$(InstallerInputDir)\*.xml"/>
-      <InstallerFiles Include="$(PublishDir)\ChromaRGBConnectSetup-*.exe"/>
+      <InstallerFiles Include="$(PublishDir)\ChromaControlSetup-*.exe"/>
     </ItemGroup>
 
     <Delete Files="@(DebugFiles)"/>
@@ -61,7 +61,7 @@
     <RemoveDir Directories="$(PublishDir)"/>
     <MakeDir Directories="$(PublishDir)"/>
 
-    <Move SourceFiles="$(MSBuildProjectExtensionsPath)ChromaRGBConnectSetup-$(Version).exe"
+    <Move SourceFiles="$(MSBuildProjectExtensionsPath)ChromaControlSetup-$(Version).exe"
           DestinationFolder="$(PublishDir)"/>
 
     <Message Text="$(ProjectName) -> $(PublishDir)\"

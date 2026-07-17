@@ -57,9 +57,18 @@ begin
     exit;
   end;
 
-  if not Exec(InstallerPath, Parameters, '', SW_HIDE, ewWaitUntilTerminated, ResultCode) or (ResultCode <> 0) then
+  if not Exec(InstallerPath, Parameters, '', SW_HIDE, ewWaitUntilTerminated, ResultCode) then
   begin
-    MsgBox('Unable to install ' + Description + '.', mbError, MB_OK);
+    MsgBox('Unable to start the ' + Description + ' installer.', mbError, MB_OK);
+    Result := False;
+    exit;
+  end;
+
+  { 1638 means a compatible or newer VC++ runtime is already installed.
+    3010 means installation succeeded and a reboot is recommended. }
+  if (ResultCode <> 0) and (ResultCode <> 1638) and (ResultCode <> 3010) then
+  begin
+    MsgBox('Unable to install ' + Description + '. Installer exit code: ' + IntToStr(ResultCode) + '.', mbError, MB_OK);
     Result := False;
   end;
 end;

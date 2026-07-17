@@ -105,6 +105,41 @@ jobs:
           dotnet publish src/Installer/ChromaControl.Installer.csproj
           -c Release -r win-x64 --self-contained true
           /p:InnoSetupCompilerPath="${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe"
+      - name: Sign release executables
+        if: startsWith(github.ref, 'refs/tags/v')
+        shell: pwsh
+        env:
+          WINDOWS_CERTIFICATE_BASE64: ${{ secrets.WINDOWS_CERTIFICATE_BASE64 }}
+          WINDOWS_CERTIFICATE_PASSWORD: ${{ secrets.WINDOWS_CERTIFICATE_PASSWORD }}
+        run: |
+          if ([string]::IsNullOrWhiteSpace($env:WINDOWS_CERTIFICATE_BASE64) -or [string]::IsNullOrWhiteSpace($env:WINDOWS_CERTIFICATE_PASSWORD)) {
+            throw 'Release signing is required for version tags. Configure WINDOWS_CERTIFICATE_BASE64 and WINDOWS_CERTIFICATE_PASSWORD repository secrets.'
+          }
+
+          $certificatePath = Join-Path $env:RUNNER_TEMP 'chroma-rgb-connect-signing.pfx'
+          [IO.File]::WriteAllBytes($certificatePath, [Convert]::FromBase64String($env:WINDOWS_CERTIFICATE_BASE64))
+
+          $signTool = Get-ChildItem "${env:ProgramFiles(x86)}\Windows Kits\10\bin\*\x64\signtool.exe" |
+            Sort-Object LastWriteTime -Descending |
+            Select-Object -First 1
+
+          if ($null -eq $signTool) {
+            throw 'Windows SDK signtool.exe was not found on the runner.'
+          }
+
+          $executables = @(Get-ChildItem 'src/Installer/bin' -Filter '*.exe' -Recurse)
+          if ($executables.Count -eq 0) {
+            throw 'No release executables were found to sign.'
+          }
+
+          foreach ($executable in $executables) {
+            & $signTool.FullName sign /fd SHA256 /f $certificatePath /p $env:WINDOWS_CERTIFICATE_PASSWORD /tr http://timestamp.digicert.com /td SHA256 $executable.FullName
+            if ($LASTEXITCODE -ne 0) {
+              throw "Signing failed for $($executable.FullName)."
+            }
+          }
+
+          Remove-Item $certificatePath -Force
       - name: Upload installer
         uses: actions/upload-artifact@v5
         with:

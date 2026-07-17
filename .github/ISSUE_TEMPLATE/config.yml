@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+	- name: Security vulnerability report
+		url: https://github.com/TheDouglife/chroma-control-manager/security/policy
+		about: Please report security vulnerabilities through the security policy process.
+	- name: Project license
+		url: https://github.com/TheDouglife/chroma-control-manager/blob/main/LICENSE
+		about: Review the project license and open source terms.

@@ -1,0 +1,1180 @@
+/* _content/ChromaControl.App/Lighting/Components/BlankSlate.razor.rz.scp.css */
+/* Licensed to the Chroma Control Contributors under one or more agreements. */
+/* The Chroma Control Contributors licenses this file to you under the MIT license. */
+/* See the LICENSE file in the project root for more information. */
+
+.blank-slate[b-fi1vbvknpp] {
+    padding: var(--spacing-quad);
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.blank-slate-content[b-fi1vbvknpp] {
+    width: 100%;
+    max-width: 600px;
+}
+
+.blank-slate-header[b-fi1vbvknpp] {
+    margin-bottom: var(--spacing-double);
+}
+
+    .blank-slate-header h1[b-fi1vbvknpp] {
+        padding: 0;
+        margin: 0;
+        font-size: var(--font-size-xl);
+        font-weight: var(--font-weight-light);
+    }
+
+    .blank-slate-header p[b-fi1vbvknpp] {
+        margin: 0;
+    }
+
+.blank-slate-action[b-fi1vbvknpp] {
+    border-radius: 5px;
+    background: var(--background-color-muted);
+}
+
+    .blank-slate-action:not(:last-child)[b-fi1vbvknpp] {
+        margin-bottom: var(--spacing);
+    }
+
+.blank-slate-action-content[b-fi1vbvknpp] {
+    padding: var(--spacing-double);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.blank-slate-action-text[b-fi1vbvknpp] {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+    .blank-slate-action-text:not(:last-child)[b-fi1vbvknpp] {
+        margin-right: var(--spacing-double);
+    }
+
+    .blank-slate-action-text h2[b-fi1vbvknpp] {
+        margin: 0;
+        padding: 0;
+        font-size: var(--font-size);
+        font-weight: var(--font-weight-semibold);
+    }
+
+    .blank-slate-action-text p.description[b-fi1vbvknpp] {
+        margin: 0;
+        padding: 0;
+        font-size: var(--font-size);
+        margin-bottom: var(--spacing-half);
+    }
+
+    .blank-slate-action-text p.discoverability[b-fi1vbvknpp] {
+        margin: 0;
+        padding: 0;
+        font-size: var(--font-size);
+        color: var(--foreground-color-muted);
+    }
+/* _content/ChromaControl.App/Lighting/Components/Device.razor.rz.scp.css */
+/* Licensed to the Chroma Control Contributors under one or more agreements. */
+/* The Chroma Control Contributors licenses this file to you under the MIT license. */
+/* See the LICENSE file in the project root for more information. */
+
+.device[b-leludfxarq] {
+    height: 38px;
+    width: 100%;
+    border-bottom: 1px solid var(--border-color-default);
+}
+
+    .device:hover[b-leludfxarq] {
+        background-color: var(--background-color-tertiary-muted);
+    }
+
+    .device.active[b-leludfxarq] {
+        background-color: var(--background-color-tertiary-emphasis);
+    }
+
+.device-content-wrapper[b-leludfxarq] {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    min-width: 0;
+    height: 100%;
+    padding: 0 var(--spacing);
+}
+
+.device-content[b-leludfxarq] {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    align-self: center;
+    min-width: 0;
+}
+
+.device-name[b-leludfxarq] {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/* _content/ChromaControl.App/Lighting/Components/DeviceGroup.razor.rz.scp.css */
+/* Licensed to the Chroma Control Contributors under one or more agreements. */
+/* The Chroma Control Contributors licenses this file to you under the MIT license. */
+/* See the LICENSE file in the project root for more information. */
+
+.device-group[b-bgbg2bu0pa] {
+    height: 46px;
+    width: 100%;
+    border-bottom: 1px solid var(--border-color-default);
+}
+
+    .device-group:hover[b-bgbg2bu0pa] {
+        background-color: var(--background-color-tertiary-muted);
+    }
+
+    .device-group.active[b-bgbg2bu0pa] {
+        background-color: var(--background-color-tertiary-emphasis);
+    }
+
+.device-group-content-wrapper[b-bgbg2bu0pa] {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-right: calc(var(--spacing) + var(--spacing-half));
+    padding-left: var(--spacing);
+}
+
+.device-group-content[b-bgbg2bu0pa] {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    margin-top: 4px;
+    overflow: hidden;
+}
+
+.device-group-name[b-bgbg2bu0pa] {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: var(--font-weight-semibold);
+}
+
+.device-group-details[b-bgbg2bu0pa] {
+    margin-top: 3px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: var(--font-size-sm);
+}
+/* _content/ChromaControl.App/Lighting/Components/DeviceGroupView.razor.rz.scp.css */
+/* Licensed to the Chroma Control Contributors under one or more agreements. */
+/* The Chroma Control Contributors licenses this file to you under the MIT license. */
+/* See the LICENSE file in the project root for more information. */
+
+.device-group-view[b-78kmisjqoz] {
+    min-width: 0;
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+    height: 100%;
+    min-height: 0;
+}
+
+.device-group-view-container[b-78kmisjqoz] {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    border-right: 1px solid var(--border-color-default);
+    background: var(--background-color-tertiary);
+    width: 250px;
+}
+
+.device-group-view-header[b-78kmisjqoz] {
+    height: 30px;
+    line-height: 30px;
+    padding: 0 var(--spacing);
+    text-align: center;
+    border-bottom: 1px solid var(--border-color-default);
+    background: var(--background-color-tertiary);
+}
+
+.device-group-view-list[b-78kmisjqoz] {
+    overflow: hidden auto;
+}
+
+.device-view-container[b-78kmisjqoz] {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.device-view-wrapper[b-78kmisjqoz] {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-height: 100%;
+    min-width: 0;
+}
+
+.device-view-summary[b-78kmisjqoz] {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    border-bottom: var(--base-border);
+}
+
+.device-view-summary-title[b-78kmisjqoz] {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-semibold);
+    line-height: 16px;
+    word-wrap: break-word;
+    display: flex;
+    padding: var(--spacing);
+    padding-bottom: var(--spacing-half);
+}
+
+.device-view-summary-details[b-78kmisjqoz] {
+    padding: var(--spacing);
+    padding-top: 0;
+    padding-bottom: var(--spacing-half);
+    font-size: var(--font-size-sm);
+    align-items: center;
+}
+/* _content/ChromaControl.App/Lighting/Components/DeviceInfoTab.razor.rz.scp.css */
+* Licensed to the Chroma Control Contributors under one or more agreements. */
+/* The Chroma Control Contributors licenses this file to you under the MIT license. */
+/* See the LICENSE file in the project root for more information. */
+
+.label[b-48t7suo38j] {
+    margin-bottom: var(--spacing-half);
+}
+
+.value[b-48t7suo38j] {
+    margin-top: 0;
+    margin-bottom: var(--spacing);
+    font-size: var(--font-size-sm);
+    color: var(--foreground-color-muted);
+}
+/* _content/ChromaControl.App/Lighting/Components/DeviceView.razor.rz.scp.css */
+/* Licensed to the Chroma Control Contributors under one or more agreements. */
+/* The Chroma Control Contributors licenses this file to you under the MIT license. */
+/* See the LICENSE file in the project root for more information. */
+
+.device-view[b-8xy2ruo3wm] {
+    min-width: 0;
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+    height: 100%;
+    min-height: 0;
+}
+
+.device-view-container[b-8xy2ruo3wm] {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    border-right: 1px solid var(--border-color-default);
+    background: var(--background-color-tertiary);
+    width: 250px;
+}
+
+.device-view-header[b-8xy2ruo3wm] {
+    height: 30px;
+    line-height: 30px;
+    padding: 0 var(--spacing);
+    text-align: center;
+    border-bottom: 1px solid var(--border-color-default);
+    background: var(--background-color-tertiary);
+}
+
+.device-view-list[b-8xy2ruo3wm] {
+    overflow: hidden auto;
+}
+
+.device-settings-container[b-8xy2ruo3wm] {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.device-settings-wrapper[b-8xy2ruo3wm] {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-width: 0;
+    max-height: 100%;
+}
+
+.device-summary[b-8xy2ruo3wm] {
+    height: 30px;
+    background: var(--background-color-tertiary);
+    border-bottom: 1px solid var(--border-color-default);
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    flex-grow: 0;
+    align-items: center;
+    padding: var(--spacing-half) var(--spacing);
+}
+
+.device-summary-name[b-8xy2ruo3wm] {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/* _content/ChromaControl.App/Lighting/Components/DeviceZonesTab.razor.rz.scp.css */
+/* Licensed to the Chroma Control Contributors under one or more agreements. */
+/* The Chroma Control Contributors licenses this file to you under the MIT license. */
+/* See the LICENSE file in the project root for more information. */
+
+.zone[b-wx7z6iemjp] {
+    margin-bottom: var(--spacing);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+    .zone label[b-wx7z6iemjp] {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin-bottom: var(--spacing-third);
+    }
+
+    .zone[b-wx7z6iemjp]  input {
+        border: var(--muted-border);
+        border-radius: var(--border-radius);
+        background: var(--background-color-muted);
+        color: currentColor;
+        font-size: var(--font-size);
+        font-family: var(--font-family-sans-serif);
+        height: 25px;
+        width: 100%;
+    }
+
+        .zone[b-wx7z6iemjp]  input:active,
+        .zone[b-wx7z6iemjp]  input:hover,
+        .zone[b-wx7z6iemjp]  input:focus {
+            border: var(--accent-border);
+        }
+/* _content/ChromaControl.App/Lighting/Components/VendorList.razor.rz.scp.css */
+/* Licensed to the Chroma Control Contributors under one or more agreements. */
+/* The Chroma Control Contributors licenses this file to you under the MIT license. */
+/* See the LICENSE file in the project root for more information. */
+
+.vendor-checkbox-item[b-6zc1c8lm6l] {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: var(--spacing-half);
+}
+
+.vendor-checkbox-item input[b-6zc1c8lm6l] {
+    margin-right: var(--spacing-half);
+}
+
+.dangerous[b-6zc1c8lm6l] {
+    fill: var(--background-color-danger);
+    margin-right: var(--spacing-third);
+}
+/* _content/ChromaControl.App/Settings/Components/AppearanceTab.razor.rz.scp.css */
+/* Licensed to the Chroma Control Contributors under one or more agreements. */
+/* The Chroma Control Contributors licenses this file to you under the MIT license. */
+/* See the LICENSE file in the project root for more information. */
+
+.theme-selector[b-wsvgl26ki9] {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 calc(var(--spacing-half) * -1);
+}
+
+.theme[b-wsvgl26ki9] {
+    display: block;
+    flex-shrink: 0;
+    padding: var(--spacing-half);
+    position: relative;
+    width: 50%;
+    margin: 0;
+}
+
+    .theme[b-wsvgl26ki9] >  input[type=radio] {
+        position: absolute;
+        left: var(--spacing-half);
+        margin-top: calc(54.5%);
+    }
+
+        .theme[b-wsvgl26ki9] >  input[type=radio]:checked + label {
+            border-color: var(--border-color-accent);
+        }
+
+    .theme > label[b-wsvgl26ki9] {
+        border: var(--base-border);
+        border-radius: 2px;
+        float: left;
+        overflow: hidden;
+        padding-bottom: var(--spacing-half);
+        width: 100%;
+        margin: 0;
+    }
+
+.theme-image[b-wsvgl26ki9] {
+    width: 100%;
+    border-bottom: var(--base-border);
+    margin-bottom: var(--spacing-half);
+    display: block;
+}
+
+.theme-label[b-wsvgl26ki9] {
+    margin-left: var(--spacing-triple);
+}
+
+.theme-system[b-wsvgl26ki9] {
+    width: 100%;
+    position: relative;
+    display: block;
+}
+
+    .theme-system img[b-wsvgl26ki9] {
+        top: 0;
+    }
+
+        .theme-system img:first-child[b-wsvgl26ki9] {
+            position: inherit;
+        }
+
+        .theme-system img:last-child[b-wsvgl26ki9] {
+            position: absolute;
+            clip-path: polygon(50% 0%, 110% 0%, 110% 100%, 50% 100%);
+        }
+/* _content/ChromaControl.App/Settings/Components/IntegrationsTab.razor.rz.scp.css */
+/* Licensed to the Chroma Control Contributors under one or more agreements. */
+/* The Chroma Control Contributors licenses this file to you under the MIT license. */
+/* See the LICENSE file in the project root for more information. */
+
+.note-text[b-2ajjibplx9] {
+    font-size: var(--font-size-sm);
+    color: var(--foreground-color-muted);
+}
+/* _content/ChromaControl.App/Shell/Components/AboutDialog.razor.rz.scp.css */
+/* Licensed to the Chroma Control Contributors under one or more agreements. */
+/* The Chroma Control Contributors licenses this file to you under the MIT license. */
+/* See the LICENSE file in the project root for more information. */
+
+.update-spin-icon[b-1moss0my1v] {
+    animation: spin-b-1moss0my1v 1s linear infinite;
+    fill: currentColor;
+    flex-shrink: 0;
+    align-self: center;
+    margin-right: 3px;
+}
+
+@keyframes spin-b-1moss0my1v {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+/* _content/ChromaControl.App/Shell/Components/Button.razor.rz.scp.css */
+/* Licensed to the Chroma Control Contributors under one or more agreements. */
+/* The Chroma Control Contributors licenses this file to you under the MIT license. */
+/* See the LICENSE file in the project root for more information. */
+
+.button[b-2aha1fe87q] {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: var(--font-family-sans-serif);
+    font-size: var(--font-size);
+    padding: 0 var(--spacing);
+    height: 25px;
+    border-radius: 2px;
+    min-width: 120px;
+}
+
+    .button[aria-disabled=true][b-2aha1fe87q] {
+        opacity: .6;
+        pointer-events: none;
+    }
+
+.button-primary[b-2aha1fe87q] {
+    border: 1px solid var(--border-color-accent);
+    color: var(--foreground-color-inset);
+    background-color: var(--background-color-accent);
+}
+
+    .button-primary:not([aria-disabled=true]):hover[b-2aha1fe87q] {
+        border: 1px solid var(--border-color-accent-muted);
+        background-color: var(--background-color-accent-muted);
+    }
+
+    .button-primary:not([aria-disabled=true]):active[b-2aha1fe87q] {
+        border: 1px solid var(--border-color-accent-emphasis);
+        background-color: var(--background-color-accent-emphasis);
+    }
+
+.button-secondary[b-2aha1fe87q] {
+    border: 1px solid var(--border-color-neutral);
+    color: var(--foreground-color-white);
+    background-color: var(--background-color-neutral);
+}
+
+    .button-secondary:not([aria-disabled=true]):hover[b-2aha1fe87q] {
+        border: 1px solid var(--border-color-neutral-muted);
+        background-color: var(--background-color-neutral-muted);
+    }
+
+    .button-secondary:not([aria-disabled=true]):active[b-2aha1fe87q] {
+        border: 1px solid var(--border-color-neutral-emphasis);
+        background-color: var(--background-color-neutral-emphasis);
+    }
+
+.button-danger[b-2aha1fe87q] {
+    border: 1px solid var(--border-color-neutral);
+    color: var(--foreground-color-white);
+    background-color: var(--background-color-neutral);
+}
+
+    .button-danger:not([aria-disabled=true]):hover[b-2aha1fe87q] {
+        border: 1px solid var(--border-color-danger);
+        background-color: var(--background-color-danger);
+    }
+
+    .button-danger:not([aria-disabled=true]):active[b-2aha1fe87q] {
+        border: 1px solid var(--border-color-danger-emphasis);
+        background-color: var(--background-color-danger-emphasis);
+    }
+/* _content/ChromaControl.App/Shell/Components/DialogOutlet.razor.rz.scp.css */
+/* Licensed to the Chroma Control Contributors under one or more agreements. */
+/* The Chroma Control Contributors licenses this file to you under the MIT license. */
+/* See the LICENSE file in the project root for more information. */
+
+.dialog-container[b-06irr42lsk] {
+    position: fixed;
+    inset: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--overlay-color-default);
+    animation: 200ms cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal none running dialog-overlay-appear-b-06irr42lsk;
+}
+
+@keyframes dialog-overlay-appear-b-06irr42lsk {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+/* _content/ChromaControl.App/Shell/Components/Icon.razor.rz.scp.css */
+/* Licensed to the Chroma Control Contributors under one or more agreements. */
+/* The Chroma Control Contributors licenses this file to you under the MIT license. */
+/* See the LICENSE file in the project root for more information. */
+
+.icon[b-46leoeqp4c] {
+    fill: currentColor;
+    flex-shrink: 0;
+}
+/* _content/ChromaControl.App/Shell/Components/LicenseDialog.razor.rz.scp.css */
+/* Licensed to the Chroma Control Contributors under one or more agreements. */
+/* The Chroma Control Contributors licenses this file to you under the MIT license. */
+/* See the LICENSE file in the project root for more information. */
+
+.license-text[b-xhqkuw1ztd] {
+    font-family: var(--font-family-monospace);
+    white-space: pre-wrap;
+    margin-top: 0;
+    margin-bottom: var(--spacing-double);
+    cursor: text;
+    user-select: text;
+    padding: 0;
+}
+/* _content/ChromaControl.App/Shell/Components/MenuBar.razor.rz.scp.css */
+/* Licensed to the Chroma Control Contributors under one or more agreements. */
+/* The Chroma Control Contributors licenses this file to you under the MIT license. */
+/* See the LICENSE file in the project root for more information. */
+
+.menu-bar[b-lyc7e83ks3] {
+    display: flex;
+    height: 27px;
+}
+/* _content/ChromaControl.App/Shell/Components/MenuBarDropdown.razor.rz.scp.css */
+/* Licensed to the Chroma Control Contributors under one or more agreements. */
+/* The Chroma Control Contributors licenses this file to you under the MIT license. */
+/* See the LICENSE file in the project root for more information. */
+
+.menu-bar-dropdown[b-6dqjfnk0tm] {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+    .menu-bar-dropdown.open > .menu-bar-dropdown-button-container > button[b-6dqjfnk0tm] {
+        background: var(--background-color-inset);
+    }
+
+.menu-bar-dropdown-container[b-6dqjfnk0tm] {
+    z-index: var(--foldout-z-index);
+    position: relative;
+    top: 27px;
+}
+
+.menu-bar-dropdown-foldout[b-6dqjfnk0tm] {
+    position: absolute;
+    min-width: 100%;
+    pointer-events: all;
+    color: var(--foreground-color-default);
+    background: var(--background-color-muted);
+    padding: var(--spacing-half) 0px;
+}
+
+.menu-bar-dropdown-button-container[b-6dqjfnk0tm] {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    min-width: 0;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.menu-bar-dropdown-button[b-6dqjfnk0tm] {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: var(--font-family-sans-serif);
+    font-size: var(--font-size);
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    overflow: hidden;
+    padding: 0 var(--spacing);
+    border: 0;
+    color: var(--foreground-color-tertiary);
+    background: transparent;
+}
+
+    .menu-bar-dropdown-button:hover[b-6dqjfnk0tm] {
+        background: var(--background-color-inset);
+    }
+
+    .menu-bar-dropdown-button:active[b-6dqjfnk0tm] {
+        color: var(--foreground-color-neutral);
+        background: var(--background-color-inset);
+    }
+/* _content/ChromaControl.App/Shell/Components/MenuBarDropdownItem.razor.rz.scp.css */
+/* Licensed to the Chroma Control Contributors under one or more agreements. */
+/* The Chroma Control Contributors licenses this file to you under the MIT license. */
+/* See the LICENSE file in the project root for more information. */
+
+.menu-bar-dropdown-item[b-acd9yp9psy] {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    height: 30px;
+}
+
+    .menu-bar-dropdown-item:hover[b-acd9yp9psy] {
+        background: var(--background-color-default);
+    }
+
+.menu-bar-dropdown-item-label[b-acd9yp9psy] {
+    flex-grow: 1;
+    margin-left: var(--spacing-double);
+    margin-right: var(--spacing);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.menu-bar-dropdown-item-shortcut[b-acd9yp9psy] {
+    flex-shrink: 0;
+    margin-right: var(--spacing);
+    color: var(--foreground-color-muted);
+}
+/* _content/ChromaControl.App/Shell/Components/NotificationOutlet.razor.rz.scp.css */
+/* Licensed to the Chroma Control Contributors under one or more agreements. */
+/* The Chroma Control Contributors licenses this file to you under the MIT license. */
+/* See the LICENSE file in the project root for more information. */
+
+.notification-container[b-wrjv0atzlt] {
+    border-bottom: var(--base-border);
+}
+/* _content/ChromaControl.App/Shell/Components/Row.razor.rz.scp.css */
+/* Licensed to the Chroma Control Contributors under one or more agreements. */
+/* The Chroma Control Contributors licenses this file to you under the MIT license. */
+/* See the LICENSE file in the project root for more information. */
+
+.row[b-royhurzu41] {
+    display: flex;
+    flex-direction: row;
+}
+
+.row-margin-standard:not(:last-child)[b-royhurzu41] {
+    margin-bottom: var(--spacing);
+}
+
+.row-margin-none:not(:last-child)[b-royhurzu41] {
+    margin-bottom: 0;
+}
+
+.row-left[b-royhurzu41] {
+    justify-content: left;
+}
+
+.row-center[b-royhurzu41] {
+    justify-content: center;
+}
+/* _content/ChromaControl.App/Shell/Components/TabItem.razor.rz.scp.css */
+/* Licensed to the Chroma Control Contributors under one or more agreements. */
+/* The Chroma Control Contributors licenses this file to you under the MIT license. */
+/* See the LICENSE file in the project root for more information. */
+
+.tab-item[b-ozr5m4hyn4] {
+    border: none;
+    box-shadow: none;
+    font-family: var(--font-family-sans-serif);
+    font-size: var(--font-size-md);
+    border-radius: 0px;
+    min-width: 150px;
+    display: flex;
+    justify-content: left;
+    padding: calc(var(--spacing) + var(--spacing-third)) var(--spacing-triple);
+}
+
+    .tab-item[b-ozr5m4hyn4] >  span > svg {
+        vertical-align: bottom;
+        margin-right: var(--spacing);
+    }
+
+    .tab-item.inactive[b-ozr5m4hyn4] {
+        color: var(--foreground-color-default);
+        background-color: var(--background-color-default);
+    }
+
+        .tab-item.inactive:hover[b-ozr5m4hyn4] {
+            background-color: var(--background-color-muted);
+        }
+
+        .tab-item.inactive[b-ozr5m4hyn4] >  span > svg {
+            color: var(--foreground-color-muted);
+        }
+
+    .tab-item.active[b-ozr5m4hyn4] {
+        color: var(--foreground-color-accent);
+        background-color: var(--background-color-muted);
+    }
+/* _content/ChromaControl.App/Shell/Components/Tabs.razor.rz.scp.css */
+/* Licensed to the Chroma Control Contributors under one or more agreements. */
+/* The Chroma Control Contributors licenses this file to you under the MIT license. */
+/* See the LICENSE file in the project root for more information. */
+
+.tabs[b-xpb4kh0wgf] {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+}
+
+.tab-items[b-xpb4kh0wgf] {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    height: auto;
+    flex-shrink: 0;
+    padding: var(--spacing) 0;
+}
+
+.tabs-content[b-xpb4kh0wgf] {
+    padding: var(--spacing-double);
+    border-left: var(--base-border);
+    flex: 1;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+    .tabs-content[b-xpb4kh0wgf] >  h2 {
+        font-size: var(--font-size-md);
+        font-weight: var(--font-weight);
+        margin-top: 0;
+        margin-bottom: var(--spacing);
+    }
+/* _content/ChromaControl.App/Shell/Components/WindowContent.razor.rz.scp.css */
+/* Licensed to the Chroma Control Contributors under one or more agreements. */
+/* The Chroma Control Contributors licenses this file to you under the MIT license. */
+/* See the LICENSE file in the project root for more information. */
+
+.window-content[b-59709nw50k] {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    height: 100%;
+}
+/* _content/ChromaControl.App/Shell/Components/WindowControls.razor.rz.scp.css */
+/* Licensed to the Chroma Control Contributors under one or more agreements. */
+/* The Chroma Control Contributors licenses this file to you under the MIT license. */
+/* See the LICENSE file in the project root for more information. */
+
+.window-controls[b-afw80hxuxs] {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.window-control[b-afw80hxuxs] {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: var(--font-family-sans-serif);
+    font-size: var(--font-size);
+    display: inline-block;
+    position: relative;
+    width: 45px;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    color: var(--foreground-color-tertiary);
+    background-color: transparent;
+    transition: background-color .25s ease;
+    line-height: 10px;
+}
+
+    .window-control:hover[b-afw80hxuxs] {
+        color: var(--foreground-color-tertiary);
+        background-color: var(--background-color-inset);
+    }
+
+    .window-control:active[b-afw80hxuxs] {
+        color: var(--foreground-color-neutral);
+        background-color: var(--background-color-inset);
+    }
+
+    .window-control svg[b-afw80hxuxs] {
+        fill: currentColor;
+    }
+/* _content/ChromaControl.App/Shell/Components/WindowTitleBar.razor.rz.scp.css */
+/* Licensed to the Chroma Control Contributors under one or more agreements. */
+/* The Chroma Control Contributors licenses this file to you under the MIT license. */
+/* See the LICENSE file in the project root for more information. */
+
+.window-title-bar[b-g14r3eqd6z] {
+    -webkit-app-region: drag;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 28px;
+}
+
+.window-title-bar-icon[b-g14r3eqd6z] {
+    margin: 0 var(--spacing);
+    align-self: center;
+}
+
+.window-title-bar-light[b-g14r3eqd6z] {
+    border-bottom: none;
+}
+
+.window-title-bar-full[b-g14r3eqd6z] {
+    border-bottom: var(--base-border);
+}
+/* _content/ChromaControl.App/Shell/Layouts/BaseWindowLayout.razor.rz.scp.css */
+/* Licensed to the Chroma Control Contributors under one or more agreements. */
+/* The Chroma Control Contributors licenses this file to you under the MIT license. */
+/* See the LICENSE file in the project root for more information. */
+
+.window[b-j8hyuozga8] {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+/* _content/ChromaControl.App/Shell/Scaffolds/DialogScaffold.razor.rz.scp.css */
+/* Licensed to the Chroma Control Contributors under one or more agreements. */
+/* The Chroma Control Contributors licenses this file to you under the MIT license. */
+/* See the LICENSE file in the project root for more information. */
+
+.dialog[b-6aah650t4b] {
+    display: flex;
+    flex-direction: column;
+    overflow: unset;
+    border: var(--base-border);
+    padding: 0;
+    color: var(--foreground-color-default);
+    background: var(--background-color-default);
+    opacity: 1;
+    min-width: 400px;
+    max-width: 600px;
+}
+
+.dialog-header[b-6aah650t4b] {
+    height: 50px;
+    border-bottom: var(--base-border);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: var(--spacing-double);
+}
+
+.dialog-header-text[b-6aah650t4b] {
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-md);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.dialog-header-button[b-6aah650t4b] {
+    flex-shrink: 0;
+    border: 0;
+    height: 16px;
+    width: 16px;
+    margin: 0 calc(var(--spacing) * -1) 0 auto;
+    padding: 0;
+    background: transparent;
+    color: var(--foreground-color-neutral);
+    cursor: pointer;
+}
+
+    .dialog-header-button:hover[b-6aah650t4b] {
+        color: var(--foreground-color-tertiary);
+    }
+
+.dialog-header-button-icon[b-6aah650t4b] {
+    fill: currentColor;
+}
+
+.dialog-body-container[b-6aah650t4b] {
+    min-height: 0;
+    height: 100%;
+    flex: 1;
+    display: flex;
+}
+
+.dialog-body[b-6aah650t4b] {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.dialog-content[b-6aah650t4b] {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.dialog-content-scrollable[b-6aah650t4b] {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+[b-6aah650t4b] .dialog-content > div > span {
+    margin: 0;
+}
+
+[b-6aah650t4b] .dialog-content > div > p {
+    margin: 0;
+}
+
+[b-6aah650t4b] .dialog-content > div > h2 {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-semibold);
+    margin: 0;
+}
+
+[b-6aah650t4b] .dialog-content > div > svg {
+    margin: 0;
+}
+
+.dialog-content-padding-standard[b-6aah650t4b] {
+    padding: var(--spacing-double);
+}
+
+.dialog-content-padding-none[b-6aah650t4b] {
+    padding: 0;
+}
+
+.dialog-footer[b-6aah650t4b] {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    border-top: var(--base-border);
+    padding: var(--spacing-double);
+}
+
+[b-6aah650t4b] .dialog-footer button {
+    margin-right: var(--spacing);
+}
+
+    [b-6aah650t4b] .dialog-footer button:last-child {
+        margin-right: 0;
+    }
+/* _content/ChromaControl.App/Shell/Scaffolds/NotificationScaffold.razor.rz.scp.css */
+/* Licensed to the Chroma Control Contributors under one or more agreements. */
+/* The Chroma Control Contributors licenses this file to you under the MIT license. */
+/* See the LICENSE file in the project root for more information. */
+
+.notification[b-zggfogofwc] {
+    height: 30px;
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: var(--spacing);
+}
+
+.notification-content[b-zggfogofwc] {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: left;
+    align-items: center;
+}
+
+.notification-close[b-zggfogofwc] {
+    display: flex;
+    flex-shrink: 0;
+    flex-grow: 0;
+    margin-right: var(--spacing);
+    margin-left: var(--spacing);
+}
+
+.notification-close-button[b-zggfogofwc] {
+    width: 16px;
+    height: 16px;
+    border: 0;
+    padding: 0;
+    color: var(--foreground-color-neutral);
+    background: transparent;
+}
+
+    .notification-close-button:hover[b-zggfogofwc] {
+        color: var(--foreground-color-tertiary);
+    }
+
+.notification-close-button-icon[b-zggfogofwc] {
+    fill: currentColor;
+    flex: 0;
+}
+/* _content/ChromaControl.App/Tutorials/Pages/Vendors.razor.rz.scp.css */
+/* Licensed to the Chroma Control Contributors under one or more agreements. */
+/* The Chroma Control Contributors licenses this file to you under the MIT license. */
+/* See the LICENSE file in the project root for more information. */
+
+.vendors-container[b-g0t20r2fzb] {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 250px;
+}
+/* _content/ChromaControl.App/Tutorials/Scaffolds/TutorialScaffold.razor.rz.scp.css */
+/* Licensed to the Chroma Control Contributors under one or more agreements. */
+/* The Chroma Control Contributors licenses this file to you under the MIT license. */
+/* See the LICENSE file in the project root for more information. */
+
+.tutorial[b-4noiqrvgb4] {
+    display: flex;
+    flex-grow: 1;
+    min-width: 0;
+    align-items: stretch;
+    justify-content: center;
+    flex-direction: row;
+    font-size: 14px;
+}
+
+.tutorial-container[b-4noiqrvgb4] {
+    display: flex;
+    align-items: center;
+    padding: 40px;
+}
+
+.tutorial-body[b-4noiqrvgb4] {
+    max-width: 500px;
+    width: 100%;
+}
+
+.tutorial-section[b-4noiqrvgb4] {
+    min-height: calc(100vh - 2 * 40px);
+    display: flex;
+    flex-direction: column;
+}
+
+.tutorial-content[b-4noiqrvgb4] {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tutorial-title[b-4noiqrvgb4] {
+    font-size: 42px;
+    font-weight: 300;
+    line-height: 1.25;
+    margin-bottom: var(--spacing);
+}
+
+.tutorial-title span[b-4noiqrvgb4] {
+    display: inline-block;
+}
+
+.tutorial-description[b-4noiqrvgb4] {
+    margin: var(--spacing) 0;
+}
+
+.tutorial-user-content[b-4noiqrvgb4] {
+    display: flex;
+    flex-direction: column;
+    margin: var(--spacing-double);
+}
+
+.tutorial-user-buttons[b-4noiqrvgb4] {
+    display: flex;
+    flex-direction: row;
+}
+
+[b-4noiqrvgb4] .tutorial-user-buttons button {
+    margin-right: var(--spacing);
+}
+
+    [b-4noiqrvgb4] .tutorial-user-buttons button:last-child {
+        margin-right: 0;
+    }
+/* _content/ChromaControl.App/Updater/Components/ReleaseNotesDialog.razor.rz.scp.css */
+/* Licensed to the Chroma Control Contributors under one or more agreements. */
+/* The Chroma Control Contributors licenses this file to you under the MIT license. */
+/* See the LICENSE file in the project root for more information. */
+
+.release-notes-container[b-gw3o53ypww] {
+    font-family: var(--font-family-monospace);
+}
+/* _content/ChromaControl.App/Updater/Components/UpdateNotification.razor.rz.scp.css */
+/* Licensed to the Chroma Control Contributors under one or more agreements. */
+/* The Chroma Control Contributors licenses this file to you under the MIT license. */
+/* See the LICENSE file in the project root for more information. */
+
+.update-icon[b-k2jfeqvzgl] {
+    fill: currentColor;
+    flex-shrink: 0;
+    margin-right: var(--spacing);
+}

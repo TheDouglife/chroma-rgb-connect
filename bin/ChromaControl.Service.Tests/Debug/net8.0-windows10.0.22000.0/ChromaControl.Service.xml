@@ -1,0 +1,587 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ChromaControl.Service</name>
+    </assembly>
+    <members>
+        <member name="T:ChromaControl.Service.Core.CoreExtensions">
+            <summary>
+            Core extension methods.
+            </summary>
+        </member>
+        <member name="M:ChromaControl.Service.Core.CoreExtensions.ConfigureCore(Microsoft.Extensions.Hosting.IHostApplicationBuilder)">
+            <summary>
+            Adds core configuration to a <see cref="T:Microsoft.Extensions.Hosting.IHostApplicationBuilder"/>.
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.Extensions.Hosting.IHostApplicationBuilder"/> to add configuration to.</param>
+            <returns>The <see cref="T:Microsoft.Extensions.Hosting.IHostApplicationBuilder"/> to continue adding configuration to.</returns>
+        </member>
+        <member name="T:ChromaControl.Service.Core.Services.ServiceStartupState">
+            <summary>
+            The current startup state of the service.
+            </summary>
+        </member>
+        <member name="P:ChromaControl.Service.Core.Services.ServiceStartupState.Status">
+            <summary>
+            Gets the current startup status.
+            </summary>
+        </member>
+        <member name="P:ChromaControl.Service.Core.Services.ServiceStartupState.Message">
+            <summary>
+            Gets the latest status message.
+            </summary>
+        </member>
+        <member name="P:ChromaControl.Service.Core.Services.ServiceStartupState.UpdatedAtUtc">
+            <summary>
+            Gets the timestamp when the current state was recorded.
+            </summary>
+        </member>
+        <member name="P:ChromaControl.Service.Core.Services.ServiceStartupState.StopRequested">
+            <summary>
+            Gets a value indicating whether host stop was requested due to startup failure.
+            </summary>
+        </member>
+        <member name="M:ChromaControl.Service.Core.Services.ServiceStartupState.GetSnapshot">
+            <summary>
+            Gets an atomic snapshot of the current startup state.
+            </summary>
+            <returns>The startup state snapshot.</returns>
+        </member>
+        <member name="M:ChromaControl.Service.Core.Services.ServiceStartupState.MarkReady(System.String)">
+            <summary>
+            Marks startup as ready.
+            </summary>
+            <param name="message">The status message.</param>
+        </member>
+        <member name="M:ChromaControl.Service.Core.Services.ServiceStartupState.MarkDegraded(System.String)">
+            <summary>
+            Marks startup as degraded.
+            </summary>
+            <param name="message">The status message.</param>
+        </member>
+        <member name="M:ChromaControl.Service.Core.Services.ServiceStartupState.MarkFailed(System.String)">
+            <summary>
+            Marks startup as failed.
+            </summary>
+            <param name="message">The status message.</param>
+        </member>
+        <member name="M:ChromaControl.Service.Core.Services.ServiceStartupState.MarkStopRequested">
+            <summary>
+            Marks that a host stop was requested.
+            </summary>
+        </member>
+        <member name="T:ChromaControl.Service.Core.Services.StartupStateSnapshot">
+            <summary>
+            Immutable snapshot of startup state values.
+            </summary>
+            <param name="Status">The startup status value.</param>
+            <param name="Message">The startup status message.</param>
+            <param name="UpdatedAtUtc">The timestamp of the last state update.</param>
+            <param name="StopRequested">Whether host stop was requested.</param>
+        </member>
+        <member name="M:ChromaControl.Service.Core.Services.StartupStateSnapshot.#ctor(ChromaControl.Service.Core.Services.StartupStatus,System.String,System.DateTimeOffset,System.Boolean)">
+            <summary>
+            Immutable snapshot of startup state values.
+            </summary>
+            <param name="Status">The startup status value.</param>
+            <param name="Message">The startup status message.</param>
+            <param name="UpdatedAtUtc">The timestamp of the last state update.</param>
+            <param name="StopRequested">Whether host stop was requested.</param>
+        </member>
+        <member name="P:ChromaControl.Service.Core.Services.StartupStateSnapshot.Status">
+            <summary>The startup status value.</summary>
+        </member>
+        <member name="P:ChromaControl.Service.Core.Services.StartupStateSnapshot.Message">
+            <summary>The startup status message.</summary>
+        </member>
+        <member name="P:ChromaControl.Service.Core.Services.StartupStateSnapshot.UpdatedAtUtc">
+            <summary>The timestamp of the last state update.</summary>
+        </member>
+        <member name="P:ChromaControl.Service.Core.Services.StartupStateSnapshot.StopRequested">
+            <summary>Whether host stop was requested.</summary>
+        </member>
+        <member name="T:ChromaControl.Service.Core.Services.StartupStatus">
+            <summary>
+            Startup status values.
+            </summary>
+        </member>
+        <member name="F:ChromaControl.Service.Core.Services.StartupStatus.Starting">
+            <summary>
+            Startup work is still in progress.
+            </summary>
+        </member>
+        <member name="F:ChromaControl.Service.Core.Services.StartupStatus.Ready">
+            <summary>
+            Startup completed and service is ready.
+            </summary>
+        </member>
+        <member name="F:ChromaControl.Service.Core.Services.StartupStatus.Degraded">
+            <summary>
+            Startup is still progressing but with recoverable failures.
+            </summary>
+        </member>
+        <member name="F:ChromaControl.Service.Core.Services.StartupStatus.Failed">
+            <summary>
+            Startup failed and the service is not ready.
+            </summary>
+        </member>
+        <member name="T:ChromaControl.Service.Core.Services.StartupHealthCheck">
+            <summary>
+            Exposes startup readiness and degraded state via health checks.
+            </summary>
+        </member>
+        <member name="M:ChromaControl.Service.Core.Services.StartupHealthCheck.#ctor(ChromaControl.Service.Core.Services.ServiceStartupState,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Creates a <see cref="T:ChromaControl.Service.Core.Services.StartupHealthCheck"/> instance.
+            </summary>
+            <param name="startupState">The startup state.</param>
+            <param name="configuration">The host configuration.</param>
+        </member>
+        <member name="M:ChromaControl.Service.Core.Services.StartupHealthCheck.CheckHealthAsync(Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckContext,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ChromaControl.Service.Data.AppDbContext">
+            <summary>
+            The app database context.
+            </summary>
+        </member>
+        <member name="P:ChromaControl.Service.Data.AppDbContext.Settings">
+            <summary>
+            The settings.
+            </summary>
+        </member>
+        <member name="P:ChromaControl.Service.Data.AppDbContext.DeviceVendors">
+            <summary>
+            The device vendors.
+            </summary>
+        </member>
+        <member name="P:ChromaControl.Service.Data.AppDbContext.DeviceDetectors">
+            <summary>
+            The device detectors.
+            </summary>
+        </member>
+        <member name="M:ChromaControl.Service.Data.AppDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{ChromaControl.Service.Data.AppDbContext})">
+            <summary>
+            Creates an <see cref="T:ChromaControl.Service.Data.AppDbContext"/> instance.
+            </summary>
+            <param name="options">The <see cref="T:Microsoft.EntityFrameworkCore.DbContextOptions`1"/>.</param>
+        </member>
+        <member name="M:ChromaControl.Service.Data.AppDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ChromaControl.Service.Data.DataExtensions">
+            <summary>
+            Data extension methods.
+            </summary>
+        </member>
+        <member name="M:ChromaControl.Service.Data.DataExtensions.ConfigureData(Microsoft.Extensions.Hosting.IHostApplicationBuilder)">
+            <summary>
+            Adds data configuration to a <see cref="T:Microsoft.Extensions.Hosting.IHostApplicationBuilder"/>.
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.Extensions.Hosting.IHostApplicationBuilder"/> to add configuration to.</param>
+            <returns>The <see cref="T:Microsoft.Extensions.Hosting.IHostApplicationBuilder"/> to continue adding configuration to.</returns>
+        </member>
+        <member name="T:ChromaControl.Service.Data.Extensions.AppDbContextExtensions">
+            <summary>
+            Extension methods for <see cref="T:ChromaControl.Service.Data.AppDbContext"/>.
+            </summary>
+        </member>
+        <member name="M:ChromaControl.Service.Data.Extensions.AppDbContextExtensions.GenerateConfig(ChromaControl.Service.Data.AppDbContext)">
+            <summary>
+            Generates a config from a <see cref="T:ChromaControl.Service.Data.AppDbContext"/>.
+            </summary>
+            <param name="context">The <see cref="T:ChromaControl.Service.Data.AppDbContext"/>.</param>
+            <returns>A <see cref="T:System.Text.Json.Nodes.JsonNode"/> config.</returns>
+        </member>
+        <member name="T:ChromaControl.Service.Data.Services.IDatabaseMigrationRunner">
+            <summary>
+            Runs startup database initialization for the configuration database.
+            </summary>
+        </member>
+        <member name="M:ChromaControl.Service.Data.Services.IDatabaseMigrationRunner.RunAsync(System.IServiceProvider,System.Threading.CancellationToken)">
+            <summary>
+            Runs the migration workflow.
+            </summary>
+            <param name="services">The service provider.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+        </member>
+        <member name="T:ChromaControl.Service.Data.Services.DatabaseMigrationRunner">
+            <summary>
+            Default implementation of <see cref="T:ChromaControl.Service.Data.Services.IDatabaseMigrationRunner"/>.
+            </summary>
+        </member>
+        <member name="M:ChromaControl.Service.Data.Services.DatabaseMigrationRunner.RunAsync(System.IServiceProvider,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ChromaControl.Service.Data.Services.MigrationService">
+            <summary>
+            Service that performs database migrations.
+            </summary>
+        </member>
+        <member name="M:ChromaControl.Service.Data.Services.MigrationService.#ctor(System.IServiceProvider,ChromaControl.Service.Data.Services.IDatabaseMigrationRunner,Microsoft.Extensions.Hosting.IHostApplicationLifetime,ChromaControl.Service.Core.Services.ServiceStartupState,Microsoft.Extensions.Options.IOptions{ChromaControl.Service.Data.Services.MigrationServiceOptions},Microsoft.Extensions.Logging.ILogger{ChromaControl.Service.Data.Services.MigrationService})">
+            <summary>
+            Creates a <see cref="T:ChromaControl.Service.Data.Services.MigrationService"/> instance.
+            </summary>
+            <param name="serviceProvider">The <see cref="T:System.IServiceProvider"/>.</param>
+            <param name="migrationRunner">The <see cref="T:ChromaControl.Service.Data.Services.IDatabaseMigrationRunner"/>.</param>
+            <param name="hostApplicationLifetime">The <see cref="T:Microsoft.Extensions.Hosting.IHostApplicationLifetime"/>.</param>
+            <param name="startupState">The <see cref="T:ChromaControl.Service.Core.Services.ServiceStartupState"/>.</param>
+            <param name="options">The <see cref="T:ChromaControl.Service.Data.Services.MigrationServiceOptions"/>.</param>
+            <param name="logger">The <see cref="T:Microsoft.Extensions.Logging.ILogger"/>.</param>
+        </member>
+        <member name="M:ChromaControl.Service.Data.Services.MigrationService.StartAsync(System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ChromaControl.Service.Data.Services.MigrationService.StopAsync(System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ChromaControl.Service.Data.Services.MigrationServiceOptions">
+            <summary>
+            Configuration options for <see cref="T:ChromaControl.Service.Data.Services.MigrationService"/> startup behavior.
+            </summary>
+        </member>
+        <member name="F:ChromaControl.Service.Data.Services.MigrationServiceOptions.SectionName">
+            <summary>
+            Configuration section name.
+            </summary>
+        </member>
+        <member name="P:ChromaControl.Service.Data.Services.MigrationServiceOptions.MaxAttempts">
+            <summary>
+            Maximum number of migration attempts before aborting startup.
+            </summary>
+        </member>
+        <member name="P:ChromaControl.Service.Data.Services.MigrationServiceOptions.RetryDelay">
+            <summary>
+            Delay between migration retries.
+            </summary>
+        </member>
+        <member name="P:ChromaControl.Service.Data.Services.MigrationServiceOptions.SuppressHostStop">
+            <summary>
+            Suppresses the call to stop the host when migration fails.
+            </summary>
+        </member>
+        <member name="T:ChromaControl.Service.Lighting.Entities.DeviceDetector">
+            <summary>
+            A device detector.
+            </summary>
+        </member>
+        <member name="P:ChromaControl.Service.Lighting.Entities.DeviceDetector.VendorId">
+            <summary>
+            The vendor id.
+            </summary>
+        </member>
+        <member name="P:ChromaControl.Service.Lighting.Entities.DeviceDetector.Vendor">
+            <summary>
+            The vendor.
+            </summary>
+        </member>
+        <member name="P:ChromaControl.Service.Lighting.Entities.DeviceDetector.Name">
+            <summary>
+            The detector name.
+            </summary>
+        </member>
+        <member name="M:ChromaControl.Service.Lighting.Entities.DeviceDetector.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{ChromaControl.Service.Lighting.Entities.DeviceDetector})">
+            <inheritdoc/>
+        </member>
+        <member name="T:ChromaControl.Service.Lighting.Entities.DeviceVendor">
+            <summary>
+            A device vendor.
+            </summary>
+        </member>
+        <member name="P:ChromaControl.Service.Lighting.Entities.DeviceVendor.Id">
+            <summary>
+            The vendor id.
+            </summary>
+        </member>
+        <member name="P:ChromaControl.Service.Lighting.Entities.DeviceVendor.Name">
+            <summary>
+            The vendor name.
+            </summary>
+        </member>
+        <member name="P:ChromaControl.Service.Lighting.Entities.DeviceVendor.Hidden">
+            <summary>
+            If this vendor is hidden from users.
+            </summary>
+        </member>
+        <member name="P:ChromaControl.Service.Lighting.Entities.DeviceVendor.Enabled">
+            <summary>
+            If this vendor is enabled.
+            </summary>
+        </member>
+        <member name="P:ChromaControl.Service.Lighting.Entities.DeviceVendor.Dangerous">
+            <summary>
+            If this vendor is dangerous to enable.
+            </summary>
+        </member>
+        <member name="P:ChromaControl.Service.Lighting.Entities.DeviceVendor.Detectors">
+            <summary>
+            The device detectors.
+            </summary>
+        </member>
+        <member name="M:ChromaControl.Service.Lighting.Entities.DeviceVendor.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{ChromaControl.Service.Lighting.Entities.DeviceVendor})">
+            <inheritdoc/>
+        </member>
+        <member name="T:ChromaControl.Service.Lighting.Extensions.DeviceTypeExtensions">
+            <summary>
+            Extension methods for <see cref="T:ChromaControl.SDK.OpenRGB.Enums.OpenRGBDeviceType"/>.
+            </summary>
+        </member>
+        <member name="M:ChromaControl.Service.Lighting.Extensions.DeviceTypeExtensions.ToFriendlyName(ChromaControl.SDK.OpenRGB.Enums.OpenRGBDeviceType)">
+            <summary>
+            Returns a friendly string version of a <see cref="T:ChromaControl.SDK.OpenRGB.Enums.OpenRGBDeviceType"/>.
+            </summary>
+            <param name="deviceType">The <see cref="T:ChromaControl.SDK.OpenRGB.Enums.OpenRGBDeviceType"/>.</param>
+            <returns>A friendly version of the <see cref="T:ChromaControl.SDK.OpenRGB.Enums.OpenRGBDeviceType"/>.</returns>
+        </member>
+        <member name="T:ChromaControl.Service.Lighting.LightingExtensions">
+            <summary>
+            Lighting extension methods.
+            </summary>
+        </member>
+        <member name="M:ChromaControl.Service.Lighting.LightingExtensions.ConfigureLighting(Microsoft.Extensions.Hosting.IHostApplicationBuilder)">
+            <summary>
+            Adds lighting configuration to a <see cref="T:Microsoft.Extensions.Hosting.IHostApplicationBuilder"/>.
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.Extensions.Hosting.IHostApplicationBuilder"/> to add configuration to.</param>
+            <returns>The <see cref="T:Microsoft.Extensions.Hosting.IHostApplicationBuilder"/> to continue adding configuration to.</returns>
+        </member>
+        <member name="M:ChromaControl.Service.Lighting.LightingExtensions.UseLighting(Microsoft.AspNetCore.Builder.WebApplication)">
+            <summary>
+            Adds lighting middleware to a <see cref="T:Microsoft.AspNetCore.Builder.WebApplication"/>.
+            </summary>
+            <param name="app">The <see cref="T:Microsoft.AspNetCore.Builder.WebApplication"/> to add middleware to.</param>
+            <returns>The <see cref="T:Microsoft.AspNetCore.Builder.WebApplication"/> to continue adding middleware to.</returns>
+        </member>
+        <member name="T:ChromaControl.Service.Lighting.Services.EventDispatcher">
+            <summary>
+            The event dispatcher.
+            </summary>
+        </member>
+        <member name="E:ChromaControl.Service.Lighting.Services.EventDispatcher.EventTriggered">
+            <summary>
+            Occurs when any event happens.
+            </summary>
+        </member>
+        <member name="P:ChromaControl.Service.Lighting.Services.EventDispatcher.ZoneResized">
+            <summary>
+            If a zone has been resized.
+            </summary>
+        </member>
+        <member name="M:ChromaControl.Service.Lighting.Services.EventDispatcher.RaiseDevicesUpdated">
+            <summary>
+            Raises <see cref="F:ChromaControl.Common.Protos.Lighting.EventType.DevicesUpdated"/>.
+            </summary>
+        </member>
+        <member name="T:ChromaControl.Service.Lighting.Services.LightingService">
+            <summary>
+            The lighting service
+            </summary>
+        </member>
+        <member name="M:ChromaControl.Service.Lighting.Services.LightingService.#ctor(ChromaControl.Service.Data.AppDbContext,ChromaControl.SDK.OpenRGB.IOpenRGBService,ChromaControl.Service.Lighting.Services.EventDispatcher)">
+            <summary>
+            Creates a <see cref="T:ChromaControl.Service.Lighting.Services.LightingService"/> instance.
+            </summary>
+            <param name="context">The <see cref="T:ChromaControl.Service.Data.AppDbContext"/>.</param>
+            <param name="openRGBService">The <see cref="T:ChromaControl.SDK.OpenRGB.IOpenRGBService"/>.</param>
+            <param name="eventDispatcher">The <see cref="T:ChromaControl.Service.Lighting.Services.EventDispatcher"/>.</param>
+        </member>
+        <member name="M:ChromaControl.Service.Lighting.Services.LightingService.RestartService(ChromaControl.Common.Protos.Lighting.EmptyMessage,Grpc.Core.ServerCallContext)">
+            <summary>
+            Restarts the service.
+            </summary>
+            <param name="request">The <see cref="T:ChromaControl.Common.Protos.Lighting.EmptyMessage"/>.</param>
+            <param name="context">The <see cref="T:Grpc.Core.ServerCallContext"/>.</param>
+            <returns>A <see cref="T:ChromaControl.Common.Protos.Lighting.EmptyMessage"/>.</returns>
+        </member>
+        <member name="M:ChromaControl.Service.Lighting.Services.LightingService.StreamEvents(ChromaControl.Common.Protos.Lighting.EmptyMessage,Grpc.Core.IServerStreamWriter{ChromaControl.Common.Protos.Lighting.Event},Grpc.Core.ServerCallContext)">
+            <summary>
+            Streams events.
+            </summary>
+            <param name="request">The <see cref="T:ChromaControl.Common.Protos.Lighting.EmptyMessage"/>.</param>
+            <param name="responseStream">The <see cref="T:Grpc.Core.IServerStreamWriter`1"/>.</param>
+            <param name="context">The <see cref="T:Grpc.Core.ServerCallContext"/>.</param>
+            <returns>A <see cref="T:ChromaControl.Common.Protos.Lighting.EmptyMessage"/>.</returns>
+        </member>
+        <member name="M:ChromaControl.Service.Lighting.Services.LightingService.GetVendors(ChromaControl.Common.Protos.Lighting.EmptyMessage,Grpc.Core.ServerCallContext)">
+            <summary>
+            Gets the device vendors.
+            </summary>
+            <param name="request">The <see cref="T:ChromaControl.Common.Protos.Lighting.EmptyMessage"/>.</param>
+            <param name="context">The <see cref="T:Grpc.Core.ServerCallContext"/>.</param>
+            <returns>A <see cref="T:ChromaControl.Common.Protos.Lighting.VendorListResponse"/>.</returns>
+        </member>
+        <member name="M:ChromaControl.Service.Lighting.Services.LightingService.ToggleVendor(ChromaControl.Common.Protos.Lighting.ToggleVendorRequest,Grpc.Core.ServerCallContext)">
+            <summary>
+            Toggles a device vendor.
+            </summary>
+            <param name="request">The <see cref="T:ChromaControl.Common.Protos.Lighting.ToggleVendorRequest"/>.</param>
+            <param name="context">The <see cref="T:Grpc.Core.ServerCallContext"/>.</param>
+            <returns>A <see cref="T:ChromaControl.Common.Protos.Lighting.EmptyMessage"/>.</returns>
+        </member>
+        <member name="M:ChromaControl.Service.Lighting.Services.LightingService.GetDeviceGroups(ChromaControl.Common.Protos.Lighting.EmptyMessage,Grpc.Core.ServerCallContext)">
+            <summary>
+            Gets the device groups.
+            </summary>
+            <param name="request">The <see cref="T:ChromaControl.Common.Protos.Lighting.EmptyMessage"/>.</param>
+            <param name="context">The <see cref="T:Grpc.Core.ServerCallContext"/>.</param>
+            <returns>A <see cref="T:ChromaControl.Common.Protos.Lighting.DeviceGroupsResponse"/>.</returns>
+        </member>
+        <member name="M:ChromaControl.Service.Lighting.Services.LightingService.GetGroupDevices(ChromaControl.Common.Protos.Lighting.GetGroupDevicesRequest,Grpc.Core.ServerCallContext)">
+            <summary>
+            Gets the devices in a group.
+            </summary>
+            <param name="request">The <see cref="T:ChromaControl.Common.Protos.Lighting.GetGroupDevicesRequest"/>.</param>
+            <param name="context">The <see cref="T:Grpc.Core.ServerCallContext"/>.</param>
+            <returns>A <see cref="T:ChromaControl.Common.Protos.Lighting.DevicesResponse"/>.</returns>
+        </member>
+        <member name="M:ChromaControl.Service.Lighting.Services.LightingService.GetDeviceInfo(ChromaControl.Common.Protos.Lighting.GetDeviceInfoRequest,Grpc.Core.ServerCallContext)">
+            <summary>
+            Gets info for a specific device.
+            </summary>
+            <param name="request">The <see cref="T:ChromaControl.Common.Protos.Lighting.GetDeviceInfoRequest"/>.</param>
+            <param name="context">The <see cref="T:Grpc.Core.ServerCallContext"/>.</param>
+            <returns>A <see cref="T:ChromaControl.Common.Protos.Lighting.DeviceInfoResponse"/>.</returns>
+        </member>
+        <member name="M:ChromaControl.Service.Lighting.Services.LightingService.GetDeviceZones(ChromaControl.Common.Protos.Lighting.GetDeviceZonesRequest,Grpc.Core.ServerCallContext)">
+            <summary>
+            Gets zones for a specific device.
+            </summary>
+            <param name="request">The <see cref="T:ChromaControl.Common.Protos.Lighting.GetDeviceZonesRequest"/>.</param>
+            <param name="context">The <see cref="T:Grpc.Core.ServerCallContext"/>.</param>
+            <returns>A <see cref="T:ChromaControl.Common.Protos.Lighting.DeviceZonesResponse"/>.</returns>
+        </member>
+        <member name="M:ChromaControl.Service.Lighting.Services.LightingService.ResizeDeviceZone(ChromaControl.Common.Protos.Lighting.ResizeDeviceZoneRequest,Grpc.Core.ServerCallContext)">
+            <summary>
+            Resizes a zone for a specific device.
+            </summary>
+            <param name="request">The <see cref="T:ChromaControl.Common.Protos.Lighting.ResizeDeviceZoneRequest"/>.</param>
+            <param name="context">The <see cref="T:Grpc.Core.ServerCallContext"/>.</param>
+            <returns>A <see cref="T:ChromaControl.Common.Protos.Lighting.EmptyMessage"/>.</returns>
+        </member>
+        <member name="T:ChromaControl.Service.Lighting.Workers.LightingWorker">
+            <summary>
+            The lighting worker.
+            </summary>
+        </member>
+        <member name="M:ChromaControl.Service.Lighting.Workers.LightingWorker.#ctor(Microsoft.Extensions.Logging.ILogger{ChromaControl.Service.Lighting.Workers.LightingWorker},System.IServiceProvider,ChromaControl.Service.Lighting.Services.EventDispatcher,ChromaControl.SDK.OpenRGB.IOpenRGBService,ChromaControl.SDK.Synapse.ISynapseService)">
+            <summary>
+            Creates a <see cref="T:ChromaControl.Service.Lighting.Workers.LightingWorker"/> instance.
+            </summary>
+            <param name="logger">The <see cref="T:Microsoft.Extensions.Logging.ILogger`1"/>.</param>
+            <param name="serviceProvider">The <see cref="T:System.IServiceProvider"/>.</param>
+            <param name="eventDispatcher">The <see cref="T:ChromaControl.Service.Lighting.Services.EventDispatcher"/>.</param>
+            <param name="openRGBService">The <see cref="T:ChromaControl.SDK.OpenRGB.IOpenRGBService"/>.</param>
+            <param name="synapseService">The <see cref="T:ChromaControl.SDK.Synapse.ISynapseService"/>.</param>
+        </member>
+        <member name="M:ChromaControl.Service.Lighting.Workers.LightingWorker.StartAsync(System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:ChromaControl.Service.Lighting.Workers.LightingWorker.StopAsync(System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="T:ChromaControl.Service.Settings.Entities.Setting">
+            <summary>
+            A setting.
+            </summary>
+        </member>
+        <member name="P:ChromaControl.Service.Settings.Entities.Setting.Module">
+            <summary>
+            The settings module.
+            </summary>
+        </member>
+        <member name="P:ChromaControl.Service.Settings.Entities.Setting.Name">
+            <summary>
+            The setting name.
+            </summary>
+        </member>
+        <member name="P:ChromaControl.Service.Settings.Entities.Setting.StringValue">
+            <summary>
+            The string type value.
+            </summary>
+        </member>
+        <member name="P:ChromaControl.Service.Settings.Entities.Setting.BoolValue">
+            <summary>
+            The bool type value.
+            </summary>
+        </member>
+        <member name="P:ChromaControl.Service.Settings.Entities.Setting.DateTimeValue">
+            <summary>
+            The date time type value.
+            </summary>
+        </member>
+        <member name="M:ChromaControl.Service.Settings.Entities.Setting.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{ChromaControl.Service.Settings.Entities.Setting})">
+            <inheritdoc/>
+        </member>
+        <member name="T:ChromaControl.Service.Settings.Services.SettingsService">
+            <summary>
+            The settings service.
+            </summary>
+        </member>
+        <member name="M:ChromaControl.Service.Settings.Services.SettingsService.#ctor(ChromaControl.Service.Data.AppDbContext)">
+            <summary>
+            Creates a <see cref="T:ChromaControl.Service.Settings.Services.SettingsService"/> instance.
+            </summary>
+            <param name="context">The <see cref="T:ChromaControl.Service.Data.AppDbContext"/>.</param>
+        </member>
+        <member name="M:ChromaControl.Service.Settings.Services.SettingsService.GetString(ChromaControl.Common.Protos.Settings.GetSettingRequest,Grpc.Core.ServerCallContext)">
+            <summary>
+            Gets a string setting.
+            </summary>
+            <param name="request">The <see cref="T:ChromaControl.Common.Protos.Settings.GetSettingRequest"/>.</param>
+            <param name="context">The <see cref="T:Grpc.Core.ServerCallContext"/>.</param>
+            <returns>A <see cref="T:ChromaControl.Common.Protos.Settings.StringSettingResponse"/>.</returns>
+        </member>
+        <member name="M:ChromaControl.Service.Settings.Services.SettingsService.GetBool(ChromaControl.Common.Protos.Settings.GetSettingRequest,Grpc.Core.ServerCallContext)">
+            <summary>
+            Gets a bool setting.
+            </summary>
+            <param name="request">The <see cref="T:ChromaControl.Common.Protos.Settings.GetSettingRequest"/>.</param>
+            <param name="context">The <see cref="T:Grpc.Core.ServerCallContext"/>.</param>
+            <returns>A <see cref="T:ChromaControl.Common.Protos.Settings.BoolSettingResponse"/>.</returns>
+        </member>
+        <member name="M:ChromaControl.Service.Settings.Services.SettingsService.GetDateTime(ChromaControl.Common.Protos.Settings.GetSettingRequest,Grpc.Core.ServerCallContext)">
+            <summary>
+            Gets a date time setting.
+            </summary>
+            <param name="request">The <see cref="T:ChromaControl.Common.Protos.Settings.GetSettingRequest"/>.</param>
+            <param name="context">The <see cref="T:Grpc.Core.ServerCallContext"/>.</param>
+            <returns>A <see cref="T:ChromaControl.Common.Protos.Settings.DateTimeSettingResponse"/>.</returns>
+        </member>
+        <member name="M:ChromaControl.Service.Settings.Services.SettingsService.SetString(ChromaControl.Common.Protos.Settings.SetStringRequest,Grpc.Core.ServerCallContext)">
+            <summary>
+            Sets a string setting.
+            </summary>
+            <param name="request">The <see cref="T:ChromaControl.Common.Protos.Settings.SetStringRequest"/>.</param>
+            <param name="context">The <see cref="T:Grpc.Core.ServerCallContext"/>.</param>
+            <returns>A <see cref="T:ChromaControl.Common.Protos.Settings.EmptyMessage"/>.</returns>
+        </member>
+        <member name="M:ChromaControl.Service.Settings.Services.SettingsService.SetBool(ChromaControl.Common.Protos.Settings.SetBoolRequest,Grpc.Core.ServerCallContext)">
+            <summary>
+            Sets a bool setting.
+            </summary>
+            <param name="request">The <see cref="T:ChromaControl.Common.Protos.Settings.SetBoolRequest"/>.</param>
+            <param name="context">The <see cref="T:Grpc.Core.ServerCallContext"/>.</param>
+            <returns>A <see cref="T:ChromaControl.Common.Protos.Settings.EmptyMessage"/>.</returns>
+        </member>
+        <member name="M:ChromaControl.Service.Settings.Services.SettingsService.SetDateTime(ChromaControl.Common.Protos.Settings.SetDateTimeRequest,Grpc.Core.ServerCallContext)">
+            <summary>
+            Sets a date time setting.
+            </summary>
+            <param name="request">The <see cref="T:ChromaControl.Common.Protos.Settings.SetDateTimeRequest"/>.</param>
+            <param name="context">The <see cref="T:Grpc.Core.ServerCallContext"/>.</param>
+            <returns>A <see cref="T:ChromaControl.Common.Protos.Settings.EmptyMessage"/>.</returns>
+        </member>
+        <member name="T:ChromaControl.Service.Settings.SettingsExtensions">
+            <summary>
+            Settings extension methods.
+            </summary>
+        </member>
+        <member name="M:ChromaControl.Service.Settings.SettingsExtensions.UseSettings(Microsoft.AspNetCore.Builder.WebApplication)">
+            <summary>
+            Adds settings middleware to a <see cref="T:Microsoft.AspNetCore.Builder.WebApplication"/>.
+            </summary>
+            <param name="app">The <see cref="T:Microsoft.AspNetCore.Builder.WebApplication"/> to add middleware to.</param>
+            <returns>The <see cref="T:Microsoft.AspNetCore.Builder.WebApplication"/> to continue adding middleware to.</returns>
+        </member>
+    </members>
+</doc>

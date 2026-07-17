@@ -1,0 +1,72 @@
+<Project>
+
+  <PropertyGroup>
+    <InnoSetupCompilerPath Condition="'$(InnoSetupCompilerPath)' == '' and Exists('$(MSBuildProgramFiles32)\Inno Setup 6\ISCC.exe')">$(MSBuildProgramFiles32)\Inno Setup 6\ISCC.exe</InnoSetupCompilerPath>
+    <InnoSetupCompilerPath Condition="'$(InnoSetupCompilerPath)' == '' and Exists('$(ProgramFiles)\Inno Setup 6\ISCC.exe')">$(ProgramFiles)\Inno Setup 6\ISCC.exe</InnoSetupCompilerPath>
+    <InnoSetupCompilerPath Condition="'$(InnoSetupCompilerPath)' == '' and Exists('$(LOCALAPPDATA)\Programs\Inno Setup 6\ISCC.exe')">$(LOCALAPPDATA)\Programs\Inno Setup 6\ISCC.exe</InnoSetupCompilerPath>
+    <AppPublishDir>$(MSBuildThisFileDirectory)..\..\bin\ChromaRGBConnect.App\$(Configuration)\net8.0-windows10.0.22000.0\win-x64\publish\</AppPublishDir>
+    <ServicePublishDir>$(MSBuildThisFileDirectory)..\..\bin\ChromaRGBConnect.Service\$(Configuration)\net8.0-windows10.0.22000.0\win-x64\publish\</ServicePublishDir>
+    <InstallerInputDir>$(MSBuildProjectExtensionsPath)installer-input\</InstallerInputDir>
+  </PropertyGroup>
+
+  <Target Name="BuildInstaller" AfterTargets="Publish">
+
+    <Error Condition="'$(InnoSetupCompilerPath)' == ''"
+           Text="Inno Setup compiler (ISCC.exe) was not found. Install Inno Setup 6 or pass /p:InnoSetupCompilerPath=..." />
+    <Error Condition="!Exists('$(AppPublishDir)')"
+           Text="App publish output not found at $(AppPublishDir). Ensure publish completed before building installer." />
+    <Error Condition="!Exists('$(ServicePublishDir)')"
+           Text="Service publish output not found at $(ServicePublishDir). Ensure publish completed before building installer." />
+
+    <RemoveDir Directories="$(InstallerInputDir)"
+               Condition="Exists('$(InstallerInputDir)')" />
+    <MakeDir Directories="$(InstallerInputDir)" />
+
+    <ItemGroup>
+      <AppPublishFiles Include="$(AppPublishDir)**\*" />
+      <ServicePublishFiles Include="$(ServicePublishDir)**\*" />
+    </ItemGroup>
+
+    <Copy SourceFiles="@(ServicePublishFiles)"
+          DestinationFiles="@(ServicePublishFiles->'$(InstallerInputDir)%(RecursiveDir)%(Filename)%(Extension)')"
+          SkipUnchangedFiles="true" />
+        <Copy SourceFiles="@(AppPublishFiles)"
+          DestinationFiles="@(AppPublishFiles->'$(InstallerInputDir)%(RecursiveDir)%(Filename)%(Extension)')"
+          SkipUnchangedFiles="true" />
+
+    <ItemGroup>
+      <DebugFiles Include="$(InstallerInputDir)\*.pdb"/>
+      <DocumentFiles Include="$(InstallerInputDir)\*.xml"/>
+      <InstallerFiles Include="$(PublishDir)\ChromaRGBConnectSetup-*.exe"/>
+    </ItemGroup>
+
+    <Delete Files="@(DebugFiles)"/>
+    <Delete Files="@(DocumentFiles)"/>
+    <Delete Files="@(InstallerFiles)"/>
+
+    <Message Text="Generating installer executable. This process might take a while."
+             Importance="High"/>
+
+    <Exec LogStandardErrorAsError="true"
+          StandardOutputImportance="Low"
+          Command="&quot;$(InnoSetupCompilerPath)&quot; ^
+                   &quot;$(MSBuildProjectDirectory)\Installer.iss&quot; ^
+                   /DProduct=&quot;$(Product)&quot; ^
+                   /DVersion=&quot;$(Version)&quot; ^
+                   /DAuthors=&quot;$(Authors)&quot; ^
+                   /DObjDir=&quot;$(MSBuildProjectExtensionsPath)&quot; ^
+                   /DPublishDir=&quot;$(InstallerInputDir)&quot; ^
+                   /DLicenseFile=&quot;$(MSBuildThisFileDirectory)../../LICENSE.txt&quot;"/>
+    
+    <RemoveDir Directories="$(PublishDir)"/>
+    <MakeDir Directories="$(PublishDir)"/>
+
+    <Move SourceFiles="$(MSBuildProjectExtensionsPath)ChromaRGBConnectSetup-$(Version).exe"
+          DestinationFolder="$(PublishDir)"/>
+
+    <Message Text="$(ProjectName) -> $(PublishDir)\"
+             Importance="High"/>
+
+  </Target>
+
+</Project>

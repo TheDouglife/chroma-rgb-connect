@@ -1,0 +1,21 @@
+@* Licensed to the Douglife (Doug Montgomery) under one or more agreements. *@
+@* The Douglife (Doug Montgomery) licenses this file to you under the MIT license. *@
+@* See the LICENSE file in the project root for more information. *@
+
+<DialogScaffold Height="462" Width="600" Scrollable="true" Padding="DialogScaffold.PaddingType.None" CancelText="CLOSE" Title="SETTINGS">
+    <Content>
+        <Tabs>
+            <TabItem Label="INTEGRATIONS"
+                     Content="typeof(IntegrationsTab)"
+                     Icon="Icon.IconStyle.Package"
+                     DefaultItem="true" />
+
+            <TabItem Label="APPEARANCE"
+                     Content="typeof(AppearanceTab)"
+                     Icon="Icon.IconStyle.Paintbrush" />
+        </Tabs>
+    </Content>
+    <AdditionalButtons>
+        <Button Style="Button.StyleType.Primary" @onclick="RestartService">RESTART SERVICE</Button>
+    </AdditionalButtons>
+</DialogScaffold>

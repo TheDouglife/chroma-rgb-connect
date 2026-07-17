@@ -1,0 +1,40 @@
+/* Licensed to the Douglife (Doug Montgomery) under one or more agreements. */
+/* The Douglife (Doug Montgomery) licenses this file to you under the MIT license. */
+/* See the LICENSE file in the project root for more information. */
+
+.device {
+    height: 38px;
+    width: 100%;
+    border-bottom: 1px solid var(--border-color-default);
+}
+
+    .device:hover {
+        background-color: var(--background-color-tertiary-muted);
+    }
+
+    .device.active {
+        background-color: var(--background-color-tertiary-emphasis);
+    }
+
+.device-content-wrapper {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    min-width: 0;
+    height: 100%;
+    padding: 0 var(--spacing);
+}
+
+.device-content {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    align-self: center;
+    min-width: 0;
+}
+
+.device-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

@@ -1,0 +1,33 @@
+{
+  "version": 2,
+  "dgSpecHash": "D4Jb/mSFTY0=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\src\\Common\\ChromaControl.Common.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\douga\\.nuget\\packages\\chromacontrol.keys\\1.0.3\\chromacontrol.keys.1.0.3.nupkg.sha512",
+    "C:\\Users\\douga\\.nuget\\packages\\google.protobuf\\3.28.3\\google.protobuf.3.28.3.nupkg.sha512",
+    "C:\\Users\\douga\\.nuget\\packages\\grpc.core.api\\2.66.0\\grpc.core.api.2.66.0.nupkg.sha512",
+    "C:\\Users\\douga\\.nuget\\packages\\grpc.net.client\\2.66.0\\grpc.net.client.2.66.0.nupkg.sha512",
+    "C:\\Users\\douga\\.nuget\\packages\\grpc.net.clientfactory\\2.66.0\\grpc.net.clientfactory.2.66.0.nupkg.sha512",
+    "C:\\Users\\douga\\.nuget\\packages\\grpc.net.common\\2.66.0\\grpc.net.common.2.66.0.nupkg.sha512",
+    "C:\\Users\\douga\\.nuget\\packages\\grpc.tools\\2.67.0\\grpc.tools.2.67.0.nupkg.sha512",
+    "C:\\Users\\douga\\.nuget\\packages\\microsoft.extensions.configuration\\8.0.0\\microsoft.extensions.configuration.8.0.0.nupkg.sha512",
+    "C:\\Users\\douga\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\douga\\.nuget\\packages\\microsoft.extensions.configuration.binder\\8.0.0\\microsoft.extensions.configuration.binder.8.0.0.nupkg.sha512",
+    "C:\\Users\\douga\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.0\\microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "C:\\Users\\douga\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.2\\microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512",
+    "C:\\Users\\douga\\.nuget\\packages\\microsoft.extensions.diagnostics.abstractions\\8.0.1\\microsoft.extensions.diagnostics.abstractions.8.0.1.nupkg.sha512",
+    "C:\\Users\\douga\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\8.0.0\\microsoft.extensions.fileproviders.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\douga\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\8.0.1\\microsoft.extensions.hosting.abstractions.8.0.1.nupkg.sha512",
+    "C:\\Users\\douga\\.nuget\\packages\\microsoft.extensions.http\\6.0.0\\microsoft.extensions.http.6.0.0.nupkg.sha512",
+    "C:\\Users\\douga\\.nuget\\packages\\microsoft.extensions.logging\\8.0.0\\microsoft.extensions.logging.8.0.0.nupkg.sha512",
+    "C:\\Users\\douga\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.2\\microsoft.extensions.logging.abstractions.8.0.2.nupkg.sha512",
+    "C:\\Users\\douga\\.nuget\\packages\\microsoft.extensions.logging.configuration\\8.0.0\\microsoft.extensions.logging.configuration.8.0.0.nupkg.sha512",
+    "C:\\Users\\douga\\.nuget\\packages\\microsoft.extensions.options\\8.0.2\\microsoft.extensions.options.8.0.2.nupkg.sha512",
+    "C:\\Users\\douga\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\8.0.0\\microsoft.extensions.options.configurationextensions.8.0.0.nupkg.sha512",
+    "C:\\Users\\douga\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "C:\\Users\\douga\\.nuget\\packages\\nreco.logging.file\\1.2.1\\nreco.logging.file.1.2.1.nupkg.sha512",
+    "C:\\Users\\douga\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.22000.34\\microsoft.windows.sdk.net.ref.10.0.22000.34.nupkg.sha512"
+  ],
+  "logs": []
+}

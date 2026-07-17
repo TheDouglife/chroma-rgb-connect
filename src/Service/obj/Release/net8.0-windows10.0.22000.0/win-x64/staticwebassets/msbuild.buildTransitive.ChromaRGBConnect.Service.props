@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\ChromaRGBConnect.Service.props" />
+</Project>

@@ -1,0 +1,49 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\src\\App\\obj\\Release\\net8.0-windows10.0.22000.0\\win-x64\\scopedcss\\projectbundle\\ChromaControl.App.bundle.scp.css",
+      "PackagePath": "staticwebassets\\ChromaControl.App.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\src\\App\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\src\\App\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\src\\App\\wwwroot\\img\\app-logo.png",
+      "PackagePath": "staticwebassets\\img\\app-logo.png"
+    },
+    {
+      "Id": "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\src\\App\\wwwroot\\img\\dark_theme.svg",
+      "PackagePath": "staticwebassets\\img\\dark_theme.svg"
+    },
+    {
+      "Id": "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\src\\App\\wwwroot\\img\\light_theme.svg",
+      "PackagePath": "staticwebassets\\img\\light_theme.svg"
+    },
+    {
+      "Id": "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\src\\App\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Release\\net8.0-windows10.0.22000.0\\win-x64\\staticwebassets\\msbuild.ChromaControl.App.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0-windows10.0.22000.0\\win-x64\\staticwebassets\\msbuild.build.ChromaControl.App.props",
+      "PackagePath": "build\\ChromaControl.App.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0-windows10.0.22000.0\\win-x64\\staticwebassets\\msbuild.buildMultiTargeting.ChromaControl.App.props",
+      "PackagePath": "buildMultiTargeting\\ChromaControl.App.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0-windows10.0.22000.0\\win-x64\\staticwebassets\\msbuild.buildTransitive.ChromaControl.App.props",
+      "PackagePath": "buildTransitive\\ChromaControl.App.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

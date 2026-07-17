@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <IsAspireHost>true</IsAspireHost>
+    <UserSecretsId>ChromaRGBConnect</UserSecretsId>
+    <AssemblyName>ChromaRGBConnect.AppHost</AssemblyName>
+    <NoWarn>CS1591;$(NoWarn)</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.AppHost" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\App\ChromaControl.App.csproj" />
+    <ProjectReference Include="..\Service\ChromaControl.Service.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,17 @@
+@* Licensed to the Douglife (Doug Montgomery) under one or more agreements. *@
+@* The Douglife (Doug Montgomery) licenses this file to you under the MIT license. *@
+@* See the LICENSE file in the project root for more information. *@
+
+@if (_ready)
+{
+    <Router AppAssembly="typeof(ShellExtensions).Assembly">
+        <Found Context="routeData">
+            <RouteView RouteData="routeData" DefaultLayout="typeof(Layouts.FullWindowLayout)" />
+        </Found>
+        <NotFound>
+            <LayoutView Layout="@typeof(Layouts.LightWindowLayout)">
+                <p role="alert">Sorry, there's nothing here.</p>
+            </LayoutView>
+        </NotFound>
+    </Router>
+}

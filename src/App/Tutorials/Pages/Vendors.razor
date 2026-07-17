@@ -1,0 +1,19 @@
+@* Licensed to the Douglife (Doug Montgomery) under one or more agreements. *@
+@* The Douglife (Doug Montgomery) licenses this file to you under the MIT license. *@
+@* See the LICENSE file in the project root for more information. *@
+
+@page "/tutorials/vendors"
+
+<TutorialScaffold
+    Title="Configure Vendors"
+    Description="Vendors enabled here will be controlled by Chroma RGB Connect, and thus Razer Synapse.">
+    <Content>
+        <div class="vendors-container">
+            <VendorList />
+        </div>
+    </Content>
+    <Buttons>
+        <Button Style="Button.StyleType.Primary" @onclick="NavigateForward">FINISH</Button>
+        <Button @onclick="NavigateBackward">BACK</Button>
+    </Buttons>
+</TutorialScaffold>

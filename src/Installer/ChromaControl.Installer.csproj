@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.Build.Traversal/4.1.0">
+
+  <PropertyGroup>
+    <AssemblyName>ChromaRGBConnect.Installer</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <NoWarn>MSB3644;MSB3270;$(NoWarn)</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\App\ChromaControl.App.csproj" />
+    <ProjectReference Include="..\Service\ChromaControl.Service.csproj" />
+  </ItemGroup>
+
+  <Import Project="Build.targets" />
+
+  <ItemGroup>
+    <Content Include="Installer.iss" />
+    <Content Include="CodeDependencies.iss" />
+    <Content Include="Build.targets" />
+    <Content Include="images\*.*" />
+  </ItemGroup>
+
+</Project>

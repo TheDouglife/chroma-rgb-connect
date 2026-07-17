@@ -1,3 +1,0 @@
-obj\Release\net8.0-windows10.0.22000.0\Protos/Settings.cs \
-obj\Release\net8.0-windows10.0.22000.0\Protos/SettingsGrpc.cs: C:/Users/douga/.nuget/packages/grpc.tools/2.67.0/build/native/include/google/protobuf/timestamp.proto\
- Protos/settings.proto

@@ -1,2 +1,0 @@
-obj\Release\net8.0-windows10.0.22000.0\Protos/Lighting.cs \
-obj\Release\net8.0-windows10.0.22000.0\Protos/LightingGrpc.cs: Protos/lighting.proto

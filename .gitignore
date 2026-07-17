@@ -1,0 +1,31 @@
+# Ignore build outputs
+**/bin/
+**/obj/
+
+# Visual Studio / JetBrains
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Logs and CI artifacts
+ci-artifacts/
+*.log
+*.zip
+job-*.zip
+job-*.txt
+ci-*.log
+ci-*.json
+
+# NuGet packages
+# (cache files may exist in repositories but are generated)
+**/project.nuget.cache
+**/*.nuget.dgspec.json
+
+# OS files
+Thumbs.db
+ehthumbs.db
+Desktop.ini

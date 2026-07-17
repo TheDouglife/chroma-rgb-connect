@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChromaRGBConnect.Service.Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChromaRGBConnect.App.Tests", "tests\ChromaControl.App.Tests\ChromaControl.App.Tests.csproj", "{3EC75474-30E9-4776-8D6D-E066E2F2EBC3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E9D6BE62-684D-486C-B2DE-2D715A920DEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChromaControl.WinUI", "src\WinUI\ChromaControl.WinUI.csproj", "{F641134C-FBF9-4903-BF6D-7BD649831644}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +57,10 @@ Global
 		{3EC75474-30E9-4776-8D6D-E066E2F2EBC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EC75474-30E9-4776-8D6D-E066E2F2EBC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EC75474-30E9-4776-8D6D-E066E2F2EBC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F641134C-FBF9-4903-BF6D-7BD649831644}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F641134C-FBF9-4903-BF6D-7BD649831644}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F641134C-FBF9-4903-BF6D-7BD649831644}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F641134C-FBF9-4903-BF6D-7BD649831644}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,5 +71,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{8B1A3277-F9C9-42AB-9A24-B80AB6200E78} = {58657B31-4E16-4EE0-BE6A-E1828E1BBBBF}
 		{3EC75474-30E9-4776-8D6D-E066E2F2EBC3} = {58657B31-4E16-4EE0-BE6A-E1828E1BBBBF}
+		{F641134C-FBF9-4903-BF6D-7BD649831644} = {E9D6BE62-684D-486C-B2DE-2D715A920DEB}
 	EndGlobalSection
 EndGlobal

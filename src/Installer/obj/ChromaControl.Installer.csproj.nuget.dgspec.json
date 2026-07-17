@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\src\\Installer\\ChromaControl.Installer.csproj": {}
+    "C:\\Users\\douga\\OneDrive\\Documents\\chroma-rgb-connect\\src\\Installer\\ChromaControl.Installer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\src\\Installer\\ChromaControl.Installer.csproj": {
+    "C:\\Users\\douga\\OneDrive\\Documents\\chroma-rgb-connect\\src\\Installer\\ChromaControl.Installer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\src\\Installer\\ChromaControl.Installer.csproj",
+        "projectUniqueName": "C:\\Users\\douga\\OneDrive\\Documents\\chroma-rgb-connect\\src\\Installer\\ChromaControl.Installer.csproj",
         "projectName": "ChromaRGBConnect.Installer",
-        "projectPath": "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\src\\Installer\\ChromaControl.Installer.csproj",
+        "projectPath": "C:\\Users\\douga\\OneDrive\\Documents\\chroma-rgb-connect\\src\\Installer\\ChromaControl.Installer.csproj",
         "packagesPath": "C:\\Users\\douga\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\src\\Installer\\obj\\",
+        "outputPath": "C:\\Users\\douga\\OneDrive\\Documents\\chroma-rgb-connect\\src\\Installer\\obj\\",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [

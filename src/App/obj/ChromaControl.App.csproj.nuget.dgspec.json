@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\src\\App\\ChromaControl.App.csproj": {}
+    "C:\\Users\\douga\\OneDrive\\Documents\\chroma-rgb-connect\\src\\App\\ChromaControl.App.csproj": {}
   },
   "projects": {
-    "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\src\\App\\ChromaControl.App.csproj": {
+    "C:\\Users\\douga\\OneDrive\\Documents\\chroma-rgb-connect\\src\\App\\ChromaControl.App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\src\\App\\ChromaControl.App.csproj",
+        "projectUniqueName": "C:\\Users\\douga\\OneDrive\\Documents\\chroma-rgb-connect\\src\\App\\ChromaControl.App.csproj",
         "projectName": "ChromaControl.App",
-        "projectPath": "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\src\\App\\ChromaControl.App.csproj",
+        "projectPath": "C:\\Users\\douga\\OneDrive\\Documents\\chroma-rgb-connect\\src\\App\\ChromaControl.App.csproj",
         "packagesPath": "C:\\Users\\douga\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\src\\App\\obj\\",
+        "outputPath": "C:\\Users\\douga\\OneDrive\\Documents\\chroma-rgb-connect\\src\\App\\obj\\",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [
@@ -27,8 +27,8 @@
           "net8.0-windows10.0.22000": {
             "targetAlias": "net8.0-windows10.0.22000.0",
             "projectReferences": {
-              "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\src\\Common\\ChromaControl.Common.csproj": {
-                "projectPath": "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\src\\Common\\ChromaControl.Common.csproj"
+              "C:\\Users\\douga\\OneDrive\\Documents\\chroma-rgb-connect\\src\\Common\\ChromaControl.Common.csproj": {
+                "projectPath": "C:\\Users\\douga\\OneDrive\\Documents\\chroma-rgb-connect\\src\\Common\\ChromaControl.Common.csproj"
               }
             }
           }
@@ -187,14 +187,14 @@
         }
       }
     },
-    "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\src\\Common\\ChromaControl.Common.csproj": {
+    "C:\\Users\\douga\\OneDrive\\Documents\\chroma-rgb-connect\\src\\Common\\ChromaControl.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\src\\Common\\ChromaControl.Common.csproj",
+        "projectUniqueName": "C:\\Users\\douga\\OneDrive\\Documents\\chroma-rgb-connect\\src\\Common\\ChromaControl.Common.csproj",
         "projectName": "ChromaRGBConnect.Common",
-        "projectPath": "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\src\\Common\\ChromaControl.Common.csproj",
+        "projectPath": "C:\\Users\\douga\\OneDrive\\Documents\\chroma-rgb-connect\\src\\Common\\ChromaControl.Common.csproj",
         "packagesPath": "C:\\Users\\douga\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\src\\Common\\obj\\",
+        "outputPath": "C:\\Users\\douga\\OneDrive\\Documents\\chroma-rgb-connect\\src\\Common\\obj\\",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [

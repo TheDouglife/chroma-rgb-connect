@@ -2720,11 +2720,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\src\\AppHost\\ChromaControl.AppHost.csproj",
+      "projectUniqueName": "C:\\Users\\douga\\OneDrive\\Documents\\chroma-rgb-connect\\src\\AppHost\\ChromaControl.AppHost.csproj",
       "projectName": "ChromaRGBConnect.AppHost",
-      "projectPath": "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\src\\AppHost\\ChromaControl.AppHost.csproj",
+      "projectPath": "C:\\Users\\douga\\OneDrive\\Documents\\chroma-rgb-connect\\src\\AppHost\\ChromaControl.AppHost.csproj",
       "packagesPath": "C:\\Users\\douga\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\src\\AppHost\\obj\\",
+      "outputPath": "C:\\Users\\douga\\OneDrive\\Documents\\chroma-rgb-connect\\src\\AppHost\\obj\\",
       "projectStyle": "PackageReference",
       "centralPackageVersionsManagementEnabled": true,
       "configFilePaths": [

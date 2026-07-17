@@ -4410,11 +4410,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\tests\\ChromaControl.App.Tests\\ChromaControl.App.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\douga\\OneDrive\\Documents\\chroma-rgb-connect\\tests\\ChromaControl.App.Tests\\ChromaControl.App.Tests.csproj",
       "projectName": "ChromaRGBConnect.App.Tests",
-      "projectPath": "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\tests\\ChromaControl.App.Tests\\ChromaControl.App.Tests.csproj",
+      "projectPath": "C:\\Users\\douga\\OneDrive\\Documents\\chroma-rgb-connect\\tests\\ChromaControl.App.Tests\\ChromaControl.App.Tests.csproj",
       "packagesPath": "C:\\Users\\douga\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\tests\\ChromaControl.App.Tests\\obj\\",
+      "outputPath": "C:\\Users\\douga\\OneDrive\\Documents\\chroma-rgb-connect\\tests\\ChromaControl.App.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "centralPackageVersionsManagementEnabled": true,
       "configFilePaths": [
@@ -4430,8 +4430,8 @@
         "net8.0-windows10.0.22000": {
           "targetAlias": "net8.0-windows10.0.22000.0",
           "projectReferences": {
-            "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\src\\App\\ChromaControl.App.csproj": {
-              "projectPath": "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\src\\App\\ChromaControl.App.csproj"
+            "C:\\Users\\douga\\OneDrive\\Documents\\chroma-rgb-connect\\src\\App\\ChromaControl.App.csproj": {
+              "projectPath": "C:\\Users\\douga\\OneDrive\\Documents\\chroma-rgb-connect\\src\\App\\ChromaControl.App.csproj"
             }
           }
         }

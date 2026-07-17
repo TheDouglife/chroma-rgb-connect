@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "D4Jb/mSFTY0=",
+  "dgSpecHash": "z0nrsQ3rayo=",
   "success": true,
-  "projectFilePath": "C:\\Users\\douga\\chroma-control-manager\\ChromaControl-main\\src\\Common\\ChromaControl.Common.csproj",
+  "projectFilePath": "C:\\Users\\douga\\OneDrive\\Documents\\chroma-rgb-connect\\src\\Common\\ChromaControl.Common.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\douga\\.nuget\\packages\\chromacontrol.keys\\1.0.3\\chromacontrol.keys.1.0.3.nupkg.sha512",
     "C:\\Users\\douga\\.nuget\\packages\\google.protobuf\\3.28.3\\google.protobuf.3.28.3.nupkg.sha512",

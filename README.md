@@ -64,7 +64,7 @@ The repository is organized into the desktop app, local service, shared code, in
 
 Bug reports, compatibility notes, documentation improvements, and code contributions are welcome. Before opening an issue, check existing issues and include your Windows version, app version, affected hardware, related RGB software, and clear reproduction steps.
 
-Read [CONTRIBUTING.md](CONTRIBUTING.md) for the project’s contribution and issue-reporting guidance. Pull requests should include focused tests or an explanation of why tests are not applicable.
+Pull requests should include focused tests or an explanation of why tests are not applicable.
 
 ## Support and security
 

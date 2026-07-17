@@ -22,12 +22,12 @@ jobs:
         dotnet-version: [10.0.x]
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: ${{ github.event.inputs.target_ref || github.ref }}
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v5
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
 
@@ -78,11 +78,12 @@ jobs:
           dotnet pack src/Service/ChromaControl.Service.csproj -c Release --no-build -o ./artifacts
 
       - name: Upload artifacts
-        if: always()
-        uses: actions/upload-artifact@v4
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: actions/upload-artifact@v5
         with:
           name: build-artifacts
-          path: ./artifacts || .
+          path: ./artifacts
+          if-no-files-found: error
 
   package-installer:
     runs-on: windows-latest
@@ -90,9 +91,9 @@ jobs:
     if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v'))
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Setup .NET
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v5
         with:
           dotnet-version: 10.0.x
       - name: Install Inno Setup
@@ -105,7 +106,7 @@ jobs:
           -c Release -r win-x64 --self-contained true
           /p:InnoSetupCompilerPath="${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe"
       - name: Upload installer
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: chroma-rgb-connect-installer
           path: src/Installer/bin/**/publish/ChromaControlSetup-*.exe
@@ -119,7 +120,7 @@ jobs:
       contents: write
     steps:
       - name: Download installer
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: chroma-rgb-connect-installer
           path: release
@@ -132,10 +133,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v5
         with:
           dotnet-version: 10.0.x
 
@@ -152,7 +153,7 @@ jobs:
           done
 
       - name: Upload outdated report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: outdated-packages
           path: outdated.txt

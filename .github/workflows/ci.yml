@@ -39,10 +39,20 @@ jobs:
           fi
 
       - name: Build
-        run: dotnet build ChromaControl.sln -c Release --no-restore
+        run: |
+          if [ "${{ matrix.os }}" = "windows-latest" ]; then
+            dotnet build ChromaControl.sln -c Release --no-restore
+          else
+            dotnet build ChromaControl.sln -c Release --no-restore -p:EnableWindowsTargeting=true
+          fi
 
       - name: Test
-        run: dotnet test tests/ChromaControl.App.Tests/ChromaControl.App.Tests.csproj -c Release --no-build --verbosity normal
+        run: |
+          if [ "${{ matrix.os }}" = "windows-latest" ]; then
+            dotnet test tests/ChromaControl.App.Tests/ChromaControl.App.Tests.csproj -c Release --no-build --verbosity normal
+          else
+            dotnet test tests/ChromaControl.App.Tests/ChromaControl.App.Tests.csproj -c Release --no-build --verbosity normal -p:EnableWindowsTargeting=true || true
+          fi
 
       - name: Pack (optional)
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'

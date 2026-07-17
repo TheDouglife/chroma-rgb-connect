@@ -1,0 +1,127 @@
+﻿
+== C:\Users\douga\OneDrive\Documents\chroma-rgb-connect\src\App\ChromaControl.App.csproj ==
+
+
+The following sources were used:
+   https://api.nuget.org/v3/index.json
+
+Project `ChromaControl.App` has the following updates to its packages
+   [net8.0-windows10.0.22000]: 
+   Top-level Package                                   Requested                  Resolved                   Latest                  
+   > BlazorDesktop                                     8.0.8                      8.0.8                      9.0.2                   
+   > CommonTypeUnions                                  1.0.1                      1.0.1                      1.0.2                   
+   > MediatR                                           12.4.1                     12.4.1                     14.2.0                  
+   > Microsoft.Extensions.Http.Resilience              9.1.0                      9.1.0                      10.8.0                  
+   > NetSparkleUpdater.SparkleUpdater                  3.0.0-preview20240716002   3.0.0-preview20240716002   3.1.0                   
+   > OpenTelemetry.Exporter.OpenTelemetryProtocol      1.15.3                     1.15.3                     1.17.0                  
+   > OpenTelemetry.Extensions.Hosting                  1.9.0                      1.9.0                      1.17.0                  
+   > OpenTelemetry.Instrumentation.GrpcNetClient       1.9.0-beta.1               1.9.0-beta.1               Not found at the sources
+   > OpenTelemetry.Instrumentation.Http                1.9.0                      1.9.0                      1.17.0                  
+   > OpenTelemetry.Instrumentation.Runtime             1.9.0                      1.9.0                      1.17.0                  
+
+
+== C:\Users\douga\OneDrive\Documents\chroma-rgb-connect\src\AppHost\ChromaControl.AppHost.csproj ==
+
+
+The following sources were used:
+   https://api.nuget.org/v3/index.json
+
+Project `ChromaControl.AppHost` has the following updates to its packages
+   [net8.0]: 
+   Top-level Package             Requested   Resolved   Latest
+   > Aspire.Hosting.AppHost      8.2.2       8.2.2      13.4.6
+
+
+== C:\Users\douga\OneDrive\Documents\chroma-rgb-connect\src\Common\ChromaControl.Common.csproj ==
+
+
+The following sources were used:
+   https://api.nuget.org/v3/index.json
+
+Project `ChromaControl.Common` has the following updates to its packages
+   [net8.0-windows10.0.22000]: 
+   Top-level Package                                Requested   Resolved   Latest 
+   > Google.Protobuf                                3.28.3      3.28.3     3.35.1 
+   > Grpc.Net.ClientFactory                         2.66.0      2.66.0     2.80.0 
+   > Grpc.Tools                                     2.67.0      2.67.0     2.82.0 
+   > Microsoft.Extensions.Hosting.Abstractions      8.0.1       8.0.1      10.0.10
+   > NReco.Logging.File                             1.2.1       1.2.1      1.3.1  
+
+
+== C:\Users\douga\OneDrive\Documents\chroma-rgb-connect\src\Installer\ChromaControl.Installer.csproj ==
+
+
+The following sources were used:
+   https://api.nuget.org/v3/index.json
+
+The given project `ChromaControl.Installer` has no updates given the current sources.
+
+== C:\Users\douga\OneDrive\Documents\chroma-rgb-connect\src\Service\ChromaControl.Service.csproj ==
+
+
+The following sources were used:
+   https://api.nuget.org/v3/index.json
+
+Project `ChromaControl.Service` has the following updates to its packages
+   [net8.0-windows10.0.22000]: 
+   Top-level Package                                        Requested       Resolved        Latest                  
+   > Grpc.AspNetCore                                        2.66.0          2.66.0          2.80.0                  
+   > Microsoft.EntityFrameworkCore.Design                   8.0.10          8.0.10          10.0.10                 
+   > Microsoft.EntityFrameworkCore.Sqlite                   8.0.10          8.0.10          10.0.10                 
+   > OpenTelemetry.Exporter.OpenTelemetryProtocol           1.15.3          1.15.3          1.17.0                  
+   > OpenTelemetry.Extensions.Hosting                       1.9.0           1.9.0           1.17.0                  
+   > OpenTelemetry.Instrumentation.AspNetCore               1.9.0           1.9.0           1.17.0                  
+   > OpenTelemetry.Instrumentation.EntityFrameworkCore      1.0.0-beta.12   1.0.0-beta.12   Not found at the sources
+   > OpenTelemetry.Instrumentation.Runtime                  1.9.0           1.9.0           1.17.0                  
+
+
+== C:\Users\douga\OneDrive\Documents\chroma-rgb-connect\src\WinUI\ChromaControl.WinUI.csproj ==
+
+
+The following sources were used:
+   https://api.nuget.org/v3/index.json
+
+
+dotnet : No assets file was found for `C:\Users\douga\OneDrive\Documents\chroma
+-rgb-connect\src\WinUI\ChromaControl.WinUI.csproj`. Please run restore before 
+running this command.
+At C:\Users\douga\OneDrive\Documents\chroma-rgb-connect\scripts\collect-outdate
+d.ps1:7 char:5
++     dotnet list "$p" package --outdated 2>&1 | Out-File -FilePath $ou ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (No assets file ...g this command. 
+   :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+== C:\Users\douga\OneDrive\Documents\chroma-rgb-connect\tests\ChromaControl.App.Tests\ChromaControl.App.Tests.csproj ==
+
+
+The following sources were used:
+   https://api.nuget.org/v3/index.json
+
+Project `ChromaControl.App.Tests` has the following updates to its packages
+   [net8.0-windows10.0.22000]: 
+   Top-level Package                Requested   Resolved   Latest
+   > coverlet.collector             6.0.2       6.0.2      10.0.1
+   > Microsoft.NET.Test.Sdk         17.11.1     17.11.1    18.8.1
+   > xunit                          2.9.0       2.9.0      2.9.3 
+   > xunit.runner.visualstudio      2.8.2       2.8.2      3.1.5 
+
+
+== C:\Users\douga\OneDrive\Documents\chroma-rgb-connect\tests\ChromaControl.Service.Tests\ChromaControl.Service.Tests.csproj ==
+
+
+The following sources were used:
+   https://api.nuget.org/v3/index.json
+
+Project `ChromaControl.Service.Tests` has the following updates to its packages
+   [net8.0-windows10.0.22000]: 
+   Top-level Package                       Requested   Resolved   Latest 
+   > coverlet.collector                    6.0.2       6.0.2      10.0.1 
+   > Grpc.Net.Client                       2.66.0      2.66.0     2.80.0 
+   > Microsoft.AspNetCore.Mvc.Testing      8.0.8       8.0.8      10.0.10
+   > Microsoft.NET.Test.Sdk                17.11.1     17.11.1    18.8.1 
+   > xunit                                 2.9.0       2.9.0      2.9.3  
+   > xunit.runner.visualstudio             2.8.2       2.8.2      3.1.5  
+

@@ -2,14 +2,14 @@
 // The Douglife (Doug Montgomery) licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using ChromaControl.App.Shell.Services;
-using ChromaControl.App.Updater.Components;
+using ChromaConnect.App.Shell.Services;
+using ChromaConnect.App.Updater.Components;
 using MarkdownSharp;
 using Microsoft.AspNetCore.Components;
 using NetSparkleUpdater;
 using System.Windows;
 
-namespace ChromaControl.App.Updater.Services;
+namespace ChromaConnect.App.Updater.Services;
 
 /// <summary>
 /// The update service.
@@ -78,7 +78,7 @@ public class UpdateService
             return (_currentVersion, _currentHash, _isPrerelease);
         }
 
-        var appVersion = _configuration.GetSection("ChromaControl")["VERSION"];
+        var appVersion = _configuration.GetSection("ChromaConnect")["VERSION"];
 
         if (string.IsNullOrWhiteSpace(appVersion))
         {

@@ -4,7 +4,7 @@
 
 using BlazorDesktop.Hosting;
 
-namespace ChromaControl.App.Tutorials;
+namespace ChromaConnect.App.Tutorials;
 
 /// <summary>
 /// Tutorials extension methods.

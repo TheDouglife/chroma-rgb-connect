@@ -2,8 +2,8 @@
 // The Douglife (Doug Montgomery) licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using ChromaControl.Common.Services;
-using ChromaControl.Keys;
+using ChromaConnect.Common.Services;
+using ChromaConnect.Keys;
 using Grpc.Core;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,14 +14,14 @@ using System.IO.Pipes;
 using System.Reflection;
 using System.Security.Principal;
 
-namespace ChromaControl.Common.Extensions;
+namespace ChromaConnect.Common.Extensions;
 
 /// <summary>
 /// Chroma Control extension methods.
 /// </summary>
-public static class ChromaControlExtensions
+public static class ChromaConnectExtensions
 {
-    private const string DefaultPipeName = "ChromaControl";
+    private const string DefaultPipeName = "ChromaConnect";
     private const int DefaultTcpPort = 50071;
 
     /// <summary>
@@ -29,11 +29,11 @@ public static class ChromaControlExtensions
     /// </summary>
     /// <param name="services">The <see cref="IServiceCollection"/> to add services to.</param>
     /// <returns>The <see cref="IServiceCollection"/> to continue adding services to.</returns>
-    public static IServiceCollection AddChromaControlServices(this IServiceCollection services)
+    public static IServiceCollection AddChromaConnectServices(this IServiceCollection services)
     {
-        var applicationName = Assembly.GetEntryAssembly()?.GetName().Name ?? "ChromaControl";
+        var applicationName = Assembly.GetEntryAssembly()?.GetName().Name ?? "ChromaConnect";
 
-        return AddChromaControlServices(services, applicationName);
+        return AddChromaConnectServices(services, applicationName);
     }
 
     /// <summary>
@@ -42,7 +42,7 @@ public static class ChromaControlExtensions
     /// <param name="services">The <see cref="IServiceCollection"/> to add services to.</param>
     /// <param name="applicationName">The single-instance application name.</param>
     /// <returns>The <see cref="IServiceCollection"/> to continue adding services to.</returns>
-    public static IServiceCollection AddChromaControlServices(this IServiceCollection services, string applicationName)
+    public static IServiceCollection AddChromaConnectServices(this IServiceCollection services, string applicationName)
     {
         services.AddSingleton(AcquireSingleInstanceMutex(applicationName));
 
@@ -54,7 +54,7 @@ public static class ChromaControlExtensions
     internal static Mutex AcquireSingleInstanceMutex(string applicationName)
     {
         var normalizedApplicationName = string.IsNullOrWhiteSpace(applicationName)
-            ? "ChromaControl"
+            ? "ChromaConnect"
             : applicationName.Trim();
 
         var mutex = new Mutex(true, normalizedApplicationName, out var success);
@@ -73,11 +73,11 @@ public static class ChromaControlExtensions
     /// </summary>
     /// <param name="logging">The <see cref="ILoggingBuilder"/> to add logging to.</param>
     /// <returns>The <see cref="ILoggingBuilder"/> to continue adding logging to.</returns>
-    public static ILoggingBuilder AddChromaControlLogging(this ILoggingBuilder logging)
+    public static ILoggingBuilder AddChromaConnectLogging(this ILoggingBuilder logging)
     {
         var paths = ResolvePaths(new ConfigurationManager(), AppContext.BaseDirectory, Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData));
 
-        return AddChromaControlLogging(logging, paths);
+        return AddChromaConnectLogging(logging, paths);
     }
 
     /// <summary>
@@ -86,16 +86,16 @@ public static class ChromaControlExtensions
     /// <param name="logging">The <see cref="ILoggingBuilder"/> to add logging to.</param>
     /// <param name="configuration">The <see cref="IConfiguration"/> containing Chroma Control path settings.</param>
     /// <returns>The <see cref="ILoggingBuilder"/> to continue adding logging to.</returns>
-    public static ILoggingBuilder AddChromaControlLogging(this ILoggingBuilder logging, IConfiguration configuration)
+    public static ILoggingBuilder AddChromaConnectLogging(this ILoggingBuilder logging, IConfiguration configuration)
     {
         var paths = ResolvePaths(configuration);
 
-        return AddChromaControlLogging(logging, paths);
+        return AddChromaConnectLogging(logging, paths);
     }
 
-    private static ILoggingBuilder AddChromaControlLogging(ILoggingBuilder logging, ChromaControlPaths paths)
+    private static ILoggingBuilder AddChromaConnectLogging(ILoggingBuilder logging, ChromaConnectPaths paths)
     {
-        var applicationName = Assembly.GetEntryAssembly()?.GetName().Name ?? "ChromaControl";
+        var applicationName = Assembly.GetEntryAssembly()?.GetName().Name ?? "ChromaConnect";
         var logFilePath = Path.Combine(paths.LogsPath, $"{applicationName}.log");
 
         logging.AddFile(logFilePath, config =>
@@ -113,19 +113,19 @@ public static class ChromaControlExtensions
     /// </summary>
     /// <param name="config">The <see cref="IConfigurationManager"/> to add configuration to.</param>
     /// <returns>The <see cref="ILoggingBuilder"/> to continue adding configuration to.</returns>
-    public static IConfigurationManager AddChromaControlConfiguration(this IConfigurationManager config)
+    public static IConfigurationManager AddChromaConnectConfiguration(this IConfigurationManager config)
     {
         var resolvedPaths = ResolvePaths(config);
 
         EnsureBootstrapDirectoriesExist(resolvedPaths);
 
-        var chromaControl = config.GetSection("ChromaControl");
-        var pathSection = chromaControl.GetSection("Path");
+        var chromaConnect = config.GetSection("ChromaConnect");
+        var pathSection = chromaConnect.GetSection("Path");
         var connectionStrings = config.GetSection("ConnectionStrings");
 
         var appExecutable = $"{AppDomain.CurrentDomain.FriendlyName}.exe";
         var appPath = Path.Combine(resolvedPaths.AppPath, appExecutable);
-        chromaControl["VERSION"] = ResolveProductVersion(appPath);
+        chromaConnect["VERSION"] = ResolveProductVersion(appPath);
 
         pathSection["APP"] = resolvedPaths.AppPath;
         pathSection["DATA"] = resolvedPaths.DataPath;
@@ -134,17 +134,17 @@ public static class ChromaControlExtensions
 
         connectionStrings["Database"] = resolvedPaths.DatabaseConnectionString;
 
-        config.AddChromaControlKeys();
+        config.AddChromaConnectKeys();
 
         return config;
     }
 
-    internal static void EnsureBootstrapDirectoriesExist(ChromaControlPaths paths)
+    internal static void EnsureBootstrapDirectoriesExist(ChromaConnectPaths paths)
     {
         EnsureBootstrapDirectoriesExist(paths, Directory.CreateDirectory);
     }
 
-    internal static void EnsureBootstrapDirectoriesExist(ChromaControlPaths paths, Func<string, DirectoryInfo> createDirectory)
+    internal static void EnsureBootstrapDirectoriesExist(ChromaConnectPaths paths, Func<string, DirectoryInfo> createDirectory)
     {
         ArgumentNullException.ThrowIfNull(createDirectory);
 
@@ -153,23 +153,23 @@ public static class ChromaControlExtensions
         EnsureDirectoryExists(paths.ConfigPath, "config", createDirectory);
     }
 
-    internal static ChromaControlPaths ResolvePaths(IConfiguration configuration)
+    internal static ChromaConnectPaths ResolvePaths(IConfiguration configuration)
     {
         return ResolvePaths(configuration, AppContext.BaseDirectory, Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData));
     }
 
-    internal static ChromaControlPaths ResolvePaths(IConfiguration configuration, string appBasePath, string localAppDataPath)
+    internal static ChromaConnectPaths ResolvePaths(IConfiguration configuration, string appBasePath, string localAppDataPath)
     {
         ArgumentNullException.ThrowIfNull(configuration);
 
-        var pathSection = configuration.GetSection("ChromaControl").GetSection("Path");
+        var pathSection = configuration.GetSection("ChromaConnect").GetSection("Path");
         var appPath = GetConfiguredValue(pathSection["APP"]) ?? appBasePath;
-        var dataPath = GetConfiguredValue(pathSection["DATA"]) ?? Path.Combine(localAppDataPath, "ChromaControl");
+        var dataPath = GetConfiguredValue(pathSection["DATA"]) ?? Path.Combine(localAppDataPath, "ChromaConnect");
         var logsPath = GetConfiguredValue(pathSection["LOGS"]) ?? Path.Combine(dataPath, "logs");
         var configPath = GetConfiguredValue(pathSection["CONFIG"]) ?? Path.Combine(dataPath, "config");
-        var databaseConnectionString = GetConfiguredValue(configuration.GetConnectionString("Database")) ?? $"Data Source={Path.Combine(dataPath, "ChromaControl.db")}";
+        var databaseConnectionString = GetConfiguredValue(configuration.GetConnectionString("Database")) ?? $"Data Source={Path.Combine(dataPath, "ChromaConnect.db")}";
 
-        return new ChromaControlPaths(appPath, dataPath, logsPath, configPath, databaseConnectionString);
+        return new ChromaConnectPaths(appPath, dataPath, logsPath, configPath, databaseConnectionString);
     }
 
     internal static string ResolveProductVersion(string appPath)
@@ -268,9 +268,9 @@ public static class ChromaControlExtensions
     /// <param name="config">The <see cref="IConfigurationManager"/> to get the path from.</param>
     /// <param name="pathName">The name of the path requested.</param>
     /// <returns>The requested path.</returns>
-    public static string GetChromaControlPath(this IConfiguration config, string pathName)
+    public static string GetChromaConnectPath(this IConfiguration config, string pathName)
     {
-        var result = config.GetSection("ChromaControl").GetSection("Path")[pathName.ToUpper()]
+        var result = config.GetSection("ChromaConnect").GetSection("Path")[pathName.ToUpper()]
             ?? throw new InvalidOperationException($"The requested path '{pathName}` could not be found.");
 
         return result;
@@ -282,9 +282,9 @@ public static class ChromaControlExtensions
     /// <typeparam name="TClient">The client type to add.</typeparam>
     /// <param name="services">The <see cref="IServiceCollection"/>.</param>
     /// <returns>The original <see cref="IServiceCollection"/>.</returns>
-    public static IServiceCollection AddChromaControlGrpcClient<TClient>(this IServiceCollection services) where TClient : ClientBase
+    public static IServiceCollection AddChromaConnectGrpcClient<TClient>(this IServiceCollection services) where TClient : ClientBase
     {
-        return AddChromaControlGrpcClient<TClient>(services, new ConfigurationManager());
+        return AddChromaConnectGrpcClient<TClient>(services, new ConfigurationManager());
     }
 
     /// <summary>
@@ -294,7 +294,7 @@ public static class ChromaControlExtensions
     /// <param name="services">The <see cref="IServiceCollection"/>.</param>
     /// <param name="configuration">The <see cref="IConfiguration"/> containing transport settings.</param>
     /// <returns>The original <see cref="IServiceCollection"/>.</returns>
-    public static IServiceCollection AddChromaControlGrpcClient<TClient>(this IServiceCollection services, IConfiguration configuration) where TClient : ClientBase
+    public static IServiceCollection AddChromaConnectGrpcClient<TClient>(this IServiceCollection services, IConfiguration configuration) where TClient : ClientBase
     {
         var transportOptions = ResolveTransportOptions(configuration);
         services.AddGrpcClient<TClient>(options =>
@@ -317,7 +317,7 @@ public static class ChromaControlExtensions
         return services;
     }
 
-    internal static ChromaControlTransportOptions ResolveTransportOptions(IConfiguration configuration)
+    internal static ChromaConnectTransportOptions ResolveTransportOptions(IConfiguration configuration)
     {
         ArgumentNullException.ThrowIfNull(configuration);
 
@@ -327,10 +327,10 @@ public static class ChromaControlExtensions
         var pipeName = configuredPipeName ?? DefaultPipeName;
         var port = configuration.GetValue<int?>("Service:Transport:Port") ?? DefaultTcpPort;
 
-        return new ChromaControlTransportOptions(useNamedPipes, pipeName, port, allowAllAuthenticatedUsers);
+        return new ChromaConnectTransportOptions(useNamedPipes, pipeName, port, allowAllAuthenticatedUsers);
     }
 
-    internal static Uri ResolveGrpcClientAddress(ChromaControlTransportOptions transportOptions)
+    internal static Uri ResolveGrpcClientAddress(ChromaConnectTransportOptions transportOptions)
     {
         if (transportOptions.UseNamedPipes)
         {
@@ -345,12 +345,12 @@ public static class ChromaControlExtensions
         return new Uri($"http://127.0.0.1:{transportOptions.Port}");
     }
 
-    internal static string GetTransportModeLabel(ChromaControlTransportOptions transportOptions)
+    internal static string GetTransportModeLabel(ChromaConnectTransportOptions transportOptions)
     {
         return transportOptions.UseNamedPipes ? "named-pipe" : "tcp";
     }
 
-    internal static string GetTransportEndpointLabel(ChromaControlTransportOptions transportOptions, bool forServer)
+    internal static string GetTransportEndpointLabel(ChromaConnectTransportOptions transportOptions, bool forServer)
     {
         if (transportOptions.UseNamedPipes)
         {
@@ -365,7 +365,7 @@ public static class ChromaControlExtensions
         return $"tcp:127.0.0.1:{transportOptions.Port}";
     }
 
-    internal static IReadOnlyList<string> GetTransportConfigurationWarnings(IConfiguration configuration, ChromaControlTransportOptions transportOptions, bool forServer)
+    internal static IReadOnlyList<string> GetTransportConfigurationWarnings(IConfiguration configuration, ChromaConnectTransportOptions transportOptions, bool forServer)
     {
         ArgumentNullException.ThrowIfNull(configuration);
 
@@ -454,14 +454,14 @@ public static class ChromaControlExtensions
     }
 }
 
-internal readonly record struct ChromaControlPaths(
+internal readonly record struct ChromaConnectPaths(
     string AppPath,
     string DataPath,
     string LogsPath,
     string ConfigPath,
     string DatabaseConnectionString);
 
-internal readonly record struct ChromaControlTransportOptions(
+internal readonly record struct ChromaConnectTransportOptions(
     bool UseNamedPipes,
     string PipeName,
     int Port,

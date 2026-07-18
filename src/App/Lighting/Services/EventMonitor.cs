@@ -2,10 +2,10 @@
 // The Douglife (Doug Montgomery) licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using ChromaControl.Common.Protos.Lighting;
+using ChromaConnect.Common.Protos.Lighting;
 using Grpc.Core;
 
-namespace ChromaControl.App.Lighting.Services;
+namespace ChromaConnect.App.Lighting.Services;
 
 /// <summary>
 /// Monitors for notifications.

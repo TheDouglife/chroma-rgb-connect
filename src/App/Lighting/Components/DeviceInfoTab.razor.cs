@@ -2,12 +2,12 @@
 // The Douglife (Doug Montgomery) licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using ChromaControl.App.Lighting.Queries;
-using ChromaControl.App.Shell.Services;
+using ChromaConnect.App.Lighting.Queries;
+using ChromaConnect.App.Shell.Services;
 using MediatR;
 using Microsoft.AspNetCore.Components;
 
-namespace ChromaControl.App.Lighting.Components;
+namespace ChromaConnect.App.Lighting.Components;
 
 /// <summary>
 /// The device info tab.

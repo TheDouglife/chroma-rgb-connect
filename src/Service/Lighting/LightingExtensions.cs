@@ -2,12 +2,12 @@
 // The Douglife (Doug Montgomery) licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using ChromaControl.SDK.OpenRGB.Extensions;
-using ChromaControl.SDK.Synapse.Extensions;
-using ChromaControl.Service.Lighting.Services;
-using ChromaControl.Service.Lighting.Workers;
+using ChromaConnect.SDK.OpenRGB.Extensions;
+using ChromaConnect.SDK.Synapse.Extensions;
+using ChromaConnect.Service.Lighting.Services;
+using ChromaConnect.Service.Lighting.Workers;
 
-namespace ChromaControl.Service.Lighting;
+namespace ChromaConnect.Service.Lighting;
 
 /// <summary>
 /// Lighting extension methods.

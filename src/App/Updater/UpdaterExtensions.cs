@@ -3,8 +3,8 @@
 // See the LICENSE file in the project root for more information.
 
 using BlazorDesktop.Hosting;
-using ChromaControl.App.Updater.Services;
-using ChromaControl.App.Updater.Sparkle;
+using ChromaConnect.App.Updater.Services;
+using ChromaConnect.App.Updater.Sparkle;
 using NetSparkleUpdater;
 using NetSparkleUpdater.AssemblyAccessors;
 using NetSparkleUpdater.Configurations;
@@ -12,7 +12,7 @@ using NetSparkleUpdater.Enums;
 using NetSparkleUpdater.Interfaces;
 using NetSparkleUpdater.SignatureVerifiers;
 
-namespace ChromaControl.App.Updater;
+namespace ChromaConnect.App.Updater;
 
 /// <summary>
 /// Updater extension methods.
@@ -59,7 +59,7 @@ public static class UpdaterExtensions
             var updateInfoHandler = services.GetRequiredService<IAppCastHandler>();
             var configuration = services.GetRequiredService<Configuration>();
 
-            return new("https://api.github.com/repos/ChromaControl/ChromaControl/releases", signatureVerifier)
+            return new("https://api.github.com/repos/ChromaConnect/ChromaConnect/releases", signatureVerifier)
             {
                 LogWriter = logger,
                 AppCastDataDownloader = updateInfoDownloader,

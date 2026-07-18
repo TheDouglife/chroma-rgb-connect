@@ -2,9 +2,9 @@
 // The Douglife (Doug Montgomery) licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using ChromaControl.Service.Settings.Services;
+using ChromaConnect.Service.Settings.Services;
 
-namespace ChromaControl.Service.Settings;
+namespace ChromaConnect.Service.Settings;
 
 /// <summary>
 /// Settings extension methods.

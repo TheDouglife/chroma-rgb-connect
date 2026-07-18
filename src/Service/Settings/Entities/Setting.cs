@@ -5,7 +5,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace ChromaControl.Service.Settings.Entities;
+namespace ChromaConnect.Service.Settings.Entities;
 
 /// <summary>
 /// A setting.

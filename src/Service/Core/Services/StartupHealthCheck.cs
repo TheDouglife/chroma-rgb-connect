@@ -2,10 +2,10 @@
 // The Douglife (Doug Montgomery) licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using ChromaControl.Common.Extensions;
+using ChromaConnect.Common.Extensions;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 
-namespace ChromaControl.Service.Core.Services;
+namespace ChromaConnect.Service.Core.Services;
 
 /// <summary>
 /// Exposes startup readiness and degraded state via health checks.
@@ -13,7 +13,7 @@ namespace ChromaControl.Service.Core.Services;
 public sealed class StartupHealthCheck : IHealthCheck
 {
     private readonly ServiceStartupState _startupState;
-    private readonly ChromaControlTransportOptions _transportOptions;
+    private readonly ChromaConnectTransportOptions _transportOptions;
     private readonly IReadOnlyList<string> _transportWarnings;
 
     /// <summary>
@@ -24,8 +24,8 @@ public sealed class StartupHealthCheck : IHealthCheck
     public StartupHealthCheck(ServiceStartupState startupState, IConfiguration configuration)
     {
         _startupState = startupState;
-        _transportOptions = ChromaControlExtensions.ResolveTransportOptions(configuration);
-        _transportWarnings = ChromaControlExtensions.GetTransportConfigurationWarnings(configuration, _transportOptions, forServer: true);
+        _transportOptions = ChromaConnectExtensions.ResolveTransportOptions(configuration);
+        _transportWarnings = ChromaConnectExtensions.GetTransportConfigurationWarnings(configuration, _transportOptions, forServer: true);
     }
 
     /// <inheritdoc/>
@@ -38,8 +38,8 @@ public sealed class StartupHealthCheck : IHealthCheck
             ["status"] = snapshot.Status.ToString(),
             ["updatedAtUtc"] = snapshot.UpdatedAtUtc.ToString("O"),
             ["stopRequested"] = snapshot.StopRequested,
-            ["transportMode"] = ChromaControlExtensions.GetTransportModeLabel(_transportOptions),
-            ["transportEndpoint"] = ChromaControlExtensions.GetTransportEndpointLabel(_transportOptions, forServer: true)
+            ["transportMode"] = ChromaConnectExtensions.GetTransportModeLabel(_transportOptions),
+            ["transportEndpoint"] = ChromaConnectExtensions.GetTransportEndpointLabel(_transportOptions, forServer: true)
         };
 
         if (_transportOptions.UseNamedPipes)

@@ -2,16 +2,16 @@
 // The Douglife (Doug Montgomery) licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using ChromaControl.SDK.OpenRGB;
-using ChromaControl.SDK.Synapse;
-using ChromaControl.SDK.Synapse.Enums;
-using ChromaControl.Service.Data;
-using ChromaControl.Service.Data.Extensions;
-using ChromaControl.Service.Lighting.Services;
+using ChromaConnect.SDK.OpenRGB;
+using ChromaConnect.SDK.Synapse;
+using ChromaConnect.SDK.Synapse.Enums;
+using ChromaConnect.Service.Data;
+using ChromaConnect.Service.Data.Extensions;
+using ChromaConnect.Service.Lighting.Services;
 using System.Drawing;
 using System.Threading.Channels;
 
-namespace ChromaControl.Service.Lighting.Workers;
+namespace ChromaConnect.Service.Lighting.Workers;
 
 /// <summary>
 /// The lighting worker.
@@ -36,7 +36,7 @@ public partial class LightingWorker : IHostedService
     private CancellationTokenSource? _processingTokenSource;
     private Task? _processingTask;
     private bool _isRunning;
-    private IReadOnlyList<SDK.OpenRGB.Structs.OpenRGBDevice> _devices = [];
+    private IReadOnlyList<ChromaConnect.SDK.OpenRGB.Structs.OpenRGBDevice> _devices = [];
 
     [LoggerMessage(0, LogLevel.Information, "Connected to Synapse...", EventName = "SynapseConnected")]
     private static partial void LogSynapseConnected(ILogger logger);
@@ -109,7 +109,7 @@ public partial class LightingWorker : IHostedService
         _processingTokenSource = null;
     }
 
-    private void DeviceListUpdated(object? sender, IReadOnlyList<SDK.OpenRGB.Structs.OpenRGBDevice> e)
+    private void DeviceListUpdated(object? sender, IReadOnlyList<ChromaConnect.SDK.OpenRGB.Structs.OpenRGBDevice> e)
     {
         lock (_devicesLock)
         {
@@ -183,7 +183,7 @@ public partial class LightingWorker : IHostedService
 
     private async Task ApplyColorsAsync(Color[] colors, CancellationToken cancellationToken)
     {
-        IReadOnlyList<SDK.OpenRGB.Structs.OpenRGBDevice> devices;
+        IReadOnlyList<ChromaConnect.SDK.OpenRGB.Structs.OpenRGBDevice> devices;
 
         lock (_devicesLock)
         {

@@ -2,11 +2,11 @@
 // The Douglife (Doug Montgomery) licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using ChromaControl.App.Tutorials.Queries;
+using ChromaConnect.App.Tutorials.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Components;
 
-namespace ChromaControl.App.Shell.Components;
+namespace ChromaConnect.App.Shell.Components;
 
 /// <summary>
 /// The routes component.

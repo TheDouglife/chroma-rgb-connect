@@ -2,12 +2,12 @@
 // The Douglife (Doug Montgomery) licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using ChromaControl.Common.Protos.Settings;
+using ChromaConnect.Common.Protos.Settings;
 using Google.Protobuf.WellKnownTypes;
 using NetSparkleUpdater.Configurations;
 using NetSparkleUpdater.Interfaces;
 
-namespace ChromaControl.App.Updater.Sparkle;
+namespace ChromaConnect.App.Updater.Sparkle;
 
 /// <summary>
 /// The update configuration.

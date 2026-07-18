@@ -2,8 +2,8 @@
 // The Douglife (Doug Montgomery) licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using ChromaControl.Common.Protos.Settings;
-using ChromaControl.Service.Data.Services;
+using ChromaConnect.Common.Protos.Settings;
+using ChromaConnect.Service.Data.Services;
 using Grpc.Net.Client;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
@@ -11,7 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using System.Text.Json;
 
-namespace ChromaControl.Service.Tests;
+namespace ChromaConnect.Service.Tests;
 
 public sealed class ServiceGrpcIntegrationTests : IClassFixture<ServiceWebApplicationFactory>
 {
@@ -71,11 +71,11 @@ public sealed class ServiceGrpcIntegrationTests : IClassFixture<ServiceWebApplic
 
 public sealed class ServiceWebApplicationFactory : WebApplicationFactory<Program>
 {
-    private readonly string _singleInstanceName = $"ChromaControl.Service.Tests.Factory.{Guid.NewGuid():N}";
+    private readonly string _singleInstanceName = $"ChromaConnect.Service.Tests.Factory.{Guid.NewGuid():N}";
 
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
-        Environment.SetEnvironmentVariable("CHROMACONTROL_SINGLE_INSTANCE_NAME", _singleInstanceName);
+        Environment.SetEnvironmentVariable("CHROMACONNECT_SINGLE_INSTANCE_NAME", _singleInstanceName);
         builder.UseEnvironment("Development");
 
         builder.ConfigureAppConfiguration((_, config) =>
@@ -84,7 +84,7 @@ public sealed class ServiceWebApplicationFactory : WebApplicationFactory<Program
 
             config.AddInMemoryCollection(new Dictionary<string, string?>
             {
-                ["ChromaControl:SingleInstanceName"] = $"ChromaControl.Service.Tests.{Guid.NewGuid():N}",
+                ["ChromaConnect:SingleInstanceName"] = $"ChromaConnect.Service.Tests.{Guid.NewGuid():N}",
                 ["Service:Transport:UseNamedPipes"] = "false",
                 ["Service:Transport:Port"] = "0",
                 ["ConnectionStrings:Database"] = $"Data Source={testDatabasePath}",
@@ -109,7 +109,7 @@ public sealed class ServiceWebApplicationFactory : WebApplicationFactory<Program
 
     protected override void Dispose(bool disposing)
     {
-        Environment.SetEnvironmentVariable("CHROMACONTROL_SINGLE_INSTANCE_NAME", null);
+        Environment.SetEnvironmentVariable("CHROMACONNECT_SINGLE_INSTANCE_NAME", null);
         base.Dispose(disposing);
     }
 }

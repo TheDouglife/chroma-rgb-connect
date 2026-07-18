@@ -4,7 +4,7 @@
 
 using Microsoft.AspNetCore.Components;
 
-namespace ChromaControl.App.Shell.Services;
+namespace ChromaConnect.App.Shell.Services;
 
 /// <summary>
 /// The notification service.

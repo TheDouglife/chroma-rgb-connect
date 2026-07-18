@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Common\ChromaControl.Common.csproj" />
+    <ProjectReference Include="..\Common\ChromaConnect.Common.csproj" />
   </ItemGroup>
 
 </Project>

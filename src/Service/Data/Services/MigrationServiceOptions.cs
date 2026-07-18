@@ -2,7 +2,7 @@
 // The Douglife (Doug Montgomery) licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-namespace ChromaControl.Service.Data.Services;
+namespace ChromaConnect.Service.Data.Services;
 
 /// <summary>
 /// Configuration options for <see cref="MigrationService"/> startup behavior.

@@ -9,9 +9,9 @@ using MediatR.Pipeline;
 using Microsoft.Extensions.Logging.Abstractions;
 using static CommonTypeUnions.Extensions.ResultExtensions;
 
-using ChromaControl.App.Core.Mediator;
+using ChromaConnect.App.Core.Mediator;
 
-namespace ChromaControl.App.Tests;
+namespace ChromaConnect.App.Tests;
 
 public class GlobalExceptionHandlerTests
 {

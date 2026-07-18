@@ -4,7 +4,7 @@
 
 using Microsoft.EntityFrameworkCore;
 
-namespace ChromaControl.Service.Data.Services;
+namespace ChromaConnect.Service.Data.Services;
 
 /// <summary>
 /// Runs startup database initialization for the configuration database.

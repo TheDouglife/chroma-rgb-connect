@@ -4,7 +4,7 @@
 
 using Microsoft.AspNetCore.Components;
 
-namespace ChromaControl.App.Lighting.Components;
+namespace ChromaConnect.App.Lighting.Components;
 
 /// <summary>
 /// The device group component.

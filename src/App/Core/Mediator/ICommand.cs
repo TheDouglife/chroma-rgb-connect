@@ -4,7 +4,7 @@
 
 using MediatR;
 
-namespace ChromaControl.App.Core.Mediator;
+namespace ChromaConnect.App.Core.Mediator;
 
 /// <summary>
 /// Marker interface to represent a command with a void response.

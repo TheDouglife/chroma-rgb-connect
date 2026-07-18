@@ -10,8 +10,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ChromaControl.SDK.OpenRGB" />
-    <PackageReference Include="ChromaControl.SDK.Synapse" />
     <PackageReference Include="Grpc.AspNetCore" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
       <PrivateAssets>all</PrivateAssets>
@@ -26,7 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Common\ChromaControl.Common.csproj" />
+    <ProjectReference Include="..\Common\ChromaConnect.Common.csproj" />
+    <ProjectReference Include="$(ChromaConnectSdkRoot)\src\ChromaConnect.SDK.OpenRGB\ChromaConnect.SDK.OpenRGB.csproj" />
+    <ProjectReference Include="$(ChromaConnectSdkRoot)\src\ChromaConnect.SDK.Synapse\ChromaConnect.SDK.Synapse.csproj" />
   </ItemGroup>
 
 </Project>

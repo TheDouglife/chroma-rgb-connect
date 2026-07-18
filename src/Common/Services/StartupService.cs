@@ -2,12 +2,12 @@
 // The Douglife (Doug Montgomery) licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using ChromaControl.Common.Extensions;
+using ChromaConnect.Common.Extensions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace ChromaControl.Common.Services;
+namespace ChromaConnect.Common.Services;
 
 /// <summary>
 /// The Chroma Control startup service.
@@ -40,15 +40,15 @@ internal sealed partial class StartupService : IHostedService
     /// <inheritdoc/>
     public Task StartAsync(CancellationToken cancellationToken)
     {
-        var transportOptions = ChromaControlExtensions.ResolveTransportOptions(_configuration);
-        var transportWarnings = ChromaControlExtensions.GetTransportConfigurationWarnings(_configuration, transportOptions, forServer: true);
+        var transportOptions = ChromaConnectExtensions.ResolveTransportOptions(_configuration);
+        var transportWarnings = ChromaConnectExtensions.GetTransportConfigurationWarnings(_configuration, transportOptions, forServer: true);
 
-        LogStartup(_logger, "version", _configuration.GetSection("ChromaControl")["VERSION"]);
+        LogStartup(_logger, "version", _configuration.GetSection("ChromaConnect")["VERSION"]);
         LogStartup(_logger, "environment", _hostEnvironment.EnvironmentName);
-        LogStartup(_logger, "app path", _configuration.GetChromaControlPath("app").Trim('\\'));
-        LogStartup(_logger, "data path", _configuration.GetChromaControlPath("data"));
-        LogStartup(_logger, "transport mode", ChromaControlExtensions.GetTransportModeLabel(transportOptions));
-        LogStartup(_logger, "transport endpoint", ChromaControlExtensions.GetTransportEndpointLabel(transportOptions, forServer: true));
+        LogStartup(_logger, "app path", _configuration.GetChromaConnectPath("app").Trim('\\'));
+        LogStartup(_logger, "data path", _configuration.GetChromaConnectPath("data"));
+        LogStartup(_logger, "transport mode", ChromaConnectExtensions.GetTransportModeLabel(transportOptions));
+        LogStartup(_logger, "transport endpoint", ChromaConnectExtensions.GetTransportEndpointLabel(transportOptions, forServer: true));
 
         if (transportOptions.UseNamedPipes)
         {

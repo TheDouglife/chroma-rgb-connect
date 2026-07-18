@@ -4,7 +4,7 @@
 
 using Microsoft.AspNetCore.Components;
 
-namespace ChromaControl.App.Tutorials.Scaffolds;
+namespace ChromaConnect.App.Tutorials.Scaffolds;
 
 /// <summary>
 /// The tutorial scaffold.

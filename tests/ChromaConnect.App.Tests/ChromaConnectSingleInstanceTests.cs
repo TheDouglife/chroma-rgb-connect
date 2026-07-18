@@ -2,18 +2,18 @@
 // The Douglife (Doug Montgomery) licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using ChromaControl.Common.Extensions;
+using ChromaConnect.Common.Extensions;
 
-namespace ChromaControl.App.Tests;
+namespace ChromaConnect.App.Tests;
 
-public class ChromaControlSingleInstanceTests
+public class ChromaConnectSingleInstanceTests
 {
     [Fact]
     public void AcquireSingleInstanceMutexReturnsMutexForUniqueName()
     {
-        var applicationName = $"ChromaControl.Tests.{Guid.NewGuid():N}";
+        var applicationName = $"ChromaConnect.Tests.{Guid.NewGuid():N}";
 
-        using var mutex = ChromaControlExtensions.AcquireSingleInstanceMutex(applicationName);
+        using var mutex = ChromaConnectExtensions.AcquireSingleInstanceMutex(applicationName);
 
         Assert.NotNull(mutex);
     }
@@ -21,10 +21,10 @@ public class ChromaControlSingleInstanceTests
     [Fact]
     public void AcquireSingleInstanceMutexThrowsWhenNameIsAlreadyHeld()
     {
-        var applicationName = $"ChromaControl.Tests.{Guid.NewGuid():N}";
-        using var mutex = ChromaControlExtensions.AcquireSingleInstanceMutex(applicationName);
+        var applicationName = $"ChromaConnect.Tests.{Guid.NewGuid():N}";
+        using var mutex = ChromaConnectExtensions.AcquireSingleInstanceMutex(applicationName);
 
-        var exception = Assert.Throws<InvalidOperationException>(() => ChromaControlExtensions.AcquireSingleInstanceMutex(applicationName));
+        var exception = Assert.Throws<InvalidOperationException>(() => ChromaConnectExtensions.AcquireSingleInstanceMutex(applicationName));
 
         Assert.Contains(applicationName, exception.Message, StringComparison.Ordinal);
     }
@@ -32,7 +32,7 @@ public class ChromaControlSingleInstanceTests
     [Fact]
     public void AcquireSingleInstanceMutexFallsBackForBlankName()
     {
-        using var mutex = ChromaControlExtensions.AcquireSingleInstanceMutex("   ");
+        using var mutex = ChromaConnectExtensions.AcquireSingleInstanceMutex("   ");
 
         Assert.NotNull(mutex);
     }

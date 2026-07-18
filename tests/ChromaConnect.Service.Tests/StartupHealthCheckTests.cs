@@ -2,11 +2,11 @@
 // The Douglife (Doug Montgomery) licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using ChromaControl.Service.Core.Services;
+using ChromaConnect.Service.Core.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 
-namespace ChromaControl.Service.Tests;
+namespace ChromaConnect.Service.Tests;
 
 public class StartupHealthCheckTests
 {
@@ -40,7 +40,7 @@ public class StartupHealthCheckTests
 
         var configuration = new ConfigurationManager();
         configuration["Service:Transport:UseNamedPipes"] = "true";
-        configuration["Service:Transport:PipeName"] = "ChromaControl";
+        configuration["Service:Transport:PipeName"] = "ChromaConnect";
 
         var healthCheck = new StartupHealthCheck(startupState, configuration);
 

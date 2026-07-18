@@ -2,7 +2,7 @@
 // The Douglife (Doug Montgomery) licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-namespace ChromaControl.App.Updater.Services;
+namespace ChromaConnect.App.Updater.Services;
 
 /// <summary>
 /// The update worker.

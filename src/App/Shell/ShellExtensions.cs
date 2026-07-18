@@ -3,10 +3,10 @@
 // See the LICENSE file in the project root for more information.
 
 using BlazorDesktop.Hosting;
-using ChromaControl.App.Shell.Services;
+using ChromaConnect.App.Shell.Services;
 using Microsoft.AspNetCore.Components.Web;
 
-namespace ChromaControl.App.Shell;
+namespace ChromaConnect.App.Shell;
 
 /// <summary>
 /// Shell extension methods.

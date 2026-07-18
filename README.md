@@ -29,7 +29,7 @@ Hardware support depends on the devices and providers supported by the bundled O
 
 ### Recommended: Windows installer
 
-1. Download the latest [`ChromaControlSetup` installer](https://thedouglife.github.io/chroma-rgb-connect/installer/) or choose an installer from the [GitHub Releases](https://github.com/TheDouglife/chroma-rgb-connect/releases) page.
+1. Download the latest [`ChromaConnectSetup` installer](https://thedouglife.github.io/chroma-rgb-connect/installer/) or choose an installer from the [GitHub Releases](https://github.com/TheDouglife/chroma-rgb-connect/releases) page.
 2. Run the installer as an administrator.
 3. Complete the prerequisite checks if the Microsoft Visual C++ runtime or Microsoft Edge WebView2 Runtime is missing.
 4. Launch **Chroma RGB Connect** and follow the in-app setup flow.
@@ -43,19 +43,22 @@ The installer targets 64-bit Windows and is intended for Windows 10 or later. Cl
 - Windows 10 or later, x64
 - [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
 - Visual Studio 2022 or another editor with .NET development support
+- Sibling checkouts of `ChromaConnect-SDK` and `ChromaConnect-Native` next to this repository
+
+Clone the SDK and Native repositories beside this repository before restoring. The default locations are `..\ChromaConnect-SDK` and `..\ChromaConnect-Native`; CI can provide different locations with the `ChromaConnectSdkRoot` and `ChromaConnectNativeRoot` MSBuild properties.
 
 Restore dependencies, build the solution, and run the test suite from the repository root:
 
 ```powershell
-dotnet restore ChromaControl.sln
-dotnet build ChromaControl.sln -c Release
-dotnet test ChromaControl.sln -c Release --no-build
+dotnet restore ChromaConnect.sln
+dotnet build ChromaConnect.sln -c Release
+dotnet test ChromaConnect.sln -c Release --no-build
 ```
 
 To build the Windows app for its release runtime:
 
 ```powershell
-dotnet build src/App/ChromaControl.App.csproj -c Release -r win-x64
+dotnet build src/App/ChromaConnect.App.csproj -c Release -r win-x64
 ```
 
 The repository is organized into the desktop app, local service, shared code, installer, and test projects under `src/` and `tests/`.

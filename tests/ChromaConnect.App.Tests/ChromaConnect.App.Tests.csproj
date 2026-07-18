@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\App\ChromaControl.App.csproj" />
+    <ProjectReference Include="..\..\src\App\ChromaConnect.App.csproj" />
   </ItemGroup>
 
   <ItemGroup>

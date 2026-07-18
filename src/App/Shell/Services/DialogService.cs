@@ -2,10 +2,10 @@
 // The Douglife (Doug Montgomery) licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using ChromaControl.App.Shell.Components;
+using ChromaConnect.App.Shell.Components;
 using Microsoft.AspNetCore.Components;
 
-namespace ChromaControl.App.Shell.Services;
+namespace ChromaConnect.App.Shell.Services;
 
 /// <summary>
 /// The dialog service.

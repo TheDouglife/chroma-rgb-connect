@@ -5,15 +5,15 @@
 global using static CommonTypeUnions.Extensions.ResultExtensions;
 global using CommonTypeUnions.Unions;
 using BlazorDesktop.Hosting;
-using ChromaControl.App.Core.Services;
-using ChromaControl.Common.Extensions;
+using ChromaConnect.App.Core.Services;
+using ChromaConnect.Common.Extensions;
 using OpenTelemetry;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Trace;
 using System.Diagnostics;
 using System.IO;
 
-namespace ChromaControl.App.Core;
+namespace ChromaConnect.App.Core;
 
 /// <summary>
 /// Core extension methods.
@@ -27,7 +27,7 @@ public static class CoreExtensions
     /// <returns>The <see cref="BlazorDesktopHostBuilder"/> to continue adding configuration to.</returns>
     public static BlazorDesktopHostBuilder ConfigureCore(this BlazorDesktopHostBuilder builder)
     {
-        builder.ConfigureChromaControl()
+        builder.ConfigureChromaConnect()
             .ConfigureBackgroundServices()
             .ConfigureTelemetry()
             .ConfigureMediatr()
@@ -37,11 +37,11 @@ public static class CoreExtensions
         return builder;
     }
 
-    private static BlazorDesktopHostBuilder ConfigureChromaControl(this BlazorDesktopHostBuilder builder)
+    private static BlazorDesktopHostBuilder ConfigureChromaConnect(this BlazorDesktopHostBuilder builder)
     {
-        builder.Configuration.AddChromaControlConfiguration();
-        builder.Services.AddChromaControlServices("ChromaControl.App");
-        builder.Logging.AddChromaControlLogging(builder.Configuration);
+        builder.Configuration.AddChromaConnectConfiguration();
+        builder.Services.AddChromaConnectServices("ChromaConnect.App");
+        builder.Logging.AddChromaConnectLogging(builder.Configuration);
 
         return builder;
     }
@@ -105,7 +105,7 @@ public static class CoreExtensions
             http.AddStandardResilienceHandler();
             http.ConfigureHttpClient(client =>
             {
-                client.DefaultRequestHeaders.Add("User-Agent", $"ChromaControl/{appVersion}");
+                client.DefaultRequestHeaders.Add("User-Agent", $"ChromaConnect/{appVersion}");
             });
         });
 

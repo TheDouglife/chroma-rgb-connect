@@ -2,8 +2,8 @@
 // The Douglife (Doug Montgomery) licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using ChromaControl.Common.Extensions;
-using ChromaControl.Service.Core.Services;
+using ChromaConnect.Common.Extensions;
+using ChromaConnect.Service.Core.Services;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using OpenTelemetry;
 using OpenTelemetry.Metrics;
@@ -12,7 +12,7 @@ using System.IO.Pipes;
 using System.Security.AccessControl;
 using System.Security.Principal;
 
-namespace ChromaControl.Service.Core;
+namespace ChromaConnect.Service.Core;
 
 /// <summary>
 /// Core extension methods.
@@ -26,7 +26,7 @@ public static class CoreExtensions
     /// <returns>The <see cref="IHostApplicationBuilder"/> to continue adding configuration to.</returns>
     public static IHostApplicationBuilder ConfigureCore(this IHostApplicationBuilder builder)
     {
-        builder.ConfigureChromaControl()
+        builder.ConfigureChromaConnect()
             .ConfigureTelemetry()
             .ConfigureGrpc()
             .ConfigureHealth()
@@ -35,15 +35,15 @@ public static class CoreExtensions
         return builder;
     }
 
-    private static IHostApplicationBuilder ConfigureChromaControl(this IHostApplicationBuilder builder)
+    private static IHostApplicationBuilder ConfigureChromaConnect(this IHostApplicationBuilder builder)
     {
-        builder.Configuration.AddChromaControlConfiguration();
-        var environmentSingleInstanceName = Environment.GetEnvironmentVariable("CHROMACONTROL_SINGLE_INSTANCE_NAME");
-        var configuredSingleInstanceName = builder.Configuration["ChromaControl:SingleInstanceName"];
-        var singleInstanceName = environmentSingleInstanceName ?? configuredSingleInstanceName ?? "ChromaControl.Service";
+        builder.Configuration.AddChromaConnectConfiguration();
+        var environmentSingleInstanceName = Environment.GetEnvironmentVariable("CHROMACONNECT_SINGLE_INSTANCE_NAME");
+        var configuredSingleInstanceName = builder.Configuration["ChromaConnect:SingleInstanceName"];
+        var singleInstanceName = environmentSingleInstanceName ?? configuredSingleInstanceName ?? "ChromaConnect.Service";
 
-        builder.Services.AddChromaControlServices(singleInstanceName);
-        builder.Logging.AddChromaControlLogging(builder.Configuration);
+        builder.Services.AddChromaConnectServices(singleInstanceName);
+        builder.Logging.AddChromaConnectLogging(builder.Configuration);
 
         return builder;
     }
@@ -104,7 +104,7 @@ public static class CoreExtensions
             throw new ArgumentException("Named pipes can only be configured on a WebApplicationBuilder.");
         }
 
-        var transportOptions = ChromaControlExtensions.ResolveTransportOptions(builder.Configuration);
+        var transportOptions = ChromaConnectExtensions.ResolveTransportOptions(builder.Configuration);
 
         if (transportOptions.UseNamedPipes)
         {

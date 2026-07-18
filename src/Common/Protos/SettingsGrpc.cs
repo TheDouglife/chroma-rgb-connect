@@ -7,10 +7,10 @@
 
 using grpc = global::Grpc.Core;
 
-namespace ChromaControl.Common.Protos.Settings {
+namespace ChromaConnect.Common.Protos.Settings {
   public static partial class SettingsGrpc
   {
-    static readonly string __ServiceName = "chromacontrol.settings.SettingsGrpc";
+    static readonly string __ServiceName = "chromaconnect.settings.SettingsGrpc";
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static void __Helper_SerializeMessage(global::Google.Protobuf.IMessage message, grpc::SerializationContext context)
@@ -46,74 +46,74 @@ namespace ChromaControl.Common.Protos.Settings {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::ChromaControl.Common.Protos.Settings.GetSettingRequest> __Marshaller_chromacontrol_settings_GetSettingRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaControl.Common.Protos.Settings.GetSettingRequest.Parser));
+    static readonly grpc::Marshaller<global::ChromaConnect.Common.Protos.Settings.GetSettingRequest> __Marshaller_chromaconnect_settings_GetSettingRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaConnect.Common.Protos.Settings.GetSettingRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::ChromaControl.Common.Protos.Settings.StringSettingResponse> __Marshaller_chromacontrol_settings_StringSettingResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaControl.Common.Protos.Settings.StringSettingResponse.Parser));
+    static readonly grpc::Marshaller<global::ChromaConnect.Common.Protos.Settings.StringSettingResponse> __Marshaller_chromaconnect_settings_StringSettingResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaConnect.Common.Protos.Settings.StringSettingResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::ChromaControl.Common.Protos.Settings.BoolSettingResponse> __Marshaller_chromacontrol_settings_BoolSettingResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaControl.Common.Protos.Settings.BoolSettingResponse.Parser));
+    static readonly grpc::Marshaller<global::ChromaConnect.Common.Protos.Settings.BoolSettingResponse> __Marshaller_chromaconnect_settings_BoolSettingResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaConnect.Common.Protos.Settings.BoolSettingResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::ChromaControl.Common.Protos.Settings.DateTimeSettingResponse> __Marshaller_chromacontrol_settings_DateTimeSettingResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaControl.Common.Protos.Settings.DateTimeSettingResponse.Parser));
+    static readonly grpc::Marshaller<global::ChromaConnect.Common.Protos.Settings.DateTimeSettingResponse> __Marshaller_chromaconnect_settings_DateTimeSettingResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaConnect.Common.Protos.Settings.DateTimeSettingResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::ChromaControl.Common.Protos.Settings.SetStringRequest> __Marshaller_chromacontrol_settings_SetStringRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaControl.Common.Protos.Settings.SetStringRequest.Parser));
+    static readonly grpc::Marshaller<global::ChromaConnect.Common.Protos.Settings.SetStringRequest> __Marshaller_chromaconnect_settings_SetStringRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaConnect.Common.Protos.Settings.SetStringRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::ChromaControl.Common.Protos.Settings.EmptyMessage> __Marshaller_chromacontrol_settings_EmptyMessage = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaControl.Common.Protos.Settings.EmptyMessage.Parser));
+    static readonly grpc::Marshaller<global::ChromaConnect.Common.Protos.Settings.EmptyMessage> __Marshaller_chromaconnect_settings_EmptyMessage = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaConnect.Common.Protos.Settings.EmptyMessage.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::ChromaControl.Common.Protos.Settings.SetBoolRequest> __Marshaller_chromacontrol_settings_SetBoolRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaControl.Common.Protos.Settings.SetBoolRequest.Parser));
+    static readonly grpc::Marshaller<global::ChromaConnect.Common.Protos.Settings.SetBoolRequest> __Marshaller_chromaconnect_settings_SetBoolRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaConnect.Common.Protos.Settings.SetBoolRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::ChromaControl.Common.Protos.Settings.SetDateTimeRequest> __Marshaller_chromacontrol_settings_SetDateTimeRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaControl.Common.Protos.Settings.SetDateTimeRequest.Parser));
+    static readonly grpc::Marshaller<global::ChromaConnect.Common.Protos.Settings.SetDateTimeRequest> __Marshaller_chromaconnect_settings_SetDateTimeRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaConnect.Common.Protos.Settings.SetDateTimeRequest.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::ChromaControl.Common.Protos.Settings.GetSettingRequest, global::ChromaControl.Common.Protos.Settings.StringSettingResponse> __Method_GetString = new grpc::Method<global::ChromaControl.Common.Protos.Settings.GetSettingRequest, global::ChromaControl.Common.Protos.Settings.StringSettingResponse>(
+    static readonly grpc::Method<global::ChromaConnect.Common.Protos.Settings.GetSettingRequest, global::ChromaConnect.Common.Protos.Settings.StringSettingResponse> __Method_GetString = new grpc::Method<global::ChromaConnect.Common.Protos.Settings.GetSettingRequest, global::ChromaConnect.Common.Protos.Settings.StringSettingResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetString",
-        __Marshaller_chromacontrol_settings_GetSettingRequest,
-        __Marshaller_chromacontrol_settings_StringSettingResponse);
+        __Marshaller_chromaconnect_settings_GetSettingRequest,
+        __Marshaller_chromaconnect_settings_StringSettingResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::ChromaControl.Common.Protos.Settings.GetSettingRequest, global::ChromaControl.Common.Protos.Settings.BoolSettingResponse> __Method_GetBool = new grpc::Method<global::ChromaControl.Common.Protos.Settings.GetSettingRequest, global::ChromaControl.Common.Protos.Settings.BoolSettingResponse>(
+    static readonly grpc::Method<global::ChromaConnect.Common.Protos.Settings.GetSettingRequest, global::ChromaConnect.Common.Protos.Settings.BoolSettingResponse> __Method_GetBool = new grpc::Method<global::ChromaConnect.Common.Protos.Settings.GetSettingRequest, global::ChromaConnect.Common.Protos.Settings.BoolSettingResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetBool",
-        __Marshaller_chromacontrol_settings_GetSettingRequest,
-        __Marshaller_chromacontrol_settings_BoolSettingResponse);
+        __Marshaller_chromaconnect_settings_GetSettingRequest,
+        __Marshaller_chromaconnect_settings_BoolSettingResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::ChromaControl.Common.Protos.Settings.GetSettingRequest, global::ChromaControl.Common.Protos.Settings.DateTimeSettingResponse> __Method_GetDateTime = new grpc::Method<global::ChromaControl.Common.Protos.Settings.GetSettingRequest, global::ChromaControl.Common.Protos.Settings.DateTimeSettingResponse>(
+    static readonly grpc::Method<global::ChromaConnect.Common.Protos.Settings.GetSettingRequest, global::ChromaConnect.Common.Protos.Settings.DateTimeSettingResponse> __Method_GetDateTime = new grpc::Method<global::ChromaConnect.Common.Protos.Settings.GetSettingRequest, global::ChromaConnect.Common.Protos.Settings.DateTimeSettingResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetDateTime",
-        __Marshaller_chromacontrol_settings_GetSettingRequest,
-        __Marshaller_chromacontrol_settings_DateTimeSettingResponse);
+        __Marshaller_chromaconnect_settings_GetSettingRequest,
+        __Marshaller_chromaconnect_settings_DateTimeSettingResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::ChromaControl.Common.Protos.Settings.SetStringRequest, global::ChromaControl.Common.Protos.Settings.EmptyMessage> __Method_SetString = new grpc::Method<global::ChromaControl.Common.Protos.Settings.SetStringRequest, global::ChromaControl.Common.Protos.Settings.EmptyMessage>(
+    static readonly grpc::Method<global::ChromaConnect.Common.Protos.Settings.SetStringRequest, global::ChromaConnect.Common.Protos.Settings.EmptyMessage> __Method_SetString = new grpc::Method<global::ChromaConnect.Common.Protos.Settings.SetStringRequest, global::ChromaConnect.Common.Protos.Settings.EmptyMessage>(
         grpc::MethodType.Unary,
         __ServiceName,
         "SetString",
-        __Marshaller_chromacontrol_settings_SetStringRequest,
-        __Marshaller_chromacontrol_settings_EmptyMessage);
+        __Marshaller_chromaconnect_settings_SetStringRequest,
+        __Marshaller_chromaconnect_settings_EmptyMessage);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::ChromaControl.Common.Protos.Settings.SetBoolRequest, global::ChromaControl.Common.Protos.Settings.EmptyMessage> __Method_SetBool = new grpc::Method<global::ChromaControl.Common.Protos.Settings.SetBoolRequest, global::ChromaControl.Common.Protos.Settings.EmptyMessage>(
+    static readonly grpc::Method<global::ChromaConnect.Common.Protos.Settings.SetBoolRequest, global::ChromaConnect.Common.Protos.Settings.EmptyMessage> __Method_SetBool = new grpc::Method<global::ChromaConnect.Common.Protos.Settings.SetBoolRequest, global::ChromaConnect.Common.Protos.Settings.EmptyMessage>(
         grpc::MethodType.Unary,
         __ServiceName,
         "SetBool",
-        __Marshaller_chromacontrol_settings_SetBoolRequest,
-        __Marshaller_chromacontrol_settings_EmptyMessage);
+        __Marshaller_chromaconnect_settings_SetBoolRequest,
+        __Marshaller_chromaconnect_settings_EmptyMessage);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::ChromaControl.Common.Protos.Settings.SetDateTimeRequest, global::ChromaControl.Common.Protos.Settings.EmptyMessage> __Method_SetDateTime = new grpc::Method<global::ChromaControl.Common.Protos.Settings.SetDateTimeRequest, global::ChromaControl.Common.Protos.Settings.EmptyMessage>(
+    static readonly grpc::Method<global::ChromaConnect.Common.Protos.Settings.SetDateTimeRequest, global::ChromaConnect.Common.Protos.Settings.EmptyMessage> __Method_SetDateTime = new grpc::Method<global::ChromaConnect.Common.Protos.Settings.SetDateTimeRequest, global::ChromaConnect.Common.Protos.Settings.EmptyMessage>(
         grpc::MethodType.Unary,
         __ServiceName,
         "SetDateTime",
-        __Marshaller_chromacontrol_settings_SetDateTimeRequest,
-        __Marshaller_chromacontrol_settings_EmptyMessage);
+        __Marshaller_chromaconnect_settings_SetDateTimeRequest,
+        __Marshaller_chromaconnect_settings_EmptyMessage);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::ChromaControl.Common.Protos.Settings.SettingsReflection.Descriptor.Services[0]; }
+      get { return global::ChromaConnect.Common.Protos.Settings.SettingsReflection.Descriptor.Services[0]; }
     }
 
     /// <summary>Base class for server-side implementations of SettingsGrpc</summary>
@@ -121,37 +121,37 @@ namespace ChromaControl.Common.Protos.Settings {
     public abstract partial class SettingsGrpcBase
     {
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::ChromaControl.Common.Protos.Settings.StringSettingResponse> GetString(global::ChromaControl.Common.Protos.Settings.GetSettingRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::ChromaConnect.Common.Protos.Settings.StringSettingResponse> GetString(global::ChromaConnect.Common.Protos.Settings.GetSettingRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::ChromaControl.Common.Protos.Settings.BoolSettingResponse> GetBool(global::ChromaControl.Common.Protos.Settings.GetSettingRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::ChromaConnect.Common.Protos.Settings.BoolSettingResponse> GetBool(global::ChromaConnect.Common.Protos.Settings.GetSettingRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::ChromaControl.Common.Protos.Settings.DateTimeSettingResponse> GetDateTime(global::ChromaControl.Common.Protos.Settings.GetSettingRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::ChromaConnect.Common.Protos.Settings.DateTimeSettingResponse> GetDateTime(global::ChromaConnect.Common.Protos.Settings.GetSettingRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::ChromaControl.Common.Protos.Settings.EmptyMessage> SetString(global::ChromaControl.Common.Protos.Settings.SetStringRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::ChromaConnect.Common.Protos.Settings.EmptyMessage> SetString(global::ChromaConnect.Common.Protos.Settings.SetStringRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::ChromaControl.Common.Protos.Settings.EmptyMessage> SetBool(global::ChromaControl.Common.Protos.Settings.SetBoolRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::ChromaConnect.Common.Protos.Settings.EmptyMessage> SetBool(global::ChromaConnect.Common.Protos.Settings.SetBoolRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::ChromaControl.Common.Protos.Settings.EmptyMessage> SetDateTime(global::ChromaControl.Common.Protos.Settings.SetDateTimeRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::ChromaConnect.Common.Protos.Settings.EmptyMessage> SetDateTime(global::ChromaConnect.Common.Protos.Settings.SetDateTimeRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -186,122 +186,122 @@ namespace ChromaControl.Common.Protos.Settings {
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ChromaControl.Common.Protos.Settings.StringSettingResponse GetString(global::ChromaControl.Common.Protos.Settings.GetSettingRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::ChromaConnect.Common.Protos.Settings.StringSettingResponse GetString(global::ChromaConnect.Common.Protos.Settings.GetSettingRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetString(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ChromaControl.Common.Protos.Settings.StringSettingResponse GetString(global::ChromaControl.Common.Protos.Settings.GetSettingRequest request, grpc::CallOptions options)
+      public virtual global::ChromaConnect.Common.Protos.Settings.StringSettingResponse GetString(global::ChromaConnect.Common.Protos.Settings.GetSettingRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_GetString, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ChromaControl.Common.Protos.Settings.StringSettingResponse> GetStringAsync(global::ChromaControl.Common.Protos.Settings.GetSettingRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::ChromaConnect.Common.Protos.Settings.StringSettingResponse> GetStringAsync(global::ChromaConnect.Common.Protos.Settings.GetSettingRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetStringAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ChromaControl.Common.Protos.Settings.StringSettingResponse> GetStringAsync(global::ChromaControl.Common.Protos.Settings.GetSettingRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::ChromaConnect.Common.Protos.Settings.StringSettingResponse> GetStringAsync(global::ChromaConnect.Common.Protos.Settings.GetSettingRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetString, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ChromaControl.Common.Protos.Settings.BoolSettingResponse GetBool(global::ChromaControl.Common.Protos.Settings.GetSettingRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::ChromaConnect.Common.Protos.Settings.BoolSettingResponse GetBool(global::ChromaConnect.Common.Protos.Settings.GetSettingRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetBool(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ChromaControl.Common.Protos.Settings.BoolSettingResponse GetBool(global::ChromaControl.Common.Protos.Settings.GetSettingRequest request, grpc::CallOptions options)
+      public virtual global::ChromaConnect.Common.Protos.Settings.BoolSettingResponse GetBool(global::ChromaConnect.Common.Protos.Settings.GetSettingRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_GetBool, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ChromaControl.Common.Protos.Settings.BoolSettingResponse> GetBoolAsync(global::ChromaControl.Common.Protos.Settings.GetSettingRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::ChromaConnect.Common.Protos.Settings.BoolSettingResponse> GetBoolAsync(global::ChromaConnect.Common.Protos.Settings.GetSettingRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetBoolAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ChromaControl.Common.Protos.Settings.BoolSettingResponse> GetBoolAsync(global::ChromaControl.Common.Protos.Settings.GetSettingRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::ChromaConnect.Common.Protos.Settings.BoolSettingResponse> GetBoolAsync(global::ChromaConnect.Common.Protos.Settings.GetSettingRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetBool, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ChromaControl.Common.Protos.Settings.DateTimeSettingResponse GetDateTime(global::ChromaControl.Common.Protos.Settings.GetSettingRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::ChromaConnect.Common.Protos.Settings.DateTimeSettingResponse GetDateTime(global::ChromaConnect.Common.Protos.Settings.GetSettingRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetDateTime(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ChromaControl.Common.Protos.Settings.DateTimeSettingResponse GetDateTime(global::ChromaControl.Common.Protos.Settings.GetSettingRequest request, grpc::CallOptions options)
+      public virtual global::ChromaConnect.Common.Protos.Settings.DateTimeSettingResponse GetDateTime(global::ChromaConnect.Common.Protos.Settings.GetSettingRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_GetDateTime, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ChromaControl.Common.Protos.Settings.DateTimeSettingResponse> GetDateTimeAsync(global::ChromaControl.Common.Protos.Settings.GetSettingRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::ChromaConnect.Common.Protos.Settings.DateTimeSettingResponse> GetDateTimeAsync(global::ChromaConnect.Common.Protos.Settings.GetSettingRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetDateTimeAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ChromaControl.Common.Protos.Settings.DateTimeSettingResponse> GetDateTimeAsync(global::ChromaControl.Common.Protos.Settings.GetSettingRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::ChromaConnect.Common.Protos.Settings.DateTimeSettingResponse> GetDateTimeAsync(global::ChromaConnect.Common.Protos.Settings.GetSettingRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetDateTime, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ChromaControl.Common.Protos.Settings.EmptyMessage SetString(global::ChromaControl.Common.Protos.Settings.SetStringRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::ChromaConnect.Common.Protos.Settings.EmptyMessage SetString(global::ChromaConnect.Common.Protos.Settings.SetStringRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return SetString(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ChromaControl.Common.Protos.Settings.EmptyMessage SetString(global::ChromaControl.Common.Protos.Settings.SetStringRequest request, grpc::CallOptions options)
+      public virtual global::ChromaConnect.Common.Protos.Settings.EmptyMessage SetString(global::ChromaConnect.Common.Protos.Settings.SetStringRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_SetString, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ChromaControl.Common.Protos.Settings.EmptyMessage> SetStringAsync(global::ChromaControl.Common.Protos.Settings.SetStringRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::ChromaConnect.Common.Protos.Settings.EmptyMessage> SetStringAsync(global::ChromaConnect.Common.Protos.Settings.SetStringRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return SetStringAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ChromaControl.Common.Protos.Settings.EmptyMessage> SetStringAsync(global::ChromaControl.Common.Protos.Settings.SetStringRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::ChromaConnect.Common.Protos.Settings.EmptyMessage> SetStringAsync(global::ChromaConnect.Common.Protos.Settings.SetStringRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_SetString, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ChromaControl.Common.Protos.Settings.EmptyMessage SetBool(global::ChromaControl.Common.Protos.Settings.SetBoolRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::ChromaConnect.Common.Protos.Settings.EmptyMessage SetBool(global::ChromaConnect.Common.Protos.Settings.SetBoolRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return SetBool(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ChromaControl.Common.Protos.Settings.EmptyMessage SetBool(global::ChromaControl.Common.Protos.Settings.SetBoolRequest request, grpc::CallOptions options)
+      public virtual global::ChromaConnect.Common.Protos.Settings.EmptyMessage SetBool(global::ChromaConnect.Common.Protos.Settings.SetBoolRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_SetBool, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ChromaControl.Common.Protos.Settings.EmptyMessage> SetBoolAsync(global::ChromaControl.Common.Protos.Settings.SetBoolRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::ChromaConnect.Common.Protos.Settings.EmptyMessage> SetBoolAsync(global::ChromaConnect.Common.Protos.Settings.SetBoolRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return SetBoolAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ChromaControl.Common.Protos.Settings.EmptyMessage> SetBoolAsync(global::ChromaControl.Common.Protos.Settings.SetBoolRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::ChromaConnect.Common.Protos.Settings.EmptyMessage> SetBoolAsync(global::ChromaConnect.Common.Protos.Settings.SetBoolRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_SetBool, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ChromaControl.Common.Protos.Settings.EmptyMessage SetDateTime(global::ChromaControl.Common.Protos.Settings.SetDateTimeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::ChromaConnect.Common.Protos.Settings.EmptyMessage SetDateTime(global::ChromaConnect.Common.Protos.Settings.SetDateTimeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return SetDateTime(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ChromaControl.Common.Protos.Settings.EmptyMessage SetDateTime(global::ChromaControl.Common.Protos.Settings.SetDateTimeRequest request, grpc::CallOptions options)
+      public virtual global::ChromaConnect.Common.Protos.Settings.EmptyMessage SetDateTime(global::ChromaConnect.Common.Protos.Settings.SetDateTimeRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_SetDateTime, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ChromaControl.Common.Protos.Settings.EmptyMessage> SetDateTimeAsync(global::ChromaControl.Common.Protos.Settings.SetDateTimeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::ChromaConnect.Common.Protos.Settings.EmptyMessage> SetDateTimeAsync(global::ChromaConnect.Common.Protos.Settings.SetDateTimeRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return SetDateTimeAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ChromaControl.Common.Protos.Settings.EmptyMessage> SetDateTimeAsync(global::ChromaControl.Common.Protos.Settings.SetDateTimeRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::ChromaConnect.Common.Protos.Settings.EmptyMessage> SetDateTimeAsync(global::ChromaConnect.Common.Protos.Settings.SetDateTimeRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_SetDateTime, null, options, request);
       }
@@ -334,12 +334,12 @@ namespace ChromaControl.Common.Protos.Settings {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public static void BindService(grpc::ServiceBinderBase serviceBinder, SettingsGrpcBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_GetString, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ChromaControl.Common.Protos.Settings.GetSettingRequest, global::ChromaControl.Common.Protos.Settings.StringSettingResponse>(serviceImpl.GetString));
-      serviceBinder.AddMethod(__Method_GetBool, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ChromaControl.Common.Protos.Settings.GetSettingRequest, global::ChromaControl.Common.Protos.Settings.BoolSettingResponse>(serviceImpl.GetBool));
-      serviceBinder.AddMethod(__Method_GetDateTime, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ChromaControl.Common.Protos.Settings.GetSettingRequest, global::ChromaControl.Common.Protos.Settings.DateTimeSettingResponse>(serviceImpl.GetDateTime));
-      serviceBinder.AddMethod(__Method_SetString, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ChromaControl.Common.Protos.Settings.SetStringRequest, global::ChromaControl.Common.Protos.Settings.EmptyMessage>(serviceImpl.SetString));
-      serviceBinder.AddMethod(__Method_SetBool, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ChromaControl.Common.Protos.Settings.SetBoolRequest, global::ChromaControl.Common.Protos.Settings.EmptyMessage>(serviceImpl.SetBool));
-      serviceBinder.AddMethod(__Method_SetDateTime, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ChromaControl.Common.Protos.Settings.SetDateTimeRequest, global::ChromaControl.Common.Protos.Settings.EmptyMessage>(serviceImpl.SetDateTime));
+      serviceBinder.AddMethod(__Method_GetString, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ChromaConnect.Common.Protos.Settings.GetSettingRequest, global::ChromaConnect.Common.Protos.Settings.StringSettingResponse>(serviceImpl.GetString));
+      serviceBinder.AddMethod(__Method_GetBool, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ChromaConnect.Common.Protos.Settings.GetSettingRequest, global::ChromaConnect.Common.Protos.Settings.BoolSettingResponse>(serviceImpl.GetBool));
+      serviceBinder.AddMethod(__Method_GetDateTime, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ChromaConnect.Common.Protos.Settings.GetSettingRequest, global::ChromaConnect.Common.Protos.Settings.DateTimeSettingResponse>(serviceImpl.GetDateTime));
+      serviceBinder.AddMethod(__Method_SetString, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ChromaConnect.Common.Protos.Settings.SetStringRequest, global::ChromaConnect.Common.Protos.Settings.EmptyMessage>(serviceImpl.SetString));
+      serviceBinder.AddMethod(__Method_SetBool, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ChromaConnect.Common.Protos.Settings.SetBoolRequest, global::ChromaConnect.Common.Protos.Settings.EmptyMessage>(serviceImpl.SetBool));
+      serviceBinder.AddMethod(__Method_SetDateTime, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ChromaConnect.Common.Protos.Settings.SetDateTimeRequest, global::ChromaConnect.Common.Protos.Settings.EmptyMessage>(serviceImpl.SetDateTime));
     }
 
   }

@@ -9,8 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\App\ChromaControl.App.csproj" />
-    <ProjectReference Include="..\Service\ChromaControl.Service.csproj" />
+    <ProjectReference Include="..\App\ChromaConnect.App.csproj" />
+    <ProjectReference Include="..\Service\ChromaConnect.Service.csproj" />
   </ItemGroup>
 
   <Import Project="Build.targets" />

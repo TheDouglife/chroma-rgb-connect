@@ -2,10 +2,10 @@
 // The Douglife (Doug Montgomery) licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using ChromaControl.Service.Core;
-using ChromaControl.Service.Data;
-using ChromaControl.Service.Lighting;
-using ChromaControl.Service.Settings;
+using ChromaConnect.Service.Core;
+using ChromaConnect.Service.Data;
+using ChromaConnect.Service.Lighting;
+using ChromaConnect.Service.Settings;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using System.Text.Json;

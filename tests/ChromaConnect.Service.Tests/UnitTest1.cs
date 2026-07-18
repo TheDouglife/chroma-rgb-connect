@@ -2,14 +2,14 @@
 // The Douglife (Doug Montgomery) licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using ChromaControl.Service.Data.Services;
-using ChromaControl.Service.Core.Services;
+using ChromaConnect.Service.Data.Services;
+using ChromaConnect.Service.Core.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.Extensions.Options;
 
-namespace ChromaControl.Service.Tests;
+namespace ChromaConnect.Service.Tests;
 
 public class MigrationServiceTests
 {

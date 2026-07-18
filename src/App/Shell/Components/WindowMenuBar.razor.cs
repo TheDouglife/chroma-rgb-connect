@@ -3,9 +3,9 @@
 // See the LICENSE file in the project root for more information.
 
 using BlazorDesktop.Wpf;
-using ChromaControl.App.Settings.Components;
-using ChromaControl.App.Shell.Services;
-using ChromaControl.Common.Extensions;
+using ChromaConnect.App.Settings.Components;
+using ChromaConnect.App.Shell.Services;
+using ChromaConnect.Common.Extensions;
 using Microsoft.AspNetCore.Components;
 using Microsoft.Win32;
 using System.Diagnostics;
@@ -14,7 +14,7 @@ using System.IO.Compression;
 using System.Windows;
 using System.Windows.Input;
 
-namespace ChromaControl.App.Shell.Components;
+namespace ChromaConnect.App.Shell.Components;
 
 /// <summary>
 /// The window menu bar component.
@@ -95,7 +95,7 @@ public partial class WindowMenuBar
 
     private static void ReportIssue()
     {
-        OpenUrlOrPath("https://github.com/ChromaControl/ChromaControl/issues/new/choose");
+        OpenUrlOrPath("https://github.com/ChromaConnect/ChromaConnect/issues/new/choose");
     }
 
     private static void ContactSupport()
@@ -127,7 +127,7 @@ public partial class WindowMenuBar
             using var zipStream = new FileStream(fileName, FileMode.Create);
             using var zip = new ZipArchive(zipStream, ZipArchiveMode.Create);
 
-            var dataPath = Configuration.GetChromaControlPath("data");
+            var dataPath = Configuration.GetChromaConnectPath("data");
 
             foreach (var file in Directory.EnumerateFiles(dataPath, "*.*", SearchOption.AllDirectories))
             {
@@ -148,12 +148,12 @@ public partial class WindowMenuBar
 
     private static void ShowUserGuides()
     {
-        OpenUrlOrPath("https://chromacontrol.github.io/docs");
+        OpenUrlOrPath("https://thedouglife.github.io/chroma-rgb-connect/");
     }
 
     private void ShowLogs()
     {
-        OpenUrlOrPath(Configuration.GetChromaControlPath("logs"));
+        OpenUrlOrPath(Configuration.GetChromaConnectPath("logs"));
     }
 
     private void ShowAbout()

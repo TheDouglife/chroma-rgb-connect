@@ -2,10 +2,10 @@
 // The Douglife (Doug Montgomery) licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using ChromaControl.App.Updater.Services;
+using ChromaConnect.App.Updater.Services;
 using Microsoft.AspNetCore.Components;
 
-namespace ChromaControl.App.Updater.Components;
+namespace ChromaConnect.App.Updater.Components;
 
 /// <summary>
 /// The release notes dialog.

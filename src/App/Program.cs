@@ -3,12 +3,12 @@
 // See the LICENSE file in the project root for more information.
 
 using BlazorDesktop.Hosting;
-using ChromaControl.App.Core;
-using ChromaControl.App.Lighting;
-using ChromaControl.App.Settings;
-using ChromaControl.App.Shell;
-using ChromaControl.App.Tutorials;
-using ChromaControl.App.Updater;
+using ChromaConnect.App.Core;
+using ChromaConnect.App.Lighting;
+using ChromaConnect.App.Settings;
+using ChromaConnect.App.Shell;
+using ChromaConnect.App.Tutorials;
+using ChromaConnect.App.Updater;
 using System.IO;
 
 Directory.SetCurrentDirectory(AppContext.BaseDirectory);

@@ -6,9 +6,7 @@
   <ItemGroup>
     <PackageVersion Include="Aspire.Hosting.AppHost" Version="8.2.2" />
     <PackageVersion Include="BlazorDesktop" Version="8.0.8" />
-    <PackageVersion Include="ChromaControl.Keys" Version="1.0.3" />
-    <PackageVersion Include="ChromaControl.SDK.OpenRGB" Version="1.0.6" />
-    <PackageVersion Include="ChromaControl.SDK.Synapse" Version="1.0.6" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0" />
     <PackageVersion Include="CommonTypeUnions" Version="1.0.1" />
     <PackageVersion Include="Google.Protobuf" Version="3.28.3" />
     <PackageVersion Include="Grpc.AspNetCore" Version="2.66.0" />

@@ -2,11 +2,11 @@
 // The Douglife (Doug Montgomery) licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using ChromaControl.App.Shell.Commands;
-using ChromaControl.App.Shell.Queries;
+using ChromaConnect.App.Shell.Commands;
+using ChromaConnect.App.Shell.Queries;
 using MediatR;
 
-namespace ChromaControl.App.Shell.Services;
+namespace ChromaConnect.App.Shell.Services;
 
 /// <summary>
 /// The theme service.

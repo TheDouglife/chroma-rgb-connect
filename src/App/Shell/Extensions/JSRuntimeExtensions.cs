@@ -4,7 +4,7 @@
 
 using Microsoft.JSInterop;
 
-namespace ChromaControl.App.Shell.Extensions;
+namespace ChromaConnect.App.Shell.Extensions;
 
 /// <summary>
 /// <see cref="IJSRuntime"/> extension methods.

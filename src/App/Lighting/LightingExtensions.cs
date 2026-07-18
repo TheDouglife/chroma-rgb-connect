@@ -3,12 +3,12 @@
 // See the LICENSE file in the project root for more information.
 
 using BlazorDesktop.Hosting;
-using ChromaControl.App.Lighting.Services;
-using ChromaControl.Common.Extensions;
-using ChromaControl.Common.Protos.Lighting;
+using ChromaConnect.App.Lighting.Services;
+using ChromaConnect.Common.Extensions;
+using ChromaConnect.Common.Protos.Lighting;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
-namespace ChromaControl.App.Lighting;
+namespace ChromaConnect.App.Lighting;
 
 /// <summary>
 /// Lighting extension methods.
@@ -22,7 +22,7 @@ public static class LightingExtensions
     /// <returns>The <see cref="BlazorDesktopHostBuilder"/> to continue adding configuration to.</returns>
     public static BlazorDesktopHostBuilder ConfigureLighting(this BlazorDesktopHostBuilder builder)
     {
-        builder.Services.AddChromaControlGrpcClient<LightingGrpc.LightingGrpcClient>(builder.Configuration);
+        builder.Services.AddChromaConnectGrpcClient<LightingGrpc.LightingGrpcClient>(builder.Configuration);
         builder.Services.TryAddSingleton<EventService>();
         builder.Services.AddHostedService<EventMonitor>();
 

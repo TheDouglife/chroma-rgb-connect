@@ -6,7 +6,7 @@ using BlazorDesktop.Wpf;
 using Microsoft.AspNetCore.Components;
 using System.Windows;
 
-namespace ChromaControl.App.Shell.Components;
+namespace ChromaConnect.App.Shell.Components;
 
 /// <summary>
 /// The window controls component.

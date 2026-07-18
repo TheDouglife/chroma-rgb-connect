@@ -5,7 +5,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Nodes;
 
-namespace ChromaControl.Service.Data.Extensions;
+namespace ChromaConnect.Service.Data.Extensions;
 
 /// <summary>
 /// Extension methods for <see cref="AppDbContext"/>.

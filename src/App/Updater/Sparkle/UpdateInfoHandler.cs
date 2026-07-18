@@ -10,7 +10,7 @@ using NetSparkleUpdater.Interfaces;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace ChromaControl.App.Updater.Sparkle;
+namespace ChromaConnect.App.Updater.Sparkle;
 
 /// <summary>
 /// The update info parser.
@@ -138,7 +138,7 @@ public class UpdateInfoHandler : IAppCastHandler
         var items = JsonSerializer.Deserialize<ReleaseItem[]>(data)!
             .Select(r =>
             {
-                r.Assets = [.. r.Assets.Where(a => a.Name == $"ChromaControlSetup-{r.TagName}.exe")];
+                r.Assets = [.. r.Assets.Where(a => a.Name == $"ChromaConnectSetup-{r.TagName}.exe")];
 
                 return r;
             })

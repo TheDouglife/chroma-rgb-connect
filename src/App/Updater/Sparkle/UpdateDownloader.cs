@@ -9,7 +9,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Net.Http;
 
-namespace ChromaControl.App.Updater.Sparkle;
+namespace ChromaConnect.App.Updater.Sparkle;
 
 /// <summary>
 /// The update info downloader.

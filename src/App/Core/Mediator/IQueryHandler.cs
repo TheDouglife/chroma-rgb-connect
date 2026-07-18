@@ -4,7 +4,7 @@
 
 using MediatR;
 
-namespace ChromaControl.App.Core.Mediator;
+namespace ChromaConnect.App.Core.Mediator;
 
 /// <summary>
 /// Defines a handler for a query.

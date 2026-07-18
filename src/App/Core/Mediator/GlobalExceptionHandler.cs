@@ -6,7 +6,7 @@ using Grpc.Core;
 using MediatR;
 using MediatR.Pipeline;
 
-namespace ChromaControl.App.Core.Mediator;
+namespace ChromaConnect.App.Core.Mediator;
 
 /// <summary>
 /// The global mediator exception handler.

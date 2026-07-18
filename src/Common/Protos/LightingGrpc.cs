@@ -7,10 +7,10 @@
 
 using grpc = global::Grpc.Core;
 
-namespace ChromaControl.Common.Protos.Lighting {
+namespace ChromaConnect.Common.Protos.Lighting {
   public static partial class LightingGrpc
   {
-    static readonly string __ServiceName = "chromacontrol.lighting.LightingGrpc";
+    static readonly string __ServiceName = "chromaconnect.lighting.LightingGrpc";
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static void __Helper_SerializeMessage(global::Google.Protobuf.IMessage message, grpc::SerializationContext context)
@@ -46,106 +46,106 @@ namespace ChromaControl.Common.Protos.Lighting {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::ChromaControl.Common.Protos.Lighting.EmptyMessage> __Marshaller_chromacontrol_lighting_EmptyMessage = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaControl.Common.Protos.Lighting.EmptyMessage.Parser));
+    static readonly grpc::Marshaller<global::ChromaConnect.Common.Protos.Lighting.EmptyMessage> __Marshaller_chromaconnect_lighting_EmptyMessage = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaConnect.Common.Protos.Lighting.EmptyMessage.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::ChromaControl.Common.Protos.Lighting.Event> __Marshaller_chromacontrol_lighting_Event = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaControl.Common.Protos.Lighting.Event.Parser));
+    static readonly grpc::Marshaller<global::ChromaConnect.Common.Protos.Lighting.Event> __Marshaller_chromaconnect_lighting_Event = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaConnect.Common.Protos.Lighting.Event.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::ChromaControl.Common.Protos.Lighting.VendorListResponse> __Marshaller_chromacontrol_lighting_VendorListResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaControl.Common.Protos.Lighting.VendorListResponse.Parser));
+    static readonly grpc::Marshaller<global::ChromaConnect.Common.Protos.Lighting.VendorListResponse> __Marshaller_chromaconnect_lighting_VendorListResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaConnect.Common.Protos.Lighting.VendorListResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::ChromaControl.Common.Protos.Lighting.ToggleVendorRequest> __Marshaller_chromacontrol_lighting_ToggleVendorRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaControl.Common.Protos.Lighting.ToggleVendorRequest.Parser));
+    static readonly grpc::Marshaller<global::ChromaConnect.Common.Protos.Lighting.ToggleVendorRequest> __Marshaller_chromaconnect_lighting_ToggleVendorRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaConnect.Common.Protos.Lighting.ToggleVendorRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::ChromaControl.Common.Protos.Lighting.DeviceGroupsResponse> __Marshaller_chromacontrol_lighting_DeviceGroupsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaControl.Common.Protos.Lighting.DeviceGroupsResponse.Parser));
+    static readonly grpc::Marshaller<global::ChromaConnect.Common.Protos.Lighting.DeviceGroupsResponse> __Marshaller_chromaconnect_lighting_DeviceGroupsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaConnect.Common.Protos.Lighting.DeviceGroupsResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::ChromaControl.Common.Protos.Lighting.GetGroupDevicesRequest> __Marshaller_chromacontrol_lighting_GetGroupDevicesRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaControl.Common.Protos.Lighting.GetGroupDevicesRequest.Parser));
+    static readonly grpc::Marshaller<global::ChromaConnect.Common.Protos.Lighting.GetGroupDevicesRequest> __Marshaller_chromaconnect_lighting_GetGroupDevicesRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaConnect.Common.Protos.Lighting.GetGroupDevicesRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::ChromaControl.Common.Protos.Lighting.DevicesResponse> __Marshaller_chromacontrol_lighting_DevicesResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaControl.Common.Protos.Lighting.DevicesResponse.Parser));
+    static readonly grpc::Marshaller<global::ChromaConnect.Common.Protos.Lighting.DevicesResponse> __Marshaller_chromaconnect_lighting_DevicesResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaConnect.Common.Protos.Lighting.DevicesResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::ChromaControl.Common.Protos.Lighting.GetDeviceInfoRequest> __Marshaller_chromacontrol_lighting_GetDeviceInfoRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaControl.Common.Protos.Lighting.GetDeviceInfoRequest.Parser));
+    static readonly grpc::Marshaller<global::ChromaConnect.Common.Protos.Lighting.GetDeviceInfoRequest> __Marshaller_chromaconnect_lighting_GetDeviceInfoRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaConnect.Common.Protos.Lighting.GetDeviceInfoRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::ChromaControl.Common.Protos.Lighting.DeviceInfoResponse> __Marshaller_chromacontrol_lighting_DeviceInfoResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaControl.Common.Protos.Lighting.DeviceInfoResponse.Parser));
+    static readonly grpc::Marshaller<global::ChromaConnect.Common.Protos.Lighting.DeviceInfoResponse> __Marshaller_chromaconnect_lighting_DeviceInfoResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaConnect.Common.Protos.Lighting.DeviceInfoResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::ChromaControl.Common.Protos.Lighting.GetDeviceZonesRequest> __Marshaller_chromacontrol_lighting_GetDeviceZonesRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaControl.Common.Protos.Lighting.GetDeviceZonesRequest.Parser));
+    static readonly grpc::Marshaller<global::ChromaConnect.Common.Protos.Lighting.GetDeviceZonesRequest> __Marshaller_chromaconnect_lighting_GetDeviceZonesRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaConnect.Common.Protos.Lighting.GetDeviceZonesRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::ChromaControl.Common.Protos.Lighting.DeviceZonesResponse> __Marshaller_chromacontrol_lighting_DeviceZonesResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaControl.Common.Protos.Lighting.DeviceZonesResponse.Parser));
+    static readonly grpc::Marshaller<global::ChromaConnect.Common.Protos.Lighting.DeviceZonesResponse> __Marshaller_chromaconnect_lighting_DeviceZonesResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaConnect.Common.Protos.Lighting.DeviceZonesResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::ChromaControl.Common.Protos.Lighting.ResizeDeviceZoneRequest> __Marshaller_chromacontrol_lighting_ResizeDeviceZoneRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaControl.Common.Protos.Lighting.ResizeDeviceZoneRequest.Parser));
+    static readonly grpc::Marshaller<global::ChromaConnect.Common.Protos.Lighting.ResizeDeviceZoneRequest> __Marshaller_chromaconnect_lighting_ResizeDeviceZoneRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ChromaConnect.Common.Protos.Lighting.ResizeDeviceZoneRequest.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::ChromaControl.Common.Protos.Lighting.EmptyMessage, global::ChromaControl.Common.Protos.Lighting.EmptyMessage> __Method_RestartService = new grpc::Method<global::ChromaControl.Common.Protos.Lighting.EmptyMessage, global::ChromaControl.Common.Protos.Lighting.EmptyMessage>(
+    static readonly grpc::Method<global::ChromaConnect.Common.Protos.Lighting.EmptyMessage, global::ChromaConnect.Common.Protos.Lighting.EmptyMessage> __Method_RestartService = new grpc::Method<global::ChromaConnect.Common.Protos.Lighting.EmptyMessage, global::ChromaConnect.Common.Protos.Lighting.EmptyMessage>(
         grpc::MethodType.Unary,
         __ServiceName,
         "RestartService",
-        __Marshaller_chromacontrol_lighting_EmptyMessage,
-        __Marshaller_chromacontrol_lighting_EmptyMessage);
+        __Marshaller_chromaconnect_lighting_EmptyMessage,
+        __Marshaller_chromaconnect_lighting_EmptyMessage);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::ChromaControl.Common.Protos.Lighting.EmptyMessage, global::ChromaControl.Common.Protos.Lighting.Event> __Method_StreamEvents = new grpc::Method<global::ChromaControl.Common.Protos.Lighting.EmptyMessage, global::ChromaControl.Common.Protos.Lighting.Event>(
+    static readonly grpc::Method<global::ChromaConnect.Common.Protos.Lighting.EmptyMessage, global::ChromaConnect.Common.Protos.Lighting.Event> __Method_StreamEvents = new grpc::Method<global::ChromaConnect.Common.Protos.Lighting.EmptyMessage, global::ChromaConnect.Common.Protos.Lighting.Event>(
         grpc::MethodType.ServerStreaming,
         __ServiceName,
         "StreamEvents",
-        __Marshaller_chromacontrol_lighting_EmptyMessage,
-        __Marshaller_chromacontrol_lighting_Event);
+        __Marshaller_chromaconnect_lighting_EmptyMessage,
+        __Marshaller_chromaconnect_lighting_Event);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::ChromaControl.Common.Protos.Lighting.EmptyMessage, global::ChromaControl.Common.Protos.Lighting.VendorListResponse> __Method_GetVendors = new grpc::Method<global::ChromaControl.Common.Protos.Lighting.EmptyMessage, global::ChromaControl.Common.Protos.Lighting.VendorListResponse>(
+    static readonly grpc::Method<global::ChromaConnect.Common.Protos.Lighting.EmptyMessage, global::ChromaConnect.Common.Protos.Lighting.VendorListResponse> __Method_GetVendors = new grpc::Method<global::ChromaConnect.Common.Protos.Lighting.EmptyMessage, global::ChromaConnect.Common.Protos.Lighting.VendorListResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetVendors",
-        __Marshaller_chromacontrol_lighting_EmptyMessage,
-        __Marshaller_chromacontrol_lighting_VendorListResponse);
+        __Marshaller_chromaconnect_lighting_EmptyMessage,
+        __Marshaller_chromaconnect_lighting_VendorListResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::ChromaControl.Common.Protos.Lighting.ToggleVendorRequest, global::ChromaControl.Common.Protos.Lighting.EmptyMessage> __Method_ToggleVendor = new grpc::Method<global::ChromaControl.Common.Protos.Lighting.ToggleVendorRequest, global::ChromaControl.Common.Protos.Lighting.EmptyMessage>(
+    static readonly grpc::Method<global::ChromaConnect.Common.Protos.Lighting.ToggleVendorRequest, global::ChromaConnect.Common.Protos.Lighting.EmptyMessage> __Method_ToggleVendor = new grpc::Method<global::ChromaConnect.Common.Protos.Lighting.ToggleVendorRequest, global::ChromaConnect.Common.Protos.Lighting.EmptyMessage>(
         grpc::MethodType.Unary,
         __ServiceName,
         "ToggleVendor",
-        __Marshaller_chromacontrol_lighting_ToggleVendorRequest,
-        __Marshaller_chromacontrol_lighting_EmptyMessage);
+        __Marshaller_chromaconnect_lighting_ToggleVendorRequest,
+        __Marshaller_chromaconnect_lighting_EmptyMessage);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::ChromaControl.Common.Protos.Lighting.EmptyMessage, global::ChromaControl.Common.Protos.Lighting.DeviceGroupsResponse> __Method_GetDeviceGroups = new grpc::Method<global::ChromaControl.Common.Protos.Lighting.EmptyMessage, global::ChromaControl.Common.Protos.Lighting.DeviceGroupsResponse>(
+    static readonly grpc::Method<global::ChromaConnect.Common.Protos.Lighting.EmptyMessage, global::ChromaConnect.Common.Protos.Lighting.DeviceGroupsResponse> __Method_GetDeviceGroups = new grpc::Method<global::ChromaConnect.Common.Protos.Lighting.EmptyMessage, global::ChromaConnect.Common.Protos.Lighting.DeviceGroupsResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetDeviceGroups",
-        __Marshaller_chromacontrol_lighting_EmptyMessage,
-        __Marshaller_chromacontrol_lighting_DeviceGroupsResponse);
+        __Marshaller_chromaconnect_lighting_EmptyMessage,
+        __Marshaller_chromaconnect_lighting_DeviceGroupsResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::ChromaControl.Common.Protos.Lighting.GetGroupDevicesRequest, global::ChromaControl.Common.Protos.Lighting.DevicesResponse> __Method_GetGroupDevices = new grpc::Method<global::ChromaControl.Common.Protos.Lighting.GetGroupDevicesRequest, global::ChromaControl.Common.Protos.Lighting.DevicesResponse>(
+    static readonly grpc::Method<global::ChromaConnect.Common.Protos.Lighting.GetGroupDevicesRequest, global::ChromaConnect.Common.Protos.Lighting.DevicesResponse> __Method_GetGroupDevices = new grpc::Method<global::ChromaConnect.Common.Protos.Lighting.GetGroupDevicesRequest, global::ChromaConnect.Common.Protos.Lighting.DevicesResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetGroupDevices",
-        __Marshaller_chromacontrol_lighting_GetGroupDevicesRequest,
-        __Marshaller_chromacontrol_lighting_DevicesResponse);
+        __Marshaller_chromaconnect_lighting_GetGroupDevicesRequest,
+        __Marshaller_chromaconnect_lighting_DevicesResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::ChromaControl.Common.Protos.Lighting.GetDeviceInfoRequest, global::ChromaControl.Common.Protos.Lighting.DeviceInfoResponse> __Method_GetDeviceInfo = new grpc::Method<global::ChromaControl.Common.Protos.Lighting.GetDeviceInfoRequest, global::ChromaControl.Common.Protos.Lighting.DeviceInfoResponse>(
+    static readonly grpc::Method<global::ChromaConnect.Common.Protos.Lighting.GetDeviceInfoRequest, global::ChromaConnect.Common.Protos.Lighting.DeviceInfoResponse> __Method_GetDeviceInfo = new grpc::Method<global::ChromaConnect.Common.Protos.Lighting.GetDeviceInfoRequest, global::ChromaConnect.Common.Protos.Lighting.DeviceInfoResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetDeviceInfo",
-        __Marshaller_chromacontrol_lighting_GetDeviceInfoRequest,
-        __Marshaller_chromacontrol_lighting_DeviceInfoResponse);
+        __Marshaller_chromaconnect_lighting_GetDeviceInfoRequest,
+        __Marshaller_chromaconnect_lighting_DeviceInfoResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::ChromaControl.Common.Protos.Lighting.GetDeviceZonesRequest, global::ChromaControl.Common.Protos.Lighting.DeviceZonesResponse> __Method_GetDeviceZones = new grpc::Method<global::ChromaControl.Common.Protos.Lighting.GetDeviceZonesRequest, global::ChromaControl.Common.Protos.Lighting.DeviceZonesResponse>(
+    static readonly grpc::Method<global::ChromaConnect.Common.Protos.Lighting.GetDeviceZonesRequest, global::ChromaConnect.Common.Protos.Lighting.DeviceZonesResponse> __Method_GetDeviceZones = new grpc::Method<global::ChromaConnect.Common.Protos.Lighting.GetDeviceZonesRequest, global::ChromaConnect.Common.Protos.Lighting.DeviceZonesResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetDeviceZones",
-        __Marshaller_chromacontrol_lighting_GetDeviceZonesRequest,
-        __Marshaller_chromacontrol_lighting_DeviceZonesResponse);
+        __Marshaller_chromaconnect_lighting_GetDeviceZonesRequest,
+        __Marshaller_chromaconnect_lighting_DeviceZonesResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::ChromaControl.Common.Protos.Lighting.ResizeDeviceZoneRequest, global::ChromaControl.Common.Protos.Lighting.EmptyMessage> __Method_ResizeDeviceZone = new grpc::Method<global::ChromaControl.Common.Protos.Lighting.ResizeDeviceZoneRequest, global::ChromaControl.Common.Protos.Lighting.EmptyMessage>(
+    static readonly grpc::Method<global::ChromaConnect.Common.Protos.Lighting.ResizeDeviceZoneRequest, global::ChromaConnect.Common.Protos.Lighting.EmptyMessage> __Method_ResizeDeviceZone = new grpc::Method<global::ChromaConnect.Common.Protos.Lighting.ResizeDeviceZoneRequest, global::ChromaConnect.Common.Protos.Lighting.EmptyMessage>(
         grpc::MethodType.Unary,
         __ServiceName,
         "ResizeDeviceZone",
-        __Marshaller_chromacontrol_lighting_ResizeDeviceZoneRequest,
-        __Marshaller_chromacontrol_lighting_EmptyMessage);
+        __Marshaller_chromaconnect_lighting_ResizeDeviceZoneRequest,
+        __Marshaller_chromaconnect_lighting_EmptyMessage);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::ChromaControl.Common.Protos.Lighting.LightingReflection.Descriptor.Services[0]; }
+      get { return global::ChromaConnect.Common.Protos.Lighting.LightingReflection.Descriptor.Services[0]; }
     }
 
     /// <summary>Base class for server-side implementations of LightingGrpc</summary>
@@ -153,55 +153,55 @@ namespace ChromaControl.Common.Protos.Lighting {
     public abstract partial class LightingGrpcBase
     {
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::ChromaControl.Common.Protos.Lighting.EmptyMessage> RestartService(global::ChromaControl.Common.Protos.Lighting.EmptyMessage request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::ChromaConnect.Common.Protos.Lighting.EmptyMessage> RestartService(global::ChromaConnect.Common.Protos.Lighting.EmptyMessage request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task StreamEvents(global::ChromaControl.Common.Protos.Lighting.EmptyMessage request, grpc::IServerStreamWriter<global::ChromaControl.Common.Protos.Lighting.Event> responseStream, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task StreamEvents(global::ChromaConnect.Common.Protos.Lighting.EmptyMessage request, grpc::IServerStreamWriter<global::ChromaConnect.Common.Protos.Lighting.Event> responseStream, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::ChromaControl.Common.Protos.Lighting.VendorListResponse> GetVendors(global::ChromaControl.Common.Protos.Lighting.EmptyMessage request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::ChromaConnect.Common.Protos.Lighting.VendorListResponse> GetVendors(global::ChromaConnect.Common.Protos.Lighting.EmptyMessage request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::ChromaControl.Common.Protos.Lighting.EmptyMessage> ToggleVendor(global::ChromaControl.Common.Protos.Lighting.ToggleVendorRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::ChromaConnect.Common.Protos.Lighting.EmptyMessage> ToggleVendor(global::ChromaConnect.Common.Protos.Lighting.ToggleVendorRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::ChromaControl.Common.Protos.Lighting.DeviceGroupsResponse> GetDeviceGroups(global::ChromaControl.Common.Protos.Lighting.EmptyMessage request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::ChromaConnect.Common.Protos.Lighting.DeviceGroupsResponse> GetDeviceGroups(global::ChromaConnect.Common.Protos.Lighting.EmptyMessage request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::ChromaControl.Common.Protos.Lighting.DevicesResponse> GetGroupDevices(global::ChromaControl.Common.Protos.Lighting.GetGroupDevicesRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::ChromaConnect.Common.Protos.Lighting.DevicesResponse> GetGroupDevices(global::ChromaConnect.Common.Protos.Lighting.GetGroupDevicesRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::ChromaControl.Common.Protos.Lighting.DeviceInfoResponse> GetDeviceInfo(global::ChromaControl.Common.Protos.Lighting.GetDeviceInfoRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::ChromaConnect.Common.Protos.Lighting.DeviceInfoResponse> GetDeviceInfo(global::ChromaConnect.Common.Protos.Lighting.GetDeviceInfoRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::ChromaControl.Common.Protos.Lighting.DeviceZonesResponse> GetDeviceZones(global::ChromaControl.Common.Protos.Lighting.GetDeviceZonesRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::ChromaConnect.Common.Protos.Lighting.DeviceZonesResponse> GetDeviceZones(global::ChromaConnect.Common.Protos.Lighting.GetDeviceZonesRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::ChromaControl.Common.Protos.Lighting.EmptyMessage> ResizeDeviceZone(global::ChromaControl.Common.Protos.Lighting.ResizeDeviceZoneRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::ChromaConnect.Common.Protos.Lighting.EmptyMessage> ResizeDeviceZone(global::ChromaConnect.Common.Protos.Lighting.ResizeDeviceZoneRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -236,172 +236,172 @@ namespace ChromaControl.Common.Protos.Lighting {
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ChromaControl.Common.Protos.Lighting.EmptyMessage RestartService(global::ChromaControl.Common.Protos.Lighting.EmptyMessage request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::ChromaConnect.Common.Protos.Lighting.EmptyMessage RestartService(global::ChromaConnect.Common.Protos.Lighting.EmptyMessage request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return RestartService(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ChromaControl.Common.Protos.Lighting.EmptyMessage RestartService(global::ChromaControl.Common.Protos.Lighting.EmptyMessage request, grpc::CallOptions options)
+      public virtual global::ChromaConnect.Common.Protos.Lighting.EmptyMessage RestartService(global::ChromaConnect.Common.Protos.Lighting.EmptyMessage request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_RestartService, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ChromaControl.Common.Protos.Lighting.EmptyMessage> RestartServiceAsync(global::ChromaControl.Common.Protos.Lighting.EmptyMessage request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::ChromaConnect.Common.Protos.Lighting.EmptyMessage> RestartServiceAsync(global::ChromaConnect.Common.Protos.Lighting.EmptyMessage request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return RestartServiceAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ChromaControl.Common.Protos.Lighting.EmptyMessage> RestartServiceAsync(global::ChromaControl.Common.Protos.Lighting.EmptyMessage request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::ChromaConnect.Common.Protos.Lighting.EmptyMessage> RestartServiceAsync(global::ChromaConnect.Common.Protos.Lighting.EmptyMessage request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_RestartService, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncServerStreamingCall<global::ChromaControl.Common.Protos.Lighting.Event> StreamEvents(global::ChromaControl.Common.Protos.Lighting.EmptyMessage request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncServerStreamingCall<global::ChromaConnect.Common.Protos.Lighting.Event> StreamEvents(global::ChromaConnect.Common.Protos.Lighting.EmptyMessage request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return StreamEvents(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncServerStreamingCall<global::ChromaControl.Common.Protos.Lighting.Event> StreamEvents(global::ChromaControl.Common.Protos.Lighting.EmptyMessage request, grpc::CallOptions options)
+      public virtual grpc::AsyncServerStreamingCall<global::ChromaConnect.Common.Protos.Lighting.Event> StreamEvents(global::ChromaConnect.Common.Protos.Lighting.EmptyMessage request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncServerStreamingCall(__Method_StreamEvents, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ChromaControl.Common.Protos.Lighting.VendorListResponse GetVendors(global::ChromaControl.Common.Protos.Lighting.EmptyMessage request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::ChromaConnect.Common.Protos.Lighting.VendorListResponse GetVendors(global::ChromaConnect.Common.Protos.Lighting.EmptyMessage request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetVendors(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ChromaControl.Common.Protos.Lighting.VendorListResponse GetVendors(global::ChromaControl.Common.Protos.Lighting.EmptyMessage request, grpc::CallOptions options)
+      public virtual global::ChromaConnect.Common.Protos.Lighting.VendorListResponse GetVendors(global::ChromaConnect.Common.Protos.Lighting.EmptyMessage request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_GetVendors, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ChromaControl.Common.Protos.Lighting.VendorListResponse> GetVendorsAsync(global::ChromaControl.Common.Protos.Lighting.EmptyMessage request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::ChromaConnect.Common.Protos.Lighting.VendorListResponse> GetVendorsAsync(global::ChromaConnect.Common.Protos.Lighting.EmptyMessage request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetVendorsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ChromaControl.Common.Protos.Lighting.VendorListResponse> GetVendorsAsync(global::ChromaControl.Common.Protos.Lighting.EmptyMessage request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::ChromaConnect.Common.Protos.Lighting.VendorListResponse> GetVendorsAsync(global::ChromaConnect.Common.Protos.Lighting.EmptyMessage request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetVendors, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ChromaControl.Common.Protos.Lighting.EmptyMessage ToggleVendor(global::ChromaControl.Common.Protos.Lighting.ToggleVendorRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::ChromaConnect.Common.Protos.Lighting.EmptyMessage ToggleVendor(global::ChromaConnect.Common.Protos.Lighting.ToggleVendorRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return ToggleVendor(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ChromaControl.Common.Protos.Lighting.EmptyMessage ToggleVendor(global::ChromaControl.Common.Protos.Lighting.ToggleVendorRequest request, grpc::CallOptions options)
+      public virtual global::ChromaConnect.Common.Protos.Lighting.EmptyMessage ToggleVendor(global::ChromaConnect.Common.Protos.Lighting.ToggleVendorRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_ToggleVendor, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ChromaControl.Common.Protos.Lighting.EmptyMessage> ToggleVendorAsync(global::ChromaControl.Common.Protos.Lighting.ToggleVendorRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::ChromaConnect.Common.Protos.Lighting.EmptyMessage> ToggleVendorAsync(global::ChromaConnect.Common.Protos.Lighting.ToggleVendorRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return ToggleVendorAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ChromaControl.Common.Protos.Lighting.EmptyMessage> ToggleVendorAsync(global::ChromaControl.Common.Protos.Lighting.ToggleVendorRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::ChromaConnect.Common.Protos.Lighting.EmptyMessage> ToggleVendorAsync(global::ChromaConnect.Common.Protos.Lighting.ToggleVendorRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_ToggleVendor, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ChromaControl.Common.Protos.Lighting.DeviceGroupsResponse GetDeviceGroups(global::ChromaControl.Common.Protos.Lighting.EmptyMessage request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::ChromaConnect.Common.Protos.Lighting.DeviceGroupsResponse GetDeviceGroups(global::ChromaConnect.Common.Protos.Lighting.EmptyMessage request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetDeviceGroups(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ChromaControl.Common.Protos.Lighting.DeviceGroupsResponse GetDeviceGroups(global::ChromaControl.Common.Protos.Lighting.EmptyMessage request, grpc::CallOptions options)
+      public virtual global::ChromaConnect.Common.Protos.Lighting.DeviceGroupsResponse GetDeviceGroups(global::ChromaConnect.Common.Protos.Lighting.EmptyMessage request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_GetDeviceGroups, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ChromaControl.Common.Protos.Lighting.DeviceGroupsResponse> GetDeviceGroupsAsync(global::ChromaControl.Common.Protos.Lighting.EmptyMessage request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::ChromaConnect.Common.Protos.Lighting.DeviceGroupsResponse> GetDeviceGroupsAsync(global::ChromaConnect.Common.Protos.Lighting.EmptyMessage request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetDeviceGroupsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ChromaControl.Common.Protos.Lighting.DeviceGroupsResponse> GetDeviceGroupsAsync(global::ChromaControl.Common.Protos.Lighting.EmptyMessage request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::ChromaConnect.Common.Protos.Lighting.DeviceGroupsResponse> GetDeviceGroupsAsync(global::ChromaConnect.Common.Protos.Lighting.EmptyMessage request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetDeviceGroups, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ChromaControl.Common.Protos.Lighting.DevicesResponse GetGroupDevices(global::ChromaControl.Common.Protos.Lighting.GetGroupDevicesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::ChromaConnect.Common.Protos.Lighting.DevicesResponse GetGroupDevices(global::ChromaConnect.Common.Protos.Lighting.GetGroupDevicesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetGroupDevices(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ChromaControl.Common.Protos.Lighting.DevicesResponse GetGroupDevices(global::ChromaControl.Common.Protos.Lighting.GetGroupDevicesRequest request, grpc::CallOptions options)
+      public virtual global::ChromaConnect.Common.Protos.Lighting.DevicesResponse GetGroupDevices(global::ChromaConnect.Common.Protos.Lighting.GetGroupDevicesRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_GetGroupDevices, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ChromaControl.Common.Protos.Lighting.DevicesResponse> GetGroupDevicesAsync(global::ChromaControl.Common.Protos.Lighting.GetGroupDevicesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::ChromaConnect.Common.Protos.Lighting.DevicesResponse> GetGroupDevicesAsync(global::ChromaConnect.Common.Protos.Lighting.GetGroupDevicesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetGroupDevicesAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ChromaControl.Common.Protos.Lighting.DevicesResponse> GetGroupDevicesAsync(global::ChromaControl.Common.Protos.Lighting.GetGroupDevicesRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::ChromaConnect.Common.Protos.Lighting.DevicesResponse> GetGroupDevicesAsync(global::ChromaConnect.Common.Protos.Lighting.GetGroupDevicesRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetGroupDevices, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ChromaControl.Common.Protos.Lighting.DeviceInfoResponse GetDeviceInfo(global::ChromaControl.Common.Protos.Lighting.GetDeviceInfoRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::ChromaConnect.Common.Protos.Lighting.DeviceInfoResponse GetDeviceInfo(global::ChromaConnect.Common.Protos.Lighting.GetDeviceInfoRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetDeviceInfo(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ChromaControl.Common.Protos.Lighting.DeviceInfoResponse GetDeviceInfo(global::ChromaControl.Common.Protos.Lighting.GetDeviceInfoRequest request, grpc::CallOptions options)
+      public virtual global::ChromaConnect.Common.Protos.Lighting.DeviceInfoResponse GetDeviceInfo(global::ChromaConnect.Common.Protos.Lighting.GetDeviceInfoRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_GetDeviceInfo, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ChromaControl.Common.Protos.Lighting.DeviceInfoResponse> GetDeviceInfoAsync(global::ChromaControl.Common.Protos.Lighting.GetDeviceInfoRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::ChromaConnect.Common.Protos.Lighting.DeviceInfoResponse> GetDeviceInfoAsync(global::ChromaConnect.Common.Protos.Lighting.GetDeviceInfoRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetDeviceInfoAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ChromaControl.Common.Protos.Lighting.DeviceInfoResponse> GetDeviceInfoAsync(global::ChromaControl.Common.Protos.Lighting.GetDeviceInfoRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::ChromaConnect.Common.Protos.Lighting.DeviceInfoResponse> GetDeviceInfoAsync(global::ChromaConnect.Common.Protos.Lighting.GetDeviceInfoRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetDeviceInfo, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ChromaControl.Common.Protos.Lighting.DeviceZonesResponse GetDeviceZones(global::ChromaControl.Common.Protos.Lighting.GetDeviceZonesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::ChromaConnect.Common.Protos.Lighting.DeviceZonesResponse GetDeviceZones(global::ChromaConnect.Common.Protos.Lighting.GetDeviceZonesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetDeviceZones(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ChromaControl.Common.Protos.Lighting.DeviceZonesResponse GetDeviceZones(global::ChromaControl.Common.Protos.Lighting.GetDeviceZonesRequest request, grpc::CallOptions options)
+      public virtual global::ChromaConnect.Common.Protos.Lighting.DeviceZonesResponse GetDeviceZones(global::ChromaConnect.Common.Protos.Lighting.GetDeviceZonesRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_GetDeviceZones, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ChromaControl.Common.Protos.Lighting.DeviceZonesResponse> GetDeviceZonesAsync(global::ChromaControl.Common.Protos.Lighting.GetDeviceZonesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::ChromaConnect.Common.Protos.Lighting.DeviceZonesResponse> GetDeviceZonesAsync(global::ChromaConnect.Common.Protos.Lighting.GetDeviceZonesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetDeviceZonesAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ChromaControl.Common.Protos.Lighting.DeviceZonesResponse> GetDeviceZonesAsync(global::ChromaControl.Common.Protos.Lighting.GetDeviceZonesRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::ChromaConnect.Common.Protos.Lighting.DeviceZonesResponse> GetDeviceZonesAsync(global::ChromaConnect.Common.Protos.Lighting.GetDeviceZonesRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetDeviceZones, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ChromaControl.Common.Protos.Lighting.EmptyMessage ResizeDeviceZone(global::ChromaControl.Common.Protos.Lighting.ResizeDeviceZoneRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::ChromaConnect.Common.Protos.Lighting.EmptyMessage ResizeDeviceZone(global::ChromaConnect.Common.Protos.Lighting.ResizeDeviceZoneRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return ResizeDeviceZone(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ChromaControl.Common.Protos.Lighting.EmptyMessage ResizeDeviceZone(global::ChromaControl.Common.Protos.Lighting.ResizeDeviceZoneRequest request, grpc::CallOptions options)
+      public virtual global::ChromaConnect.Common.Protos.Lighting.EmptyMessage ResizeDeviceZone(global::ChromaConnect.Common.Protos.Lighting.ResizeDeviceZoneRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_ResizeDeviceZone, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ChromaControl.Common.Protos.Lighting.EmptyMessage> ResizeDeviceZoneAsync(global::ChromaControl.Common.Protos.Lighting.ResizeDeviceZoneRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::ChromaConnect.Common.Protos.Lighting.EmptyMessage> ResizeDeviceZoneAsync(global::ChromaConnect.Common.Protos.Lighting.ResizeDeviceZoneRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return ResizeDeviceZoneAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ChromaControl.Common.Protos.Lighting.EmptyMessage> ResizeDeviceZoneAsync(global::ChromaControl.Common.Protos.Lighting.ResizeDeviceZoneRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::ChromaConnect.Common.Protos.Lighting.EmptyMessage> ResizeDeviceZoneAsync(global::ChromaConnect.Common.Protos.Lighting.ResizeDeviceZoneRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_ResizeDeviceZone, null, options, request);
       }
@@ -437,15 +437,15 @@ namespace ChromaControl.Common.Protos.Lighting {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public static void BindService(grpc::ServiceBinderBase serviceBinder, LightingGrpcBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_RestartService, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ChromaControl.Common.Protos.Lighting.EmptyMessage, global::ChromaControl.Common.Protos.Lighting.EmptyMessage>(serviceImpl.RestartService));
-      serviceBinder.AddMethod(__Method_StreamEvents, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::ChromaControl.Common.Protos.Lighting.EmptyMessage, global::ChromaControl.Common.Protos.Lighting.Event>(serviceImpl.StreamEvents));
-      serviceBinder.AddMethod(__Method_GetVendors, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ChromaControl.Common.Protos.Lighting.EmptyMessage, global::ChromaControl.Common.Protos.Lighting.VendorListResponse>(serviceImpl.GetVendors));
-      serviceBinder.AddMethod(__Method_ToggleVendor, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ChromaControl.Common.Protos.Lighting.ToggleVendorRequest, global::ChromaControl.Common.Protos.Lighting.EmptyMessage>(serviceImpl.ToggleVendor));
-      serviceBinder.AddMethod(__Method_GetDeviceGroups, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ChromaControl.Common.Protos.Lighting.EmptyMessage, global::ChromaControl.Common.Protos.Lighting.DeviceGroupsResponse>(serviceImpl.GetDeviceGroups));
-      serviceBinder.AddMethod(__Method_GetGroupDevices, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ChromaControl.Common.Protos.Lighting.GetGroupDevicesRequest, global::ChromaControl.Common.Protos.Lighting.DevicesResponse>(serviceImpl.GetGroupDevices));
-      serviceBinder.AddMethod(__Method_GetDeviceInfo, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ChromaControl.Common.Protos.Lighting.GetDeviceInfoRequest, global::ChromaControl.Common.Protos.Lighting.DeviceInfoResponse>(serviceImpl.GetDeviceInfo));
-      serviceBinder.AddMethod(__Method_GetDeviceZones, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ChromaControl.Common.Protos.Lighting.GetDeviceZonesRequest, global::ChromaControl.Common.Protos.Lighting.DeviceZonesResponse>(serviceImpl.GetDeviceZones));
-      serviceBinder.AddMethod(__Method_ResizeDeviceZone, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ChromaControl.Common.Protos.Lighting.ResizeDeviceZoneRequest, global::ChromaControl.Common.Protos.Lighting.EmptyMessage>(serviceImpl.ResizeDeviceZone));
+      serviceBinder.AddMethod(__Method_RestartService, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ChromaConnect.Common.Protos.Lighting.EmptyMessage, global::ChromaConnect.Common.Protos.Lighting.EmptyMessage>(serviceImpl.RestartService));
+      serviceBinder.AddMethod(__Method_StreamEvents, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::ChromaConnect.Common.Protos.Lighting.EmptyMessage, global::ChromaConnect.Common.Protos.Lighting.Event>(serviceImpl.StreamEvents));
+      serviceBinder.AddMethod(__Method_GetVendors, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ChromaConnect.Common.Protos.Lighting.EmptyMessage, global::ChromaConnect.Common.Protos.Lighting.VendorListResponse>(serviceImpl.GetVendors));
+      serviceBinder.AddMethod(__Method_ToggleVendor, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ChromaConnect.Common.Protos.Lighting.ToggleVendorRequest, global::ChromaConnect.Common.Protos.Lighting.EmptyMessage>(serviceImpl.ToggleVendor));
+      serviceBinder.AddMethod(__Method_GetDeviceGroups, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ChromaConnect.Common.Protos.Lighting.EmptyMessage, global::ChromaConnect.Common.Protos.Lighting.DeviceGroupsResponse>(serviceImpl.GetDeviceGroups));
+      serviceBinder.AddMethod(__Method_GetGroupDevices, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ChromaConnect.Common.Protos.Lighting.GetGroupDevicesRequest, global::ChromaConnect.Common.Protos.Lighting.DevicesResponse>(serviceImpl.GetGroupDevices));
+      serviceBinder.AddMethod(__Method_GetDeviceInfo, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ChromaConnect.Common.Protos.Lighting.GetDeviceInfoRequest, global::ChromaConnect.Common.Protos.Lighting.DeviceInfoResponse>(serviceImpl.GetDeviceInfo));
+      serviceBinder.AddMethod(__Method_GetDeviceZones, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ChromaConnect.Common.Protos.Lighting.GetDeviceZonesRequest, global::ChromaConnect.Common.Protos.Lighting.DeviceZonesResponse>(serviceImpl.GetDeviceZones));
+      serviceBinder.AddMethod(__Method_ResizeDeviceZone, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ChromaConnect.Common.Protos.Lighting.ResizeDeviceZoneRequest, global::ChromaConnect.Common.Protos.Lighting.EmptyMessage>(serviceImpl.ResizeDeviceZone));
     }
 
   }

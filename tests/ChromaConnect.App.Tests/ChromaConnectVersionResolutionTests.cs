@@ -2,20 +2,20 @@
 // The Douglife (Doug Montgomery) licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using ChromaControl.Common.Extensions;
+using ChromaConnect.Common.Extensions;
 using System.Diagnostics;
 using System.Reflection;
 
-namespace ChromaControl.App.Tests;
+namespace ChromaConnect.App.Tests;
 
-public class ChromaControlVersionResolutionTests
+public class ChromaConnectVersionResolutionTests
 {
     [Fact]
     public void ResolveProductVersionReturnsAssemblyFallbackWhenExecutableIsMissing()
     {
-        var assembly = typeof(ChromaControlVersionResolutionTests).Assembly;
+        var assembly = typeof(ChromaConnectVersionResolutionTests).Assembly;
 
-        var version = ChromaControlExtensions.ResolveProductVersion("C:/missing/ChromaControl.exe", assembly);
+        var version = ChromaConnectExtensions.ResolveProductVersion("C:/missing/ChromaConnect.exe", assembly);
 
         Assert.Equal(GetExpectedFallbackVersion(assembly), version);
     }
@@ -23,12 +23,12 @@ public class ChromaControlVersionResolutionTests
     [Fact]
     public void ResolveProductVersionReturnsAssemblyFallbackWhenMetadataIsUnavailable()
     {
-        var assembly = typeof(ChromaControlVersionResolutionTests).Assembly;
+        var assembly = typeof(ChromaConnectVersionResolutionTests).Assembly;
         var tempFile = Path.GetTempFileName();
 
         try
         {
-            var version = ChromaControlExtensions.ResolveProductVersion(tempFile, assembly);
+            var version = ChromaConnectExtensions.ResolveProductVersion(tempFile, assembly);
 
             Assert.Equal(GetExpectedFallbackVersion(assembly), version);
         }
@@ -41,7 +41,7 @@ public class ChromaControlVersionResolutionTests
     [Fact]
     public void ResolveProductVersionReturnsUnknownWhenNoFileOrAssemblyMetadataExists()
     {
-        var version = ChromaControlExtensions.ResolveProductVersion("C:/missing/ChromaControl.exe", null);
+        var version = ChromaConnectExtensions.ResolveProductVersion("C:/missing/ChromaConnect.exe", null);
 
         Assert.Equal("Unknown", version);
     }

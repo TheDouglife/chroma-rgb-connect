@@ -1,5 +1,5 @@
 [Setup]
-AppId=ChromaControl
+AppId=ChromaConnect
 AppName={#Product}
 AppVersion={#Version}
 AppPublisher={#Authors}
@@ -7,11 +7,11 @@ WizardStyle=modern
 DefaultDirName={autopf}\{#Product}
 DefaultGroupName={#Product}
 UninstallDisplayName={#Product}
-UninstallDisplayIcon={app}\ChromaControl.App.exe
+UninstallDisplayIcon={app}\ChromaConnect.App.exe
 Compression=lzma2
 SolidCompression=yes
 OutputDir={#ObjDir}
-OutputBaseFileName=ChromaControlSetup-{#Version}
+OutputBaseFileName=ChromaRGBConnectSetup-{#Version}
 ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
 PrivilegesRequired=admin
@@ -24,15 +24,15 @@ MissingRunOnceIdsWarning=no
 Source: "{#PublishDir}\**"; DestDir: "{app}"; Flags: recursesubdirs ignoreversion
 
 [Icons]
-Name: "{group}\{#Product}"; Filename: "{app}\ChromaControl.App.exe"; WorkingDir: "{app}"
+Name: "{group}\{#Product}"; Filename: "{app}\ChromaConnect.App.exe"; WorkingDir: "{app}"
 Name: "{commonstartup}\{#Product}"; Filename: "{app}\ChromaRGBConnect.Service.exe"; WorkingDir: "{app}"
 
 [Run]
 Filename: "{app}\ChromaRGBConnect.Service.exe"; WorkingDir: "{app}"; StatusMsg: "Starting Chroma RGB Connect service..."; Flags: runhidden nowait
-Filename: "{app}\ChromaControl.App.exe"; WorkingDir: "{app}"; Description: "Start Chroma RGB Connect"; Flags: postinstall nowait skipifsilent
+Filename: "{app}\ChromaConnect.App.exe"; WorkingDir: "{app}"; Description: "Start Chroma RGB Connect"; Flags: postinstall nowait skipifsilent
 
 [UninstallRun]
-Filename: "{sys}\taskkill.exe"; Parameters: "/F /IM ChromaControl.App.exe"; StatusMsg: "Stopping Chroma RGB Connect..."; Flags: runhidden
+Filename: "{sys}\taskkill.exe"; Parameters: "/F /IM ChromaConnect.App.exe"; StatusMsg: "Stopping Chroma RGB Connect..."; Flags: runhidden
 Filename: "{sys}\taskkill.exe"; Parameters: "/F /IM ChromaRGBConnect.Service.exe"; StatusMsg: "Stopping Chroma RGB Connect service..."; Flags: runhidden
 
 [Code]
@@ -120,9 +120,9 @@ end;
 
 function InitializeSetup: Boolean;
 begin
-  StopProcess('ChromaControl.App.exe');
+  StopProcess('ChromaConnect.App.exe');
   StopProcess('ChromaRGBConnect.Service.exe');
-  StopProcess('ChromaControl.OpenRGB.exe');
+  StopProcess('ChromaConnect.OpenRGB.exe');
   StopService('WinRing0x64');
   StopService('WinRing0_1_2_0');
 

@@ -25,11 +25,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Common\ChromaControl.Common.csproj" />
+    <ProjectReference Include="..\..\src\Common\ChromaConnect.Common.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Service\ChromaControl.Service.csproj" />
+    <ProjectReference Include="..\..\src\Service\ChromaConnect.Service.csproj" />
   </ItemGroup>
 
   <ItemGroup>

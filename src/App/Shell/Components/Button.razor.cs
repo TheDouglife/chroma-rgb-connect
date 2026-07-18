@@ -4,7 +4,7 @@
 
 using Microsoft.AspNetCore.Components;
 
-namespace ChromaControl.App.Shell.Components;
+namespace ChromaConnect.App.Shell.Components;
 
 /// <summary>
 /// The button component.

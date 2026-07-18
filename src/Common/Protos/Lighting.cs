@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace ChromaControl.Common.Protos.Lighting {
+namespace ChromaConnect.Common.Protos.Lighting {
 
   /// <summary>Holder for reflection information generated from Protos/lighting.proto</summary>
   public static partial class LightingReflection {
@@ -73,23 +73,23 @@ namespace ChromaControl.Common.Protos.Lighting {
             "b21hQ29udHJvbC5Db21tb24uUHJvdG9zLkxpZ2h0aW5nYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::ChromaControl.Common.Protos.Lighting.EventType), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaControl.Common.Protos.Lighting.EmptyMessage), global::ChromaControl.Common.Protos.Lighting.EmptyMessage.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaControl.Common.Protos.Lighting.Event), global::ChromaControl.Common.Protos.Lighting.Event.Parser, new[]{ "Type" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaControl.Common.Protos.Lighting.Vendor), global::ChromaControl.Common.Protos.Lighting.Vendor.Parser, new[]{ "Name", "Enabled", "Dangerous" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaControl.Common.Protos.Lighting.VendorListResponse), global::ChromaControl.Common.Protos.Lighting.VendorListResponse.Parser, new[]{ "Vendors" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaControl.Common.Protos.Lighting.ToggleVendorRequest), global::ChromaControl.Common.Protos.Lighting.ToggleVendorRequest.Parser, new[]{ "Name", "Enabled" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaControl.Common.Protos.Lighting.DeviceGroup), global::ChromaControl.Common.Protos.Lighting.DeviceGroup.Parser, new[]{ "Name", "Vendor", "Type" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaControl.Common.Protos.Lighting.DeviceGroupsResponse), global::ChromaControl.Common.Protos.Lighting.DeviceGroupsResponse.Parser, new[]{ "Groups" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaControl.Common.Protos.Lighting.GetGroupDevicesRequest), global::ChromaControl.Common.Protos.Lighting.GetGroupDevicesRequest.Parser, new[]{ "GroupName" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaControl.Common.Protos.Lighting.Device), global::ChromaControl.Common.Protos.Lighting.Device.Parser, new[]{ "Index", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaControl.Common.Protos.Lighting.DevicesResponse), global::ChromaControl.Common.Protos.Lighting.DevicesResponse.Parser, new[]{ "Devices" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaControl.Common.Protos.Lighting.GetDeviceInfoRequest), global::ChromaControl.Common.Protos.Lighting.GetDeviceInfoRequest.Parser, new[]{ "DeviceIndex" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaControl.Common.Protos.Lighting.DeviceInfoResponse), global::ChromaControl.Common.Protos.Lighting.DeviceInfoResponse.Parser, new[]{ "Index", "Name", "Type", "Vendor", "Description", "Version", "Serial", "Location" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaControl.Common.Protos.Lighting.GetDeviceZonesRequest), global::ChromaControl.Common.Protos.Lighting.GetDeviceZonesRequest.Parser, new[]{ "DeviceIndex" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaControl.Common.Protos.Lighting.DeviceZone), global::ChromaControl.Common.Protos.Lighting.DeviceZone.Parser, new[]{ "Index", "Name", "MinimumLeds", "MaximumLeds", "LedCount" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaControl.Common.Protos.Lighting.DeviceZonesResponse), global::ChromaControl.Common.Protos.Lighting.DeviceZonesResponse.Parser, new[]{ "Zones" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaControl.Common.Protos.Lighting.ResizeDeviceZoneRequest), global::ChromaControl.Common.Protos.Lighting.ResizeDeviceZoneRequest.Parser, new[]{ "DeviceIndex", "ZoneIndex", "NewSize" }, null, null, null, null)
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::ChromaConnect.Common.Protos.Lighting.EventType), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaConnect.Common.Protos.Lighting.EmptyMessage), global::ChromaConnect.Common.Protos.Lighting.EmptyMessage.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaConnect.Common.Protos.Lighting.Event), global::ChromaConnect.Common.Protos.Lighting.Event.Parser, new[]{ "Type" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaConnect.Common.Protos.Lighting.Vendor), global::ChromaConnect.Common.Protos.Lighting.Vendor.Parser, new[]{ "Name", "Enabled", "Dangerous" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaConnect.Common.Protos.Lighting.VendorListResponse), global::ChromaConnect.Common.Protos.Lighting.VendorListResponse.Parser, new[]{ "Vendors" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaConnect.Common.Protos.Lighting.ToggleVendorRequest), global::ChromaConnect.Common.Protos.Lighting.ToggleVendorRequest.Parser, new[]{ "Name", "Enabled" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaConnect.Common.Protos.Lighting.DeviceGroup), global::ChromaConnect.Common.Protos.Lighting.DeviceGroup.Parser, new[]{ "Name", "Vendor", "Type" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaConnect.Common.Protos.Lighting.DeviceGroupsResponse), global::ChromaConnect.Common.Protos.Lighting.DeviceGroupsResponse.Parser, new[]{ "Groups" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaConnect.Common.Protos.Lighting.GetGroupDevicesRequest), global::ChromaConnect.Common.Protos.Lighting.GetGroupDevicesRequest.Parser, new[]{ "GroupName" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaConnect.Common.Protos.Lighting.Device), global::ChromaConnect.Common.Protos.Lighting.Device.Parser, new[]{ "Index", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaConnect.Common.Protos.Lighting.DevicesResponse), global::ChromaConnect.Common.Protos.Lighting.DevicesResponse.Parser, new[]{ "Devices" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaConnect.Common.Protos.Lighting.GetDeviceInfoRequest), global::ChromaConnect.Common.Protos.Lighting.GetDeviceInfoRequest.Parser, new[]{ "DeviceIndex" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaConnect.Common.Protos.Lighting.DeviceInfoResponse), global::ChromaConnect.Common.Protos.Lighting.DeviceInfoResponse.Parser, new[]{ "Index", "Name", "Type", "Vendor", "Description", "Version", "Serial", "Location" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaConnect.Common.Protos.Lighting.GetDeviceZonesRequest), global::ChromaConnect.Common.Protos.Lighting.GetDeviceZonesRequest.Parser, new[]{ "DeviceIndex" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaConnect.Common.Protos.Lighting.DeviceZone), global::ChromaConnect.Common.Protos.Lighting.DeviceZone.Parser, new[]{ "Index", "Name", "MinimumLeds", "MaximumLeds", "LedCount" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaConnect.Common.Protos.Lighting.DeviceZonesResponse), global::ChromaConnect.Common.Protos.Lighting.DeviceZonesResponse.Parser, new[]{ "Zones" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaConnect.Common.Protos.Lighting.ResizeDeviceZoneRequest), global::ChromaConnect.Common.Protos.Lighting.ResizeDeviceZoneRequest.Parser, new[]{ "DeviceIndex", "ZoneIndex", "NewSize" }, null, null, null, null)
           }));
     }
     #endregion
@@ -118,7 +118,7 @@ namespace ChromaControl.Common.Protos.Lighting {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ChromaControl.Common.Protos.Lighting.LightingReflection.Descriptor.MessageTypes[0]; }
+      get { return global::ChromaConnect.Common.Protos.Lighting.LightingReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -279,7 +279,7 @@ namespace ChromaControl.Common.Protos.Lighting {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ChromaControl.Common.Protos.Lighting.LightingReflection.Descriptor.MessageTypes[1]; }
+      get { return global::ChromaConnect.Common.Protos.Lighting.LightingReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -311,10 +311,10 @@ namespace ChromaControl.Common.Protos.Lighting {
 
     /// <summary>Field number for the "type" field.</summary>
     public const int TypeFieldNumber = 1;
-    private global::ChromaControl.Common.Protos.Lighting.EventType type_ = global::ChromaControl.Common.Protos.Lighting.EventType.DevicesUpdated;
+    private global::ChromaConnect.Common.Protos.Lighting.EventType type_ = global::ChromaConnect.Common.Protos.Lighting.EventType.DevicesUpdated;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::ChromaControl.Common.Protos.Lighting.EventType Type {
+    public global::ChromaConnect.Common.Protos.Lighting.EventType Type {
       get { return type_; }
       set {
         type_ = value;
@@ -344,7 +344,7 @@ namespace ChromaControl.Common.Protos.Lighting {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Type != global::ChromaControl.Common.Protos.Lighting.EventType.DevicesUpdated) hash ^= Type.GetHashCode();
+      if (Type != global::ChromaConnect.Common.Protos.Lighting.EventType.DevicesUpdated) hash ^= Type.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -363,7 +363,7 @@ namespace ChromaControl.Common.Protos.Lighting {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Type != global::ChromaControl.Common.Protos.Lighting.EventType.DevicesUpdated) {
+      if (Type != global::ChromaConnect.Common.Protos.Lighting.EventType.DevicesUpdated) {
         output.WriteRawTag(8);
         output.WriteEnum((int) Type);
       }
@@ -377,7 +377,7 @@ namespace ChromaControl.Common.Protos.Lighting {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Type != global::ChromaControl.Common.Protos.Lighting.EventType.DevicesUpdated) {
+      if (Type != global::ChromaConnect.Common.Protos.Lighting.EventType.DevicesUpdated) {
         output.WriteRawTag(8);
         output.WriteEnum((int) Type);
       }
@@ -391,7 +391,7 @@ namespace ChromaControl.Common.Protos.Lighting {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Type != global::ChromaControl.Common.Protos.Lighting.EventType.DevicesUpdated) {
+      if (Type != global::ChromaConnect.Common.Protos.Lighting.EventType.DevicesUpdated) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
       if (_unknownFields != null) {
@@ -406,7 +406,7 @@ namespace ChromaControl.Common.Protos.Lighting {
       if (other == null) {
         return;
       }
-      if (other.Type != global::ChromaControl.Common.Protos.Lighting.EventType.DevicesUpdated) {
+      if (other.Type != global::ChromaConnect.Common.Protos.Lighting.EventType.DevicesUpdated) {
         Type = other.Type;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -429,7 +429,7 @@ namespace ChromaControl.Common.Protos.Lighting {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            Type = (global::ChromaControl.Common.Protos.Lighting.EventType) input.ReadEnum();
+            Type = (global::ChromaConnect.Common.Protos.Lighting.EventType) input.ReadEnum();
             break;
           }
         }
@@ -452,7 +452,7 @@ namespace ChromaControl.Common.Protos.Lighting {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            Type = (global::ChromaControl.Common.Protos.Lighting.EventType) input.ReadEnum();
+            Type = (global::ChromaConnect.Common.Protos.Lighting.EventType) input.ReadEnum();
             break;
           }
         }
@@ -477,7 +477,7 @@ namespace ChromaControl.Common.Protos.Lighting {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ChromaControl.Common.Protos.Lighting.LightingReflection.Descriptor.MessageTypes[2]; }
+      get { return global::ChromaConnect.Common.Protos.Lighting.LightingReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -749,7 +749,7 @@ namespace ChromaControl.Common.Protos.Lighting {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ChromaControl.Common.Protos.Lighting.LightingReflection.Descriptor.MessageTypes[3]; }
+      get { return global::ChromaConnect.Common.Protos.Lighting.LightingReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -781,12 +781,12 @@ namespace ChromaControl.Common.Protos.Lighting {
 
     /// <summary>Field number for the "vendors" field.</summary>
     public const int VendorsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::ChromaControl.Common.Protos.Lighting.Vendor> _repeated_vendors_codec
-        = pb::FieldCodec.ForMessage(10, global::ChromaControl.Common.Protos.Lighting.Vendor.Parser);
-    private readonly pbc::RepeatedField<global::ChromaControl.Common.Protos.Lighting.Vendor> vendors_ = new pbc::RepeatedField<global::ChromaControl.Common.Protos.Lighting.Vendor>();
+    private static readonly pb::FieldCodec<global::ChromaConnect.Common.Protos.Lighting.Vendor> _repeated_vendors_codec
+        = pb::FieldCodec.ForMessage(10, global::ChromaConnect.Common.Protos.Lighting.Vendor.Parser);
+    private readonly pbc::RepeatedField<global::ChromaConnect.Common.Protos.Lighting.Vendor> vendors_ = new pbc::RepeatedField<global::ChromaConnect.Common.Protos.Lighting.Vendor>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::ChromaControl.Common.Protos.Lighting.Vendor> Vendors {
+    public pbc::RepeatedField<global::ChromaConnect.Common.Protos.Lighting.Vendor> Vendors {
       get { return vendors_; }
     }
 
@@ -936,7 +936,7 @@ namespace ChromaControl.Common.Protos.Lighting {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ChromaControl.Common.Protos.Lighting.LightingReflection.Descriptor.MessageTypes[4]; }
+      get { return global::ChromaConnect.Common.Protos.Lighting.LightingReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1171,7 +1171,7 @@ namespace ChromaControl.Common.Protos.Lighting {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ChromaControl.Common.Protos.Lighting.LightingReflection.Descriptor.MessageTypes[5]; }
+      get { return global::ChromaConnect.Common.Protos.Lighting.LightingReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1443,7 +1443,7 @@ namespace ChromaControl.Common.Protos.Lighting {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ChromaControl.Common.Protos.Lighting.LightingReflection.Descriptor.MessageTypes[6]; }
+      get { return global::ChromaConnect.Common.Protos.Lighting.LightingReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1475,12 +1475,12 @@ namespace ChromaControl.Common.Protos.Lighting {
 
     /// <summary>Field number for the "groups" field.</summary>
     public const int GroupsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::ChromaControl.Common.Protos.Lighting.DeviceGroup> _repeated_groups_codec
-        = pb::FieldCodec.ForMessage(10, global::ChromaControl.Common.Protos.Lighting.DeviceGroup.Parser);
-    private readonly pbc::RepeatedField<global::ChromaControl.Common.Protos.Lighting.DeviceGroup> groups_ = new pbc::RepeatedField<global::ChromaControl.Common.Protos.Lighting.DeviceGroup>();
+    private static readonly pb::FieldCodec<global::ChromaConnect.Common.Protos.Lighting.DeviceGroup> _repeated_groups_codec
+        = pb::FieldCodec.ForMessage(10, global::ChromaConnect.Common.Protos.Lighting.DeviceGroup.Parser);
+    private readonly pbc::RepeatedField<global::ChromaConnect.Common.Protos.Lighting.DeviceGroup> groups_ = new pbc::RepeatedField<global::ChromaConnect.Common.Protos.Lighting.DeviceGroup>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::ChromaControl.Common.Protos.Lighting.DeviceGroup> Groups {
+    public pbc::RepeatedField<global::ChromaConnect.Common.Protos.Lighting.DeviceGroup> Groups {
       get { return groups_; }
     }
 
@@ -1630,7 +1630,7 @@ namespace ChromaControl.Common.Protos.Lighting {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ChromaControl.Common.Protos.Lighting.LightingReflection.Descriptor.MessageTypes[7]; }
+      get { return global::ChromaConnect.Common.Protos.Lighting.LightingReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1828,7 +1828,7 @@ namespace ChromaControl.Common.Protos.Lighting {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ChromaControl.Common.Protos.Lighting.LightingReflection.Descriptor.MessageTypes[8]; }
+      get { return global::ChromaConnect.Common.Protos.Lighting.LightingReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2063,7 +2063,7 @@ namespace ChromaControl.Common.Protos.Lighting {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ChromaControl.Common.Protos.Lighting.LightingReflection.Descriptor.MessageTypes[9]; }
+      get { return global::ChromaConnect.Common.Protos.Lighting.LightingReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2095,12 +2095,12 @@ namespace ChromaControl.Common.Protos.Lighting {
 
     /// <summary>Field number for the "devices" field.</summary>
     public const int DevicesFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::ChromaControl.Common.Protos.Lighting.Device> _repeated_devices_codec
-        = pb::FieldCodec.ForMessage(10, global::ChromaControl.Common.Protos.Lighting.Device.Parser);
-    private readonly pbc::RepeatedField<global::ChromaControl.Common.Protos.Lighting.Device> devices_ = new pbc::RepeatedField<global::ChromaControl.Common.Protos.Lighting.Device>();
+    private static readonly pb::FieldCodec<global::ChromaConnect.Common.Protos.Lighting.Device> _repeated_devices_codec
+        = pb::FieldCodec.ForMessage(10, global::ChromaConnect.Common.Protos.Lighting.Device.Parser);
+    private readonly pbc::RepeatedField<global::ChromaConnect.Common.Protos.Lighting.Device> devices_ = new pbc::RepeatedField<global::ChromaConnect.Common.Protos.Lighting.Device>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::ChromaControl.Common.Protos.Lighting.Device> Devices {
+    public pbc::RepeatedField<global::ChromaConnect.Common.Protos.Lighting.Device> Devices {
       get { return devices_; }
     }
 
@@ -2250,7 +2250,7 @@ namespace ChromaControl.Common.Protos.Lighting {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ChromaControl.Common.Protos.Lighting.LightingReflection.Descriptor.MessageTypes[10]; }
+      get { return global::ChromaConnect.Common.Protos.Lighting.LightingReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2448,7 +2448,7 @@ namespace ChromaControl.Common.Protos.Lighting {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ChromaControl.Common.Protos.Lighting.LightingReflection.Descriptor.MessageTypes[11]; }
+      get { return global::ChromaConnect.Common.Protos.Lighting.LightingReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2905,7 +2905,7 @@ namespace ChromaControl.Common.Protos.Lighting {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ChromaControl.Common.Protos.Lighting.LightingReflection.Descriptor.MessageTypes[12]; }
+      get { return global::ChromaConnect.Common.Protos.Lighting.LightingReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3103,7 +3103,7 @@ namespace ChromaControl.Common.Protos.Lighting {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ChromaControl.Common.Protos.Lighting.LightingReflection.Descriptor.MessageTypes[13]; }
+      get { return global::ChromaConnect.Common.Protos.Lighting.LightingReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3449,7 +3449,7 @@ namespace ChromaControl.Common.Protos.Lighting {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ChromaControl.Common.Protos.Lighting.LightingReflection.Descriptor.MessageTypes[14]; }
+      get { return global::ChromaConnect.Common.Protos.Lighting.LightingReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3481,12 +3481,12 @@ namespace ChromaControl.Common.Protos.Lighting {
 
     /// <summary>Field number for the "zones" field.</summary>
     public const int ZonesFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::ChromaControl.Common.Protos.Lighting.DeviceZone> _repeated_zones_codec
-        = pb::FieldCodec.ForMessage(10, global::ChromaControl.Common.Protos.Lighting.DeviceZone.Parser);
-    private readonly pbc::RepeatedField<global::ChromaControl.Common.Protos.Lighting.DeviceZone> zones_ = new pbc::RepeatedField<global::ChromaControl.Common.Protos.Lighting.DeviceZone>();
+    private static readonly pb::FieldCodec<global::ChromaConnect.Common.Protos.Lighting.DeviceZone> _repeated_zones_codec
+        = pb::FieldCodec.ForMessage(10, global::ChromaConnect.Common.Protos.Lighting.DeviceZone.Parser);
+    private readonly pbc::RepeatedField<global::ChromaConnect.Common.Protos.Lighting.DeviceZone> zones_ = new pbc::RepeatedField<global::ChromaConnect.Common.Protos.Lighting.DeviceZone>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::ChromaControl.Common.Protos.Lighting.DeviceZone> Zones {
+    public pbc::RepeatedField<global::ChromaConnect.Common.Protos.Lighting.DeviceZone> Zones {
       get { return zones_; }
     }
 
@@ -3636,7 +3636,7 @@ namespace ChromaControl.Common.Protos.Lighting {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ChromaControl.Common.Protos.Lighting.LightingReflection.Descriptor.MessageTypes[15]; }
+      get { return global::ChromaConnect.Common.Protos.Lighting.LightingReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

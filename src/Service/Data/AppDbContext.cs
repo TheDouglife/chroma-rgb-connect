@@ -2,11 +2,11 @@
 // The Douglife (Doug Montgomery) licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using ChromaControl.Service.Lighting.Entities;
-using ChromaControl.Service.Settings.Entities;
+using ChromaConnect.Service.Lighting.Entities;
+using ChromaConnect.Service.Settings.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace ChromaControl.Service.Data;
+namespace ChromaConnect.Service.Data;
 
 /// <summary>
 /// The app database context.

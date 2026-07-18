@@ -2,10 +2,10 @@
 // The Douglife (Doug Montgomery) licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using ChromaControl.Service.Data.Services;
+using ChromaConnect.Service.Data.Services;
 using Microsoft.EntityFrameworkCore;
 
-namespace ChromaControl.Service.Data;
+namespace ChromaConnect.Service.Data;
 
 /// <summary>
 /// Data extension methods.

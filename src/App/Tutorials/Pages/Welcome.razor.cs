@@ -4,7 +4,7 @@
 
 using Microsoft.AspNetCore.Components;
 
-namespace ChromaControl.App.Tutorials.Pages;
+namespace ChromaConnect.App.Tutorials.Pages;
 
 /// <summary>
 /// The welcome page.

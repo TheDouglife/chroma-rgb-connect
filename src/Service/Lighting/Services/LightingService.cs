@@ -2,15 +2,15 @@
 // The Douglife (Doug Montgomery) licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using ChromaControl.Common.Protos.Lighting;
-using ChromaControl.SDK.OpenRGB;
-using ChromaControl.Service.Data;
-using ChromaControl.Service.Data.Extensions;
-using ChromaControl.Service.Lighting.Extensions;
+using ChromaConnect.Common.Protos.Lighting;
+using ChromaConnect.SDK.OpenRGB;
+using ChromaConnect.Service.Data;
+using ChromaConnect.Service.Data.Extensions;
+using ChromaConnect.Service.Lighting.Extensions;
 using Grpc.Core;
 using Microsoft.EntityFrameworkCore;
 
-namespace ChromaControl.Service.Lighting.Services;
+namespace ChromaConnect.Service.Lighting.Services;
 
 /// <summary>
 /// The lighting service

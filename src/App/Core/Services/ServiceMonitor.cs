@@ -2,11 +2,11 @@
 // The Douglife (Doug Montgomery) licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using ChromaControl.Common.Extensions;
+using ChromaConnect.Common.Extensions;
 using System.Diagnostics;
 using System.IO;
 
-namespace ChromaControl.App.Core.Services;
+namespace ChromaConnect.App.Core.Services;
 
 /// <summary>
 /// A <see cref="BackgroundService"/> that monitors the lighting service.
@@ -50,7 +50,7 @@ public partial class ServiceMonitor : IHostedService
     /// <param name="logger">The <see cref="ILogger{TCategoryName}"/>.</param>
     public ServiceMonitor(IConfiguration configuration, ILogger<ServiceMonitor> logger)
     {
-        _servicePath = Path.Combine(configuration.GetChromaControlPath("app"), "ChromaRGBConnect.Service.exe");
+        _servicePath = Path.Combine(configuration.GetChromaConnectPath("app"), "ChromaRGBConnect.Service.exe");
         _logger = logger;
     }
 

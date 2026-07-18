@@ -2,13 +2,13 @@
 // The Douglife (Doug Montgomery) licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using ChromaControl.Common.Protos.Settings;
-using ChromaControl.Service.Data;
+using ChromaConnect.Common.Protos.Settings;
+using ChromaConnect.Service.Data;
 using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
 using Microsoft.EntityFrameworkCore;
 
-namespace ChromaControl.Service.Settings.Services;
+namespace ChromaConnect.Service.Settings.Services;
 
 /// <summary>
 /// The settings service.

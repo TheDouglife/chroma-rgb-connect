@@ -2,10 +2,10 @@
 // The Douglife (Doug Montgomery) licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using ChromaControl.App.Core.Mediator;
-using ChromaControl.Common.Protos.Settings;
+using ChromaConnect.App.Core.Mediator;
+using ChromaConnect.Common.Protos.Settings;
 
-namespace ChromaControl.App.Tutorials.Commands;
+namespace ChromaConnect.App.Tutorials.Commands;
 
 /// <summary>
 /// Finishes the tutorials.

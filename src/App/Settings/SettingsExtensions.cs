@@ -3,10 +3,10 @@
 // See the LICENSE file in the project root for more information.
 
 using BlazorDesktop.Hosting;
-using ChromaControl.Common.Extensions;
-using ChromaControl.Common.Protos.Settings;
+using ChromaConnect.Common.Extensions;
+using ChromaConnect.Common.Protos.Settings;
 
-namespace ChromaControl.App.Settings;
+namespace ChromaConnect.App.Settings;
 
 /// <summary>
 /// Settings extension methods.
@@ -20,7 +20,7 @@ public static class SettingsExtensions
     /// <returns>The <see cref="BlazorDesktopHostBuilder"/> to continue adding configuration to.</returns>
     public static BlazorDesktopHostBuilder ConfigureSettings(this BlazorDesktopHostBuilder builder)
     {
-        builder.Services.AddChromaControlGrpcClient<SettingsGrpc.SettingsGrpcClient>(builder.Configuration);
+        builder.Services.AddChromaConnectGrpcClient<SettingsGrpc.SettingsGrpcClient>(builder.Configuration);
 
         return builder;
     }

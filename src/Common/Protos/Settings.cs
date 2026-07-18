@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace ChromaControl.Common.Protos.Settings {
+namespace ChromaConnect.Common.Protos.Settings {
 
   /// <summary>Holder for reflection information generated from Protos/settings.proto</summary>
   public static partial class SettingsReflection {
@@ -54,14 +54,14 @@ namespace ChromaControl.Common.Protos.Settings {
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaControl.Common.Protos.Settings.EmptyMessage), global::ChromaControl.Common.Protos.Settings.EmptyMessage.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaControl.Common.Protos.Settings.GetSettingRequest), global::ChromaControl.Common.Protos.Settings.GetSettingRequest.Parser, new[]{ "Module", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaControl.Common.Protos.Settings.StringSettingResponse), global::ChromaControl.Common.Protos.Settings.StringSettingResponse.Parser, new[]{ "Value" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaControl.Common.Protos.Settings.BoolSettingResponse), global::ChromaControl.Common.Protos.Settings.BoolSettingResponse.Parser, new[]{ "Value" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaControl.Common.Protos.Settings.DateTimeSettingResponse), global::ChromaControl.Common.Protos.Settings.DateTimeSettingResponse.Parser, new[]{ "Value" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaControl.Common.Protos.Settings.SetStringRequest), global::ChromaControl.Common.Protos.Settings.SetStringRequest.Parser, new[]{ "Module", "Name", "Value" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaControl.Common.Protos.Settings.SetBoolRequest), global::ChromaControl.Common.Protos.Settings.SetBoolRequest.Parser, new[]{ "Module", "Name", "Value" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaControl.Common.Protos.Settings.SetDateTimeRequest), global::ChromaControl.Common.Protos.Settings.SetDateTimeRequest.Parser, new[]{ "Module", "Name", "Value" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaConnect.Common.Protos.Settings.EmptyMessage), global::ChromaConnect.Common.Protos.Settings.EmptyMessage.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaConnect.Common.Protos.Settings.GetSettingRequest), global::ChromaConnect.Common.Protos.Settings.GetSettingRequest.Parser, new[]{ "Module", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaConnect.Common.Protos.Settings.StringSettingResponse), global::ChromaConnect.Common.Protos.Settings.StringSettingResponse.Parser, new[]{ "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaConnect.Common.Protos.Settings.BoolSettingResponse), global::ChromaConnect.Common.Protos.Settings.BoolSettingResponse.Parser, new[]{ "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaConnect.Common.Protos.Settings.DateTimeSettingResponse), global::ChromaConnect.Common.Protos.Settings.DateTimeSettingResponse.Parser, new[]{ "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaConnect.Common.Protos.Settings.SetStringRequest), global::ChromaConnect.Common.Protos.Settings.SetStringRequest.Parser, new[]{ "Module", "Name", "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaConnect.Common.Protos.Settings.SetBoolRequest), global::ChromaConnect.Common.Protos.Settings.SetBoolRequest.Parser, new[]{ "Module", "Name", "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ChromaConnect.Common.Protos.Settings.SetDateTimeRequest), global::ChromaConnect.Common.Protos.Settings.SetDateTimeRequest.Parser, new[]{ "Module", "Name", "Value" }, null, null, null, null)
           }));
     }
     #endregion
@@ -83,7 +83,7 @@ namespace ChromaControl.Common.Protos.Settings {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ChromaControl.Common.Protos.Settings.SettingsReflection.Descriptor.MessageTypes[0]; }
+      get { return global::ChromaConnect.Common.Protos.Settings.SettingsReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -244,7 +244,7 @@ namespace ChromaControl.Common.Protos.Settings {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ChromaControl.Common.Protos.Settings.SettingsReflection.Descriptor.MessageTypes[1]; }
+      get { return global::ChromaConnect.Common.Protos.Settings.SettingsReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -479,7 +479,7 @@ namespace ChromaControl.Common.Protos.Settings {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ChromaControl.Common.Protos.Settings.SettingsReflection.Descriptor.MessageTypes[2]; }
+      get { return global::ChromaConnect.Common.Protos.Settings.SettingsReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -677,7 +677,7 @@ namespace ChromaControl.Common.Protos.Settings {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ChromaControl.Common.Protos.Settings.SettingsReflection.Descriptor.MessageTypes[3]; }
+      get { return global::ChromaConnect.Common.Protos.Settings.SettingsReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -875,7 +875,7 @@ namespace ChromaControl.Common.Protos.Settings {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ChromaControl.Common.Protos.Settings.SettingsReflection.Descriptor.MessageTypes[4]; }
+      get { return global::ChromaConnect.Common.Protos.Settings.SettingsReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1082,7 +1082,7 @@ namespace ChromaControl.Common.Protos.Settings {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ChromaControl.Common.Protos.Settings.SettingsReflection.Descriptor.MessageTypes[5]; }
+      get { return global::ChromaConnect.Common.Protos.Settings.SettingsReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1354,7 +1354,7 @@ namespace ChromaControl.Common.Protos.Settings {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ChromaControl.Common.Protos.Settings.SettingsReflection.Descriptor.MessageTypes[6]; }
+      get { return global::ChromaConnect.Common.Protos.Settings.SettingsReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1626,7 +1626,7 @@ namespace ChromaControl.Common.Protos.Settings {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ChromaControl.Common.Protos.Settings.SettingsReflection.Descriptor.MessageTypes[7]; }
+      get { return global::ChromaConnect.Common.Protos.Settings.SettingsReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

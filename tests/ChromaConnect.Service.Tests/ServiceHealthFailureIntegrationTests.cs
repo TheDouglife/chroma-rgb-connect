@@ -2,7 +2,7 @@
 // The Douglife (Doug Montgomery) licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using ChromaControl.Service.Data.Services;
+using ChromaConnect.Service.Data.Services;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.Configuration;
@@ -12,7 +12,7 @@ using Microsoft.Extensions.Hosting;
 using System.Net;
 using System.Text.Json;
 
-namespace ChromaControl.Service.Tests;
+namespace ChromaConnect.Service.Tests;
 
 public sealed class ServiceHealthFailureIntegrationTests
 {
@@ -74,11 +74,11 @@ public sealed class ServiceHealthFailureIntegrationTests
 
 public sealed class FailedStartupServiceWebApplicationFactory : WebApplicationFactory<Program>
 {
-    private readonly string _singleInstanceName = $"ChromaControl.Service.Tests.FailingFactory.{Guid.NewGuid():N}";
+    private readonly string _singleInstanceName = $"ChromaConnect.Service.Tests.FailingFactory.{Guid.NewGuid():N}";
 
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
-        Environment.SetEnvironmentVariable("CHROMACONTROL_SINGLE_INSTANCE_NAME", _singleInstanceName);
+        Environment.SetEnvironmentVariable("CHROMACONNECT_SINGLE_INSTANCE_NAME", _singleInstanceName);
         builder.UseEnvironment("Development");
 
         builder.ConfigureAppConfiguration((_, config) =>
@@ -87,7 +87,7 @@ public sealed class FailedStartupServiceWebApplicationFactory : WebApplicationFa
 
             config.AddInMemoryCollection(new Dictionary<string, string?>
             {
-                ["ChromaControl:SingleInstanceName"] = $"ChromaControl.Service.Tests.Failing.{Guid.NewGuid():N}",
+                ["ChromaConnect:SingleInstanceName"] = $"ChromaConnect.Service.Tests.Failing.{Guid.NewGuid():N}",
                 ["Service:Transport:UseNamedPipes"] = "true",
                 ["Service:Transport:Port"] = "50123",
                 ["ConnectionStrings:Database"] = $"Data Source={testDatabasePath}",
@@ -123,7 +123,7 @@ public sealed class FailedStartupServiceWebApplicationFactory : WebApplicationFa
 
     protected override void Dispose(bool disposing)
     {
-        Environment.SetEnvironmentVariable("CHROMACONTROL_SINGLE_INSTANCE_NAME", null);
+        Environment.SetEnvironmentVariable("CHROMACONNECT_SINGLE_INSTANCE_NAME", null);
         base.Dispose(disposing);
     }
 }

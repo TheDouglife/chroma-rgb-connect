@@ -3,9 +3,9 @@
 // See the LICENSE file in the project root for more information.
 
 using Microsoft.Extensions.Options;
-using ChromaControl.Service.Core.Services;
+using ChromaConnect.Service.Core.Services;
 
-namespace ChromaControl.Service.Data.Services;
+namespace ChromaConnect.Service.Data.Services;
 
 /// <summary>
 /// Service that performs database migrations.

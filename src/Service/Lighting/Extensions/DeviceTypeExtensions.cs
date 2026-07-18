@@ -2,9 +2,9 @@
 // The Douglife (Doug Montgomery) licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using ChromaControl.SDK.OpenRGB.Enums;
+using ChromaConnect.SDK.OpenRGB.Enums;
 
-namespace ChromaControl.Service.Lighting.Extensions;
+namespace ChromaConnect.Service.Lighting.Extensions;
 
 /// <summary>
 /// Extension methods for <see cref="OpenRGBDeviceType"/>.

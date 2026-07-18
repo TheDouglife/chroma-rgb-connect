@@ -15,8 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\App\ChromaControl.App.csproj" IsAspireProjectResource="true" />
-    <ProjectReference Include="..\Service\ChromaControl.Service.csproj" IsAspireProjectResource="true" />
+    <ProjectReference Include="..\App\ChromaConnect.App.csproj" IsAspireProjectResource="true" />
+    <ProjectReference Include="..\Service\ChromaConnect.Service.csproj" IsAspireProjectResource="true" />
   </ItemGroup>
 
 </Project>

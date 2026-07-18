@@ -1,4 +1,4 @@
-﻿name: CI
+name: CI
 
 on:
   push:
@@ -26,6 +26,20 @@ jobs:
         with:
           ref: ${{ github.event.inputs.target_ref || github.ref }}
 
+      - name: Checkout ChromaConnect SDK
+        uses: actions/checkout@v5
+        with:
+          repository: ChromaControl/SDK
+          ref: main
+          path: external/ChromaConnect-SDK
+
+      - name: Checkout ChromaConnect Native
+        uses: actions/checkout@v5
+        with:
+          repository: ChromaControl/Native
+          ref: main
+          path: external/ChromaConnect-Native
+
       - name: Setup .NET
         uses: actions/setup-dotnet@v5
         with:
@@ -36,46 +50,46 @@ jobs:
 
       - name: Restore (Windows)
         if: matrix.os == 'windows-latest'
-        run: dotnet restore ChromaControl.sln -r win-${{ matrix.arch }}
+        run: dotnet restore ChromaConnect.sln -r win-${{ matrix.arch }} -p:ChromaConnectSdkRoot="${{ github.workspace }}/external/ChromaConnect-SDK" -p:ChromaConnectNativeRoot="${{ github.workspace }}/external/ChromaConnect-Native"
 
       - name: Restore (Non-Windows)
         if: matrix.os != 'windows-latest'
-        run: dotnet restore ChromaControl.sln -p:EnableWindowsTargeting=true -p:ManagePackageVersionsCentrally=false
+        run: dotnet restore ChromaConnect.sln -p:EnableWindowsTargeting=true -p:ManagePackageVersionsCentrally=false -p:ChromaConnectSdkRoot="${{ github.workspace }}/external/ChromaConnect-SDK" -p:ChromaConnectNativeRoot="${{ github.workspace }}/external/ChromaConnect-Native"
 
       - name: Publish for runtime (Windows)
         if: matrix.os == 'windows-latest'
         run: |
-          dotnet publish src/Service/ChromaControl.Service.csproj -c Release -r win-${{ matrix.arch }} --self-contained true --no-restore
-          dotnet publish src/App/ChromaControl.App.csproj -c Release -r win-${{ matrix.arch }} --self-contained true --no-restore
+          dotnet publish src/Service/ChromaConnect.Service.csproj -c Release -r win-${{ matrix.arch }} --self-contained true --no-restore -p:ChromaConnectSdkRoot="${{ github.workspace }}/external/ChromaConnect-SDK" -p:ChromaConnectNativeRoot="${{ github.workspace }}/external/ChromaConnect-Native"
+          dotnet publish src/App/ChromaConnect.App.csproj -c Release -r win-${{ matrix.arch }} --self-contained true --no-restore -p:ChromaConnectSdkRoot="${{ github.workspace }}/external/ChromaConnect-SDK" -p:ChromaConnectNativeRoot="${{ github.workspace }}/external/ChromaConnect-Native"
 
       - name: Publish for runtime (Non-Windows)
         if: matrix.os != 'windows-latest'
         run: |
-          dotnet publish src/Service/ChromaControl.Service.csproj -c Release -r linux-${{ matrix.arch }} --self-contained true --no-restore || true
-          dotnet publish src/App/ChromaControl.App.csproj -c Release -r linux-${{ matrix.arch }} --self-contained true --no-restore || true
+          dotnet publish src/Service/ChromaConnect.Service.csproj -c Release -r linux-${{ matrix.arch }} --self-contained true --no-restore -p:ChromaConnectSdkRoot="${{ github.workspace }}/external/ChromaConnect-SDK" -p:ChromaConnectNativeRoot="${{ github.workspace }}/external/ChromaConnect-Native" || true
+          dotnet publish src/App/ChromaConnect.App.csproj -c Release -r linux-${{ matrix.arch }} --self-contained true --no-restore -p:ChromaConnectSdkRoot="${{ github.workspace }}/external/ChromaConnect-SDK" -p:ChromaConnectNativeRoot="${{ github.workspace }}/external/ChromaConnect-Native" || true
 
       - name: Build (Windows)
         if: matrix.os == 'windows-latest'
-        run: dotnet build ChromaControl.sln -c Release --no-restore
+        run: dotnet build ChromaConnect.sln -c Release --no-restore -p:ChromaConnectSdkRoot="${{ github.workspace }}/external/ChromaConnect-SDK" -p:ChromaConnectNativeRoot="${{ github.workspace }}/external/ChromaConnect-Native"
 
       - name: Build (Non-Windows)
         if: matrix.os != 'windows-latest'
-        run: dotnet build ChromaControl.sln -c Release --no-restore -p:EnableWindowsTargeting=true
+        run: dotnet build ChromaConnect.sln -c Release --no-restore -p:EnableWindowsTargeting=true -p:ChromaConnectSdkRoot="${{ github.workspace }}/external/ChromaConnect-SDK" -p:ChromaConnectNativeRoot="${{ github.workspace }}/external/ChromaConnect-Native"
 
       - name: Test (Windows)
         if: matrix.os == 'windows-latest'
-        run: dotnet test tests/ChromaControl.App.Tests/ChromaControl.App.Tests.csproj -c Release --no-build --verbosity normal
+        run: dotnet test tests/ChromaConnect.App.Tests/ChromaConnect.App.Tests.csproj -c Release --no-build --verbosity normal
 
       - name: Test (Non-Windows)
         if: matrix.os != 'windows-latest'
-        run: dotnet test tests/ChromaControl.App.Tests/ChromaControl.App.Tests.csproj -c Release --no-build --verbosity normal -p:EnableWindowsTargeting=true || true
+        run: dotnet test tests/ChromaConnect.App.Tests/ChromaConnect.App.Tests.csproj -c Release --no-build --verbosity normal -p:EnableWindowsTargeting=true || true
 
       - name: Pack (optional)
         if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || (github.event_name == 'workflow_dispatch' && github.event.inputs.target_ref == 'main')
         run: |
-          dotnet pack src/Common/ChromaControl.Common.csproj -c Release --no-build -o ./artifacts
-          dotnet pack src/App/ChromaControl.App.csproj -c Release --no-build -o ./artifacts
-          dotnet pack src/Service/ChromaControl.Service.csproj -c Release --no-build -o ./artifacts
+          dotnet pack src/Common/ChromaConnect.Common.csproj -c Release --no-build -o ./artifacts
+          dotnet pack src/App/ChromaConnect.App.csproj -c Release --no-build -o ./artifacts
+          dotnet pack src/Service/ChromaConnect.Service.csproj -c Release --no-build -o ./artifacts
 
       - name: Upload artifacts
         if: success() && ((github.event_name == 'push' && github.ref == 'refs/heads/main') || (github.event_name == 'workflow_dispatch' && github.event.inputs.target_ref == 'main'))
@@ -92,6 +106,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v5
+
+      - name: Checkout ChromaConnect SDK
+        uses: actions/checkout@v5
+        with:
+          repository: ChromaControl/SDK
+          ref: main
+          path: external/ChromaConnect-SDK
+
+      - name: Checkout ChromaConnect Native
+        uses: actions/checkout@v5
+        with:
+          repository: ChromaControl/Native
+          ref: main
+          path: external/ChromaConnect-Native
       - name: Setup .NET
         uses: actions/setup-dotnet@v5
         with:
@@ -102,8 +130,10 @@ jobs:
       - name: Build installer
         shell: pwsh
         run: >-
-          dotnet publish src/Installer/ChromaControl.Installer.csproj
+          dotnet publish src/Installer/ChromaConnect.Installer.csproj
           -c Release -r win-x64 --self-contained true
+          -p:ChromaConnectSdkRoot="${{ github.workspace }}/external/ChromaConnect-SDK"
+          -p:ChromaConnectNativeRoot="${{ github.workspace }}/external/ChromaConnect-Native"
           /p:InnoSetupCompilerPath="${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe"
       - name: Sign release executables
         if: startsWith(github.ref, 'refs/tags/v')
@@ -144,7 +174,7 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: chroma-rgb-connect-installer
-          path: src/Installer/bin/**/publish/ChromaControlSetup-*.exe
+          path: src/Installer/bin/**/publish/ChromaRGBConnectSetup-*.exe
           if-no-files-found: error
 
   release-installer:
@@ -162,16 +192,16 @@ jobs:
       - name: Prepare latest installer alias
         shell: bash
         run: |
-          installer=$(find release -type f -name 'ChromaControlSetup-*.exe' | head -n 1)
+          installer=$(find release -type f -name 'ChromaRGBConnectSetup-*.exe' | head -n 1)
           if [ -z "$installer" ]; then
             echo "No installer was downloaded." >&2
             exit 1
           fi
-          cp "$installer" release/ChromaControlSetup-latest.exe
+          cp "$installer" release/ChromaRGBConnectSetup-latest.exe
       - name: Publish GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: release/**/ChromaControlSetup-*.exe
+          files: release/**/ChromaRGBConnectSetup-*.exe
 
   package-check:
     runs-on: ubuntu-latest

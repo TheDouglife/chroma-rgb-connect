@@ -161,7 +161,14 @@ public partial class LightingWorker : IHostedService
         {
             try
             {
-                await ApplyColorsAsync(colors, cancellationToken);
+                var latestColors = colors;
+
+                while (_colorUpdates.Reader.TryRead(out var newerColors))
+                {
+                    latestColors = newerColors;
+                }
+
+                await ApplyColorsAsync(latestColors, cancellationToken);
             }
             catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
             {
@@ -183,13 +190,12 @@ public partial class LightingWorker : IHostedService
             devices = _devices;
         }
 
-        var currentColor = 0;
-
         foreach (var device in devices)
         {
             cancellationToken.ThrowIfCancellationRequested();
 
             var buffer = device.CreateColorBuffer();
+            var currentColor = 0;
 
             for (var i = 0; i < buffer.Length; i++)
             {

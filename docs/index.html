@@ -5,17 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Chroma RBG Connect is an updated way to connect third-party RGB hardware to Razer Chroma Connect easily." />
   <title>Chroma RGB Connect | Windows RGB control</title>
-  <link rel="icon" type="image/png" href="../icons/web/icon-192.png" />
+  <link rel="icon" type="image/png" href="icons/web/icon-192.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    :root { --ink:#e9f1e8; --muted:#9eada0; --dim:#6f7f72; --base:#080d09; --panel:#121b15; --panel-light:#1a271d; --line:rgba(220,241,220,.13); --lime:#c3f53c; --cyan:#7ce4d0; --blue:#238cff; --magenta:#f22bca; }
+    :root { --ink:#e9f1e8; --muted:#9eada0; --dim:#6f7f72; --base:#080d09; --panel:#121b15; --panel-light:#1a271d; --line:rgba(220,241,220,.13); --lime:#59ad27; --lime-bright:#70c83b; --cyan:#7ce4d0; --blue:#238cff; --magenta:#f22bca; }
     * { box-sizing:border-box; }
     html { scroll-behavior:smooth; }
     body { margin:0; color:var(--ink); background:var(--base); font-family:"Space Grotesk",sans-serif; overflow-x:hidden; }
-    body::before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.26; background-image:linear-gradient(rgba(220,241,220,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(220,241,220,.05) 1px,transparent 1px); background-size:42px 42px; mask-image:linear-gradient(to bottom,black,transparent 74%); }
-    body::after { content:""; position:fixed; width:55vw; height:55vw; top:-25vw; right:-18vw; pointer-events:none; background:radial-gradient(circle,rgba(40,213,46,.18),transparent 68%); filter:blur(16px); }
+    body::before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.22; background-image:radial-gradient(rgba(220,241,220,.12) 1px,transparent 1px); background-size:42px 42px; mask-image:linear-gradient(to bottom,black,transparent 74%); }
+    body::after { content:""; position:fixed; width:55vw; height:55vw; top:-25vw; right:-18vw; pointer-events:none; background:radial-gradient(circle,rgba(89,173,39,.18),transparent 68%); filter:blur(16px); }
     a { color:inherit; }
     .page { width:min(1180px,calc(100% - 40px)); margin:0 auto; position:relative; }
     .nav { display:flex; justify-content:space-between; align-items:center; padding:28px 0; border-bottom:1px solid var(--line); }
@@ -31,13 +31,13 @@
     h1 { max-width:760px; margin:0; font-size:clamp(3.6rem,9vw,8.2rem); line-height:.87; letter-spacing:-.08em; }
     .hero-copy { margin:30px 0 0; max-width:610px; color:var(--muted); font-size:1.18rem; line-height:1.6; }
     .hero-side { border-left:1px solid var(--line); padding-left:28px; position:relative; }
-    .hero-visual { height:180px; margin:-10px 0 28px; position:relative; overflow:hidden; }
+    .hero-visual { height:205px; margin:-10px 0 28px; position:relative; overflow:visible; }
     .rgb-ring { position:absolute; width:190px; height:82px; right:4%; top:20px; border:2px solid var(--cyan); border-radius:50%; transform:rotate(-12deg); box-shadow:0 0 14px var(--cyan),inset 0 0 12px rgba(124,228,208,.35); }
     .rgb-ring::after { content:""; position:absolute; inset:8px 18px; border:2px solid var(--magenta); border-radius:50%; box-shadow:0 0 14px var(--magenta); }
     .rgb-ring.ring-two { right:12%; top:46px; border-color:var(--lime); transform:rotate(8deg); box-shadow:0 0 15px var(--lime),inset 0 0 12px rgba(195,245,60,.32); }
     .rgb-ring.ring-two::after { border-color:var(--blue); box-shadow:0 0 14px var(--blue); }
-    .led-panel { position:absolute; left:2%; bottom:12px; width:150px; height:48px; transform:rotate(-8deg); border:1px solid rgba(220,241,220,.5); background:radial-gradient(circle,#eaff43 0 2px,transparent 3px) 0 0/16px 16px,radial-gradient(circle,#20cfff 0 2px,transparent 3px) 8px 8px/16px 16px,rgba(8,13,9,.86); box-shadow:0 0 24px rgba(38,210,107,.48); }
-    .fan { position:absolute; right:2%; bottom:-18px; width:110px; height:110px; border:7px solid #16211a; border-radius:50%; background:conic-gradient(var(--blue),var(--magenta),#ffb52e,var(--lime),var(--cyan),var(--blue)); box-shadow:0 0 25px rgba(35,140,255,.55); }
+    .led-panel { position:absolute; left:2%; bottom:24px; width:150px; height:48px; transform:rotate(-8deg); border:1px solid rgba(220,241,220,.5); background:radial-gradient(circle,#eaff43 0 2px,transparent 3px) 0 0/16px 16px,radial-gradient(circle,#20cfff 0 2px,transparent 3px) 8px 8px/16px 16px,rgba(8,13,9,.86); box-shadow:0 0 24px rgba(89,173,39,.48); }
+    .fan { position:absolute; right:2%; bottom:6px; width:110px; height:110px; border:7px solid #16211a; border-radius:50%; background:conic-gradient(var(--blue),var(--magenta),#ffb52e,var(--lime),var(--cyan),var(--blue)); box-shadow:0 0 25px rgba(35,140,255,.55); }
     .fan::after { content:""; position:absolute; inset:30px; border-radius:50%; background:#080d09; box-shadow:0 0 18px #080d09; }
     .signal { display:flex; align-items:center; gap:9px; color:var(--cyan); margin-bottom:20px; }
     .signal i { width:8px; height:8px; display:block; background:var(--cyan); box-shadow:0 0 18px var(--cyan); }
@@ -45,7 +45,7 @@
     .button { display:inline-flex; align-items:center; justify-content:center; gap:12px; min-height:50px; padding:0 20px; text-decoration:none; font-weight:700; transition:transform .2s ease,background .2s ease; }
     .button:hover { transform:translateY(-2px); }
     .button.primary { color:var(--base); background:var(--lime); }
-    .button.primary:hover { background:#d6ff67; }
+    .button.primary:hover { background:var(--lime-bright); }
     .button.secondary { border:1px solid var(--line); color:var(--ink); }
     .button.secondary:hover { border-color:var(--lime); }
     .section { border-top:1px solid var(--line); padding:76px 0; }
@@ -73,7 +73,7 @@
 <body>
   <div class="page">
     <nav class="nav" aria-label="Main navigation">
-      <a class="brand" href="./"><img class="mark" src="../icons/web/icon-192.png" alt="" /><span>Chroma RGB Connect</span></a>
+      <a class="brand" href="./"><img class="mark" src="icons/web/icon-192.png" alt="" /><span>Chroma RGB Connect</span></a>
       <div class="nav-links"><a href="#features">Capabilities</a><a href="#download">Download</a><a href="https://github.com/TheDouglife/chroma-rgb-connect">GitHub</a></div>
     </nav>
     <main>

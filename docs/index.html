@@ -10,11 +10,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    :root { --ink:#e9f1e8; --muted:#9eada0; --dim:#6f7f72; --base:#111613; --panel:#19211b; --panel-light:#202a23; --line:rgba(220,241,220,.13); --lime:#c3f53c; --cyan:#7ce4d0; }
+    :root { --ink:#e9f1e8; --muted:#9eada0; --dim:#6f7f72; --base:#080d09; --panel:#121b15; --panel-light:#1a271d; --line:rgba(220,241,220,.13); --lime:#c3f53c; --cyan:#7ce4d0; --blue:#238cff; --magenta:#f22bca; }
     * { box-sizing:border-box; }
     html { scroll-behavior:smooth; }
-    body { margin:0; color:var(--ink); background:var(--base); font-family:"Space Grotesk",sans-serif; }
+    body { margin:0; color:var(--ink); background:var(--base); font-family:"Space Grotesk",sans-serif; overflow-x:hidden; }
     body::before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.26; background-image:linear-gradient(rgba(220,241,220,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(220,241,220,.05) 1px,transparent 1px); background-size:42px 42px; mask-image:linear-gradient(to bottom,black,transparent 74%); }
+    body::after { content:""; position:fixed; width:55vw; height:55vw; top:-25vw; right:-18vw; pointer-events:none; background:radial-gradient(circle,rgba(40,213,46,.18),transparent 68%); filter:blur(16px); }
     a { color:inherit; }
     .page { width:min(1180px,calc(100% - 40px)); margin:0 auto; position:relative; }
     .nav { display:flex; justify-content:space-between; align-items:center; padding:28px 0; border-bottom:1px solid var(--line); }
@@ -23,12 +24,21 @@
     .nav-links { display:flex; gap:24px; color:var(--muted); font-size:.9rem; }
     .nav-links a { text-decoration:none; }
     .nav-links a:hover, .text-link:hover { color:var(--lime); }
-    .hero { display:grid; grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr); gap:80px; padding:92px 0 110px; align-items:end; }
+    .hero { display:grid; grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr); gap:80px; padding:92px 0 110px; align-items:end; position:relative; isolation:isolate; overflow:hidden; }
+    .hero::after { content:""; position:absolute; z-index:-1; left:-12vw; right:26%; bottom:-100px; height:74px; opacity:.65; border-radius:50%; border-top:2px solid var(--lime); border-bottom:2px solid var(--blue); transform:rotate(-8deg); box-shadow:0 -18px 0 -1px var(--cyan),0 18px 0 -1px var(--magenta),0 36px 0 -1px #ffb52e; filter:blur(.2px); }
     .kicker, .mono { font-family:"DM Mono",monospace; text-transform:uppercase; letter-spacing:.12em; font-size:.72rem; }
     .kicker { color:var(--lime); margin-bottom:22px; }
     h1 { max-width:760px; margin:0; font-size:clamp(3.6rem,9vw,8.2rem); line-height:.87; letter-spacing:-.08em; }
     .hero-copy { margin:30px 0 0; max-width:610px; color:var(--muted); font-size:1.18rem; line-height:1.6; }
-    .hero-side { border-left:1px solid var(--line); padding-left:28px; }
+    .hero-side { border-left:1px solid var(--line); padding-left:28px; position:relative; }
+    .hero-visual { height:180px; margin:-10px 0 28px; position:relative; overflow:hidden; }
+    .rgb-ring { position:absolute; width:190px; height:82px; right:4%; top:20px; border:2px solid var(--cyan); border-radius:50%; transform:rotate(-12deg); box-shadow:0 0 14px var(--cyan),inset 0 0 12px rgba(124,228,208,.35); }
+    .rgb-ring::after { content:""; position:absolute; inset:8px 18px; border:2px solid var(--magenta); border-radius:50%; box-shadow:0 0 14px var(--magenta); }
+    .rgb-ring.ring-two { right:12%; top:46px; border-color:var(--lime); transform:rotate(8deg); box-shadow:0 0 15px var(--lime),inset 0 0 12px rgba(195,245,60,.32); }
+    .rgb-ring.ring-two::after { border-color:var(--blue); box-shadow:0 0 14px var(--blue); }
+    .led-panel { position:absolute; left:2%; bottom:12px; width:150px; height:48px; transform:rotate(-8deg); border:1px solid rgba(220,241,220,.5); background:radial-gradient(circle,#eaff43 0 2px,transparent 3px) 0 0/16px 16px,radial-gradient(circle,#20cfff 0 2px,transparent 3px) 8px 8px/16px 16px,rgba(8,13,9,.86); box-shadow:0 0 24px rgba(38,210,107,.48); }
+    .fan { position:absolute; right:2%; bottom:-18px; width:110px; height:110px; border:7px solid #16211a; border-radius:50%; background:conic-gradient(var(--blue),var(--magenta),#ffb52e,var(--lime),var(--cyan),var(--blue)); box-shadow:0 0 25px rgba(35,140,255,.55); }
+    .fan::after { content:""; position:absolute; inset:30px; border-radius:50%; background:#080d09; box-shadow:0 0 18px #080d09; }
     .signal { display:flex; align-items:center; gap:9px; color:var(--cyan); margin-bottom:20px; }
     .signal i { width:8px; height:8px; display:block; background:var(--cyan); box-shadow:0 0 18px var(--cyan); }
     .hero-side p { color:var(--muted); line-height:1.55; margin:0 0 28px; }
@@ -57,7 +67,7 @@
     .release-meta span { display:flex; gap:7px; align-items:center; }
     footer { display:flex; justify-content:space-between; gap:20px; padding:28px 0 42px; color:var(--dim); font-size:.85rem; }
     .text-link { color:var(--muted); text-decoration:none; }
-    @media (max-width:760px) { .page{width:min(100% - 28px,620px)} .nav-links{gap:12px;font-size:.78rem} .hero{grid-template-columns:1fr;gap:42px;padding:64px 0 76px} .hero-side{border-left:0;border-top:1px solid var(--line);padding:24px 0 0} h1{font-size:clamp(3.5rem,17vw,6rem)} .feature-grid,.download{grid-template-columns:1fr} .download{padding:24px} .section-heading,footer{display:block} .section-heading p{margin-top:16px} footer .text-link{display:inline-block;margin-top:12px} }
+    @media (max-width:760px) { .page{width:min(100% - 28px,620px)} .nav-links{gap:12px;font-size:.78rem} .hero{grid-template-columns:1fr;gap:42px;padding:64px 0 76px} .hero::after{left:-20vw;right:-12vw;bottom:-70px} .hero-side{border-left:0;border-top:1px solid var(--line);padding:24px 0 0} .hero-visual{height:150px;margin-top:0} h1{font-size:clamp(3.5rem,17vw,6rem)} .feature-grid,.download{grid-template-columns:1fr} .download{padding:24px} .section-heading,footer{display:block} .section-heading p{margin-top:16px} footer .text-link{display:inline-block;margin-top:12px} }
   </style>
 </head>
 <body>
@@ -69,7 +79,7 @@
     <main>
       <section class="hero">
         <div><div class="kicker">Windows / RGB control layer / 2026</div><h1>Chroma RGB Connect</h1><p class="hero-copy">Chroma RBG Connect is an updated way to connect third-party RGB hardware to Razer Chroma Connect easily.</p></div>
-        <div class="hero-side"><div class="signal mono"><i></i> Current stable release</div><p>A simple, safe way to connect your third-party RGB led devices to Razer Chroma Connect. Quick setup, new features coming soon.</p><a class="button primary" href="./installer/">Get Chroma RGB Connect <span aria-hidden="true">-&gt;</span></a></div>
+        <div class="hero-side"><div class="hero-visual" aria-hidden="true"><div class="rgb-ring"></div><div class="rgb-ring ring-two"></div><div class="led-panel"></div><div class="fan"></div></div><div class="signal mono"><i></i> Current stable release</div><p>A simple, safe way to connect your third-party RGB led devices to Razer Chroma Connect. Quick setup, new features coming soon.</p><a class="button primary" href="./installer/">Get Chroma RGB Connect <span aria-hidden="true">-&gt;</span></a></div>
       </section>
       <section class="section" id="features"><div class="section-heading"><h2>Built for<br />the whole rig.</h2><p>Less switching between vendor utilities. More time shaping the room, desk, or setup exactly how it should feel.</p></div><div class="feature-grid"><article class="feature"><span class="feature-number mono">01 / Connect</span><div><h3>Third-party ready</h3><p>Connect supported OpenRGB and Razer Synapse lighting providers through one shared surface.</p></div></article><article class="feature"><span class="feature-number mono">02 / Control</span><div><h3>Made for daily use</h3><p>Quickly find devices, vendors, zones, and settings without burying the important controls.</p></div></article><article class="feature"><span class="feature-number mono">03 / Maintain</span><div><h3>Quietly up to date</h3><p>Built-in update checks keep the app current while keeping your lighting workflow intact.</p></div></article></div></section>
       <section class="section" id="download"><div class="download"><div><div class="mono">Latest stable / Windows x64</div><h2>Put it on your setup.</h2><p>The installer includes the app, its local lighting service, and prerequisite checks for a smoother first launch.</p><div class="release-meta mono"><span>WIN 10+</span><span>x64</span><span>FREE</span></div></div><a class="button" href="https://github.com/TheDouglife/chroma-rgb-connect/releases/latest/download/ChromaControlSetup-latest.exe">Download installer <span aria-hidden="true">v</span></a></div></section>

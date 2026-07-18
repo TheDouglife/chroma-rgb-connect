@@ -159,6 +159,15 @@ jobs:
         with:
           name: chroma-rgb-connect-installer
           path: release
+      - name: Prepare latest installer alias
+        shell: bash
+        run: |
+          installer=$(find release -type f -name 'ChromaControlSetup-*.exe' | head -n 1)
+          if [ -z "$installer" ]; then
+            echo "No installer was downloaded." >&2
+            exit 1
+          fi
+          cp "$installer" release/ChromaControlSetup-latest.exe
       - name: Publish GitHub Release
         uses: softprops/action-gh-release@v2
         with:

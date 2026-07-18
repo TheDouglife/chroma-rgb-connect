@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Chroma RGB Connect brings third-party RGB lighting into one calm Windows control surface." />
+  <meta name="description" content="Chroma RBG Connect is an updated way to connect third-party RGB hardware to Razer Chroma Connect easily." />
   <title>Chroma RGB Connect | Windows RGB control</title>
+  <link rel="icon" type="image/png" href="../icons/web/icon-192.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -18,7 +19,7 @@
     .page { width:min(1180px,calc(100% - 40px)); margin:0 auto; position:relative; }
     .nav { display:flex; justify-content:space-between; align-items:center; padding:28px 0; border-bottom:1px solid var(--line); }
     .brand { display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:-.02em; text-decoration:none; }
-    .mark { width:30px; height:30px; display:grid; place-items:center; color:var(--base); background:var(--lime); font-family:"DM Mono",monospace; font-size:.85rem; font-weight:500; }
+    .mark { width:30px; height:30px; display:block; object-fit:contain; }
     .nav-links { display:flex; gap:24px; color:var(--muted); font-size:.9rem; }
     .nav-links a { text-decoration:none; }
     .nav-links a:hover, .text-link:hover { color:var(--lime); }
@@ -62,13 +63,13 @@
 <body>
   <div class="page">
     <nav class="nav" aria-label="Main navigation">
-      <a class="brand" href="./"><span class="mark">+</span><span>Chroma RGB Connect</span></a>
+      <a class="brand" href="./"><img class="mark" src="../icons/web/icon-192.png" alt="" /><span>Chroma RGB Connect</span></a>
       <div class="nav-links"><a href="#features">Capabilities</a><a href="#download">Download</a><a href="https://github.com/TheDouglife/chroma-rgb-connect">GitHub</a></div>
     </nav>
     <main>
       <section class="hero">
-        <div><div class="kicker">Windows / RGB control layer / 2026</div><h1>Chroma RGB Connect</h1><p class="hero-copy">Chroma RGB Connect brings supported third-party RGB hardware into one focused control surface, built for people who want their lighting to behave like a system.</p></div>
-        <div class="hero-side"><div class="signal mono"><i></i> Current stable release</div><p>Fast local control for supported RGB LED providers, with a Windows installer that handles the setup details for you.</p><a class="button primary" href="./installer/">Get Chroma RGB Connect <span aria-hidden="true">-&gt;</span></a></div>
+        <div><div class="kicker">Windows / RGB control layer / 2026</div><h1>Chroma RGB Connect</h1><p class="hero-copy">Chroma RBG Connect is an updated way to connect third-party RGB hardware to Razer Chroma Connect easily.</p></div>
+        <div class="hero-side"><div class="signal mono"><i></i> Current stable release</div><p>A simple, safe way to connect your third-party RGB led devices to Razer Chroma Connect. Quick setup, new features coming soon.</p><a class="button primary" href="./installer/">Get Chroma RGB Connect <span aria-hidden="true">-&gt;</span></a></div>
       </section>
       <section class="section" id="features"><div class="section-heading"><h2>Built for<br />the whole rig.</h2><p>Less switching between vendor utilities. More time shaping the room, desk, or setup exactly how it should feel.</p></div><div class="feature-grid"><article class="feature"><span class="feature-number mono">01 / Connect</span><div><h3>Third-party ready</h3><p>Connect supported OpenRGB and Razer Synapse lighting providers through one shared surface.</p></div></article><article class="feature"><span class="feature-number mono">02 / Control</span><div><h3>Made for daily use</h3><p>Quickly find devices, vendors, zones, and settings without burying the important controls.</p></div></article><article class="feature"><span class="feature-number mono">03 / Maintain</span><div><h3>Quietly up to date</h3><p>Built-in update checks keep the app current while keeping your lighting workflow intact.</p></div></article></div></section>
       <section class="section" id="download"><div class="download"><div><div class="mono">Latest stable / Windows x64</div><h2>Put it on your setup.</h2><p>The installer includes the app, its local lighting service, and prerequisite checks for a smoother first launch.</p><div class="release-meta mono"><span>WIN 10+</span><span>x64</span><span>FREE</span></div></div><a class="button" href="https://github.com/TheDouglife/chroma-rgb-connect/releases/latest/download/ChromaControlSetup-latest.exe">Download installer <span aria-hidden="true">v</span></a></div></section>

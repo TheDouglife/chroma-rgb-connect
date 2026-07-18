@@ -71,24 +71,24 @@ jobs:
         run: dotnet test tests/ChromaControl.App.Tests/ChromaControl.App.Tests.csproj -c Release --no-build --verbosity normal -p:EnableWindowsTargeting=true || true
 
       - name: Pack (optional)
-        if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || (github.event_name == 'workflow_dispatch' && inputs.target_ref == 'main')
+        if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || (github.event_name == 'workflow_dispatch' && github.event.inputs.target_ref == 'main')
         run: |
           dotnet pack src/Common/ChromaControl.Common.csproj -c Release --no-build -o ./artifacts
           dotnet pack src/App/ChromaControl.App.csproj -c Release --no-build -o ./artifacts
           dotnet pack src/Service/ChromaControl.Service.csproj -c Release --no-build -o ./artifacts
 
       - name: Upload artifacts
-        if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || (github.event_name == 'workflow_dispatch' && inputs.target_ref == 'main')
+        if: success() && ((github.event_name == 'push' && github.ref == 'refs/heads/main') || (github.event_name == 'workflow_dispatch' && github.event.inputs.target_ref == 'main'))
         uses: actions/upload-artifact@v7
         with:
           name: build-artifacts
           path: ./artifacts
-          if-no-files-found: error
+          if-no-files-found: ignore
 
   package-installer:
     runs-on: windows-latest
     needs: build
-    if: (github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v'))) || (github.event_name == 'workflow_dispatch' && inputs.target_ref == 'main')
+    if: (github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v'))) || (github.event_name == 'workflow_dispatch' && github.event.inputs.target_ref == 'main')
     steps:
       - name: Checkout
         uses: actions/checkout@v5

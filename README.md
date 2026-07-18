@@ -43,9 +43,7 @@ The installer targets 64-bit Windows and is intended for Windows 10 or later. Cl
 - Windows 10 or later, x64
 - [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
 - Visual Studio 2022 or another editor with .NET development support
-- Sibling checkouts of `ChromaConnect-SDK` and `ChromaConnect-Native` next to this repository
-
-Clone the SDK and Native repositories beside this repository before restoring. The default locations are `..\ChromaConnect-SDK` and `..\ChromaConnect-Native`; CI can provide different locations with the `ChromaConnectSdkRoot` and `ChromaConnectNativeRoot` MSBuild properties.
+- The SDK and Native projects included under `src/SDK` and `src/Native`
 
 Restore dependencies, build the solution, and run the test suite from the repository root:
 

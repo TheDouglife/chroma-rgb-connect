@@ -33,5 +33,7 @@
     <PackageVersion Include="xunit" Version="2.9.0" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="2.8.2" />
     <PackageVersion Include="Grpc.Net.Client" Version="2.66.0" />
+    <PackageVersion Include="Microsoft.AspNetCore.Connections.Abstractions" Version="8.0.7" />
+    <PackageVersion Include="Microsoft.Windows.CsWin32" Version="0.3.106" />
   </ItemGroup>
 </Project>

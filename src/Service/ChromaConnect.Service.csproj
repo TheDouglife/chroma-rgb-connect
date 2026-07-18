@@ -25,8 +25,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Common\ChromaConnect.Common.csproj" />
-    <ProjectReference Include="$(ChromaConnectSdkRoot)\src\ChromaConnect.SDK.OpenRGB\ChromaConnect.SDK.OpenRGB.csproj" />
-    <ProjectReference Include="$(ChromaConnectSdkRoot)\src\ChromaConnect.SDK.Synapse\ChromaConnect.SDK.Synapse.csproj" />
+    <ProjectReference Include="..\SDK\ChromaConnect.SDK.OpenRGB\ChromaConnect.SDK.OpenRGB.csproj" />
+    <ProjectReference Include="..\SDK\ChromaConnect.SDK.Synapse\ChromaConnect.SDK.Synapse.csproj" />
   </ItemGroup>
 
 </Project>

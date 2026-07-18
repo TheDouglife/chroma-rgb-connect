@@ -1,0 +1,12 @@
+// Licensed to the Douglife (Doug Montgomery) under one or more agreements.
+// The Douglife (Doug Montgomery) licenses this file to you under the MIT license.
+// See the LICENSE file in the project root for more information.
+
+using System.Buffers;
+
+namespace ChromaConnect.SDK.OpenRGB.Internal.Protocol;
+
+internal interface IPacketReader<TPacket>
+{
+    bool TryParsePacket(in ReadOnlySequence<byte> input, ref SequencePosition consumed, ref SequencePosition examined, out TPacket packet);
+}

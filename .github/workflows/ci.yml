@@ -26,20 +26,6 @@ jobs:
         with:
           ref: ${{ github.event.inputs.target_ref || github.ref }}
 
-      - name: Checkout ChromaConnect SDK
-        uses: actions/checkout@v5
-        with:
-          repository: ChromaControl/SDK
-          ref: main
-          path: external/ChromaConnect-SDK
-
-      - name: Checkout ChromaConnect Native
-        uses: actions/checkout@v5
-        with:
-          repository: ChromaControl/Native
-          ref: main
-          path: external/ChromaConnect-Native
-
       - name: Setup .NET
         uses: actions/setup-dotnet@v5
         with:
@@ -50,31 +36,31 @@ jobs:
 
       - name: Restore (Windows)
         if: matrix.os == 'windows-latest'
-        run: dotnet restore ChromaConnect.sln -r win-${{ matrix.arch }} -p:ChromaConnectSdkRoot="${{ github.workspace }}/external/ChromaConnect-SDK" -p:ChromaConnectNativeRoot="${{ github.workspace }}/external/ChromaConnect-Native"
+        run: dotnet restore ChromaConnect.sln -r win-${{ matrix.arch }}
 
       - name: Restore (Non-Windows)
         if: matrix.os != 'windows-latest'
-        run: dotnet restore ChromaConnect.sln -p:EnableWindowsTargeting=true -p:ManagePackageVersionsCentrally=false -p:ChromaConnectSdkRoot="${{ github.workspace }}/external/ChromaConnect-SDK" -p:ChromaConnectNativeRoot="${{ github.workspace }}/external/ChromaConnect-Native"
+        run: dotnet restore ChromaConnect.sln -p:EnableWindowsTargeting=true -p:ManagePackageVersionsCentrally=false
 
       - name: Publish for runtime (Windows)
         if: matrix.os == 'windows-latest'
         run: |
-          dotnet publish src/Service/ChromaConnect.Service.csproj -c Release -r win-${{ matrix.arch }} --self-contained true --no-restore -p:ChromaConnectSdkRoot="${{ github.workspace }}/external/ChromaConnect-SDK" -p:ChromaConnectNativeRoot="${{ github.workspace }}/external/ChromaConnect-Native"
-          dotnet publish src/App/ChromaConnect.App.csproj -c Release -r win-${{ matrix.arch }} --self-contained true --no-restore -p:ChromaConnectSdkRoot="${{ github.workspace }}/external/ChromaConnect-SDK" -p:ChromaConnectNativeRoot="${{ github.workspace }}/external/ChromaConnect-Native"
+          dotnet publish src/Service/ChromaConnect.Service.csproj -c Release -r win-${{ matrix.arch }} --self-contained true --no-restore
+          dotnet publish src/App/ChromaConnect.App.csproj -c Release -r win-${{ matrix.arch }} --self-contained true --no-restore
 
       - name: Publish for runtime (Non-Windows)
         if: matrix.os != 'windows-latest'
         run: |
-          dotnet publish src/Service/ChromaConnect.Service.csproj -c Release -r linux-${{ matrix.arch }} --self-contained true --no-restore -p:ChromaConnectSdkRoot="${{ github.workspace }}/external/ChromaConnect-SDK" -p:ChromaConnectNativeRoot="${{ github.workspace }}/external/ChromaConnect-Native" || true
-          dotnet publish src/App/ChromaConnect.App.csproj -c Release -r linux-${{ matrix.arch }} --self-contained true --no-restore -p:ChromaConnectSdkRoot="${{ github.workspace }}/external/ChromaConnect-SDK" -p:ChromaConnectNativeRoot="${{ github.workspace }}/external/ChromaConnect-Native" || true
+          dotnet publish src/Service/ChromaConnect.Service.csproj -c Release -r linux-${{ matrix.arch }} --self-contained true --no-restore || true
+          dotnet publish src/App/ChromaConnect.App.csproj -c Release -r linux-${{ matrix.arch }} --self-contained true --no-restore || true
 
       - name: Build (Windows)
         if: matrix.os == 'windows-latest'
-        run: dotnet build ChromaConnect.sln -c Release --no-restore -p:ChromaConnectSdkRoot="${{ github.workspace }}/external/ChromaConnect-SDK" -p:ChromaConnectNativeRoot="${{ github.workspace }}/external/ChromaConnect-Native"
+        run: dotnet build ChromaConnect.sln -c Release --no-restore
 
       - name: Build (Non-Windows)
         if: matrix.os != 'windows-latest'
-        run: dotnet build ChromaConnect.sln -c Release --no-restore -p:EnableWindowsTargeting=true -p:ChromaConnectSdkRoot="${{ github.workspace }}/external/ChromaConnect-SDK" -p:ChromaConnectNativeRoot="${{ github.workspace }}/external/ChromaConnect-Native"
+        run: dotnet build ChromaConnect.sln -c Release --no-restore -p:EnableWindowsTargeting=true
 
       - name: Test (Windows)
         if: matrix.os == 'windows-latest'
@@ -107,19 +93,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
-      - name: Checkout ChromaConnect SDK
-        uses: actions/checkout@v5
-        with:
-          repository: ChromaControl/SDK
-          ref: main
-          path: external/ChromaConnect-SDK
-
-      - name: Checkout ChromaConnect Native
-        uses: actions/checkout@v5
-        with:
-          repository: ChromaControl/Native
-          ref: main
-          path: external/ChromaConnect-Native
       - name: Setup .NET
         uses: actions/setup-dotnet@v5
         with:
@@ -132,8 +105,6 @@ jobs:
         run: >-
           dotnet publish src/Installer/ChromaConnect.Installer.csproj
           -c Release -r win-x64 --self-contained true
-          -p:ChromaConnectSdkRoot="${{ github.workspace }}/external/ChromaConnect-SDK"
-          -p:ChromaConnectNativeRoot="${{ github.workspace }}/external/ChromaConnect-Native"
           /p:InnoSetupCompilerPath="${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe"
       - name: Sign release executables
         if: startsWith(github.ref, 'refs/tags/v')

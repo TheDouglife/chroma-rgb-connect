@@ -2,8 +2,6 @@
 
   <PropertyGroup>
     <Product>Chroma RGB Connect</Product>
-    <ChromaConnectSdkRoot Condition="'$(ChromaConnectSdkRoot)' == ''">$(MSBuildThisFileDirectory)..\ChromaConnect-SDK</ChromaConnectSdkRoot>
-    <ChromaConnectNativeRoot Condition="'$(ChromaConnectNativeRoot)' == ''">$(MSBuildThisFileDirectory)..\ChromaConnect-Native</ChromaConnectNativeRoot>
     <Version>1.0.4</Version>
     <Authors>Douglife (Doug Montgomery)</Authors>
     <Description>3rd party device lighting support for Razer Synapse.</Description>

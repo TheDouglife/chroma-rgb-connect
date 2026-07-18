@@ -1,0 +1,21 @@
+// Licensed to the Douglife (Doug Montgomery) under one or more agreements.
+// The Douglife (Doug Montgomery) licenses this file to you under the MIT license.
+// See the LICENSE file in the project root for more information.
+
+using ChromaConnect.SDK.OpenRGB.Internal.Protocol;
+using Microsoft.AspNetCore.Connections;
+
+namespace ChromaConnect.SDK.OpenRGB.Internal.Extensions;
+
+internal static class ConnectionContextExtensions
+{
+    public static ProtocolReader CreateReader(this ConnectionContext connection)
+    {
+        return new ProtocolReader(connection.Transport.Input);
+    }
+
+    public static ProtocolWriter CreateWriter(this ConnectionContext connection)
+    {
+        return new ProtocolWriter(connection.Transport.Output);
+    }
+}

@@ -2,31 +2,21 @@
 @* The Douglife (Doug Montgomery) licenses this file to you under the MIT license. *@
 @* See the LICENSE file in the project root for more information. *@
 
-<h2>DEVICE INFO</h2>
+<div class="details-heading">
+    <h2>Device details</h2>
+    <p>Diagnostic information reported by the device.</p>
+</div>
 
 @if (_deviceInfo != null)
 {
-    <label class="label">Name</label>
-    <p class="value">@_deviceInfo.Name</p>
-
-    <label class="label">Vendor</label>
-    <p class="value">@_deviceInfo.Vendor</p>
-
-    <label class="label">Type</label>
-    <p class="value">@_deviceInfo.Type</p>
-
-    <label class="label">Index</label>
-    <p class="value">@_deviceInfo.Index</p>
-
-    <label class="label">Description</label>
-    <p class="value">@_deviceInfo.Description</p>
-
-    <label class="label">Version</label>
-    <p class="value">@_deviceInfo.Version</p>
-
-    <label class="label">Serial</label>
-    <p class="value">@_deviceInfo.Serial</p>
-
-    <label class="label">Location</label>
-    <p class="value">@_deviceInfo.Location</p>
+    <dl class="details-list">
+        <div><dt>Name</dt><dd>@_deviceInfo.Name</dd></div>
+        <div><dt>Vendor</dt><dd>@_deviceInfo.Vendor</dd></div>
+        <div><dt>Type</dt><dd>@_deviceInfo.Type</dd></div>
+        <div><dt>Index</dt><dd>@_deviceInfo.Index</dd></div>
+        <div><dt>Description</dt><dd>@_deviceInfo.Description</dd></div>
+        <div><dt>Version</dt><dd>@_deviceInfo.Version</dd></div>
+        <div><dt>Serial</dt><dd>@_deviceInfo.Serial</dd></div>
+        <div><dt>Location</dt><dd>@_deviceInfo.Location</dd></div>
+    </dl>
 }

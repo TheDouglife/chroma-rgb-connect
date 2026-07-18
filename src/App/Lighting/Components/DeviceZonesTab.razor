@@ -2,20 +2,43 @@
 @* The Douglife (Doug Montgomery) licenses this file to you under the MIT license. *@
 @* See the LICENSE file in the project root for more information. *@
 
-<h2>DEVICE ZONES</h2>
+<div class="layout-heading">
+    <div>
+        <h2>LED layout</h2>
+        <p>Set the number of LEDs connected to each reported zone.</p>
+    </div>
+</div>
 
 @foreach (var zone in _zones)
 {
     <div class="zone">
-        <label for="@($"zone_{zone.Index}")">@zone.Name LEDs</label>
+        <div class="zone-heading">
+            <label for="@($"zone_{zone.Index}")">@zone.Name</label>
+            @if (zone.MinimumLeds == zone.MaximumLeds)
+            {
+                <span class="zone-state">Fixed</span>
+            }
+            else if (_zoneStates.TryGetValue(zone.Index, out var state))
+            {
+                <span class="zone-state @state.ToLowerInvariant()" aria-live="polite">@state</span>
+            }
+        </div>
 
         @if (zone.MinimumLeds == zone.MaximumLeds)
         {
-            <InputNumber id="@($"zone_{zone.Index}")" @bind-Value="zone.LedCount" disabled />
+            <div class="zone-value" aria-label="@($"{zone.LedCount} LEDs, fixed")">@zone.LedCount LEDs</div>
         }
         else
         {
-            <InputNumber id="@($"zone_{zone.Index}")" @bind-Value="zone.LedCount" min="@zone.MinimumLeds" max="@zone.MaximumLeds" @bind-Value:after="() => OnZoneChanged(zone)" />
+            <div class="zone-input-row">
+                <InputNumber id="@($"zone_{zone.Index}")" @bind-Value="zone.LedCount" min="@zone.MinimumLeds" max="@zone.MaximumLeds" @bind-Value:after="() => OnZoneChanged(zone)" />
+                <span class="zone-range">@zone.MinimumLeds&ndash;@zone.MaximumLeds LEDs</span>
+            </div>
         }
     </div>
+}
+
+@if (_zones.Count == 0)
+{
+    <p class="empty-state">No LED zones were reported for this device.</p>
 }

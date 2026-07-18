@@ -29,6 +29,11 @@
     background: var(--background-color-tertiary);
 }
 
+.device-count {
+    color: var(--foreground-color-muted);
+    font-size: var(--font-size-sm);
+}
+
 .device-view-list {
     overflow: hidden auto;
 }
@@ -50,7 +55,7 @@
 }
 
 .device-summary {
-    height: 30px;
+    min-height: 48px;
     background: var(--background-color-tertiary);
     border-bottom: 1px solid var(--border-color-default);
     display: flex;
@@ -61,7 +66,20 @@
     padding: var(--spacing-half) var(--spacing);
 }
 
+.device-summary-copy {
+    min-width: 0;
+}
+
 .device-summary-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.device-summary-details {
+    color: var(--foreground-color-muted);
+    font-size: var(--font-size-sm);
+    margin-top: var(--spacing-third);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;

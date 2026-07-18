@@ -36,6 +36,7 @@ public partial class DeviceZonesTab
     public required DialogService DialogService { get; set; }
 
     private RepeatedField<DeviceZone> _zones = [];
+    private readonly Dictionary<int, string> _zoneStates = [];
 
     /// <inheritdoc/>
     protected override async Task OnParametersSetAsync()
@@ -50,6 +51,7 @@ public partial class DeviceZonesTab
         if (response.IsSuccess(out var zones))
         {
             _zones = zones;
+            _zoneStates.Clear();
         }
         else if (response.IsFailure(out var error))
         {
@@ -61,11 +63,20 @@ public partial class DeviceZonesTab
 
     private async Task OnZoneChanged(DeviceZone zone)
     {
+        _zoneStates[zone.Index] = "Applying";
+
         var result = await Mediator.Send(new ResizeDeviceZone.Command(DeviceIndex, zone.Index, zone.LedCount));
 
-        if (result.IsFailure(out var error))
+        if (result.IsSuccess(out _))
         {
+            _zoneStates[zone.Index] = "Applied";
+        }
+        else if (result.IsFailure(out var error))
+        {
+            _zoneStates[zone.Index] = "Failed";
             DialogService.ShowError(error);
         }
+
+        await InvokeAsync(StateHasChanged);
     }
 }

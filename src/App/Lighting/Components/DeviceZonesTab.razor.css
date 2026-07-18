@@ -2,18 +2,64 @@
 /* The Douglife (Doug Montgomery) licenses this file to you under the MIT license. */
 /* See the LICENSE file in the project root for more information. */
 
+.layout-heading p,
+.details-heading p {
+    color: var(--foreground-color-muted);
+    font-size: var(--font-size-sm);
+    margin-top: calc(var(--spacing-half) * -1);
+    margin-bottom: var(--spacing-double);
+}
+
 .zone {
-    margin-bottom: var(--spacing);
+    margin-bottom: var(--spacing-double);
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+}
+
+.zone-heading {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing);
+    margin-bottom: var(--spacing-third);
 }
 
     .zone label {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        margin-bottom: var(--spacing-third);
+        font-weight: var(--font-weight-semibold);
+    }
+
+    .zone-state,
+    .zone-range {
+        color: var(--foreground-color-muted);
+        font-size: var(--font-size-sm);
+    }
+
+    .zone-state.applied {
+        color: var(--foreground-color-accent);
+    }
+
+    .zone-state.failed {
+        color: var(--background-color-danger);
+    }
+
+    .zone-input-row {
+        align-items: center;
+        display: flex;
+        gap: var(--spacing);
+    }
+
+    .zone-value {
+        border: var(--muted-border);
+        border-radius: var(--border-radius);
+        background: var(--background-color-tertiary);
+        color: var(--foreground-color-muted);
+        min-height: 25px;
+        line-height: 25px;
+        padding: 0 var(--spacing-half);
     }
 
     .zone ::deep input {
@@ -24,8 +70,14 @@
         font-size: var(--font-size);
         font-family: var(--font-family-sans-serif);
         height: 25px;
-        width: 100%;
+        flex: 1;
+        min-width: 0;
     }
+
+.empty-state {
+    color: var(--foreground-color-muted);
+    font-size: var(--font-size-sm);
+}
 
         .zone ::deep input:active,
         .zone ::deep input:hover,

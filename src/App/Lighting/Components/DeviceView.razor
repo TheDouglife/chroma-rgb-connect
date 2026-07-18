@@ -5,7 +5,7 @@
 <div class="device-view">
     <div class="device-view-container">
         <div class="device-view-header">
-            Devices
+            Devices <span class="device-count">@_devices.Count</span>
         </div>
         <div class="device-view-list">
             <CascadingValue Value="this" Name="DeviceView" IsFixed="true">
@@ -21,8 +21,13 @@
         {
             <div class="device-settings-wrapper">
                 <div class="device-summary">
-                    <div class="device-summary-name">
-                        <span>@_activeDevice.Name</span>
+                    <div class="device-summary-copy">
+                        <div class="device-summary-name">
+                            <span>@_activeDevice.Name</span>
+                        </div>
+                        <div class="device-summary-details">
+                            <span>Detected</span> &bull; <span>Select a section to configure this device</span>
+                        </div>
                     </div>
                 </div>
                 <DeviceSettings DeviceIndex="_activeDevice.Index" />

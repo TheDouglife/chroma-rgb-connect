@@ -39,6 +39,14 @@ Filename: "{sys}\taskkill.exe"; Parameters: "/F /IM ChromaRGBConnect.Service.exe
 const
   VCRedistUrl = 'https://aka.ms/vs/17/release/vc_redist.x64.exe';
   WebView2BootstrapperUrl = 'https://go.microsoft.com/fwlink/p/?LinkId=2124703';
+  VCRedistRegistryKey = 'SOFTWARE\Microsoft\VisualStudio\14.0\VC\Runtimes\x64';
+
+function IsVCRedistInstalled: Boolean;
+var
+  Installed: Cardinal;
+begin
+  Result := RegQueryDWordValue(HKLM, VCRedistRegistryKey, 'Installed', Installed) and (Installed = 1);
+end;
 
 function InstallPrerequisite(const Url, FileName, Parameters, Description: String): Boolean;
 var
@@ -75,11 +83,16 @@ end;
 
 function InstallPrerequisites: Boolean;
 begin
-  Result := InstallPrerequisite(
-    VCRedistUrl,
-    'vc_redist.x64.exe',
-    '/install /quiet /norestart',
-    'the Microsoft Visual C++ runtime');
+  Result := True;
+
+  if not IsVCRedistInstalled then
+  begin
+    Result := InstallPrerequisite(
+      VCRedistUrl,
+      'vc_redist.x64.exe',
+      '/install /quiet /norestart',
+      'the Microsoft Visual C++ runtime');
+  end;
 
   if Result then
   begin

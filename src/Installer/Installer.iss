@@ -21,7 +21,9 @@ LicenseFile={#LicenseFile}
 MissingRunOnceIdsWarning=no
 
 [Files]
-Source: "{#PublishDir}\**"; DestDir: "{app}"; Flags: recursesubdirs ignoreversion
+Source: "{#PublishDir}\**"; DestDir: "{app}"; Flags: recursesubdirs ignoreversion; Excludes: "VC_redist.x64.exe,VC_redist.x86.exe"
+Source: "{#PublishDir}\VC_redist.x64.exe"; DestName: "vc_redist.x64.exe"; Flags: dontcopy
+Source: "{#PublishDir}\VC_redist.x86.exe"; DestName: "vc_redist.x86.exe"; Flags: dontcopy
 
 [Icons]
 Name: "{group}\{#Product}"; Filename: "{app}\ChromaConnect.App.exe"; WorkingDir: "{app}"
@@ -37,18 +39,51 @@ Filename: "{sys}\taskkill.exe"; Parameters: "/F /IM ChromaRGBConnect.Service.exe
 
 [Code]
 const
-  VCRedistUrl = 'https://aka.ms/vs/17/release/vc_redist.x64.exe';
   WebView2BootstrapperUrl = 'https://go.microsoft.com/fwlink/p/?LinkId=2124703';
-  VCRedistRegistryKey = 'SOFTWARE\Microsoft\VisualStudio\14.0\VC\Runtimes\x64';
+  VCRedistRegistryKeyX64 = 'SOFTWARE\Microsoft\VisualStudio\14.0\VC\Runtimes\x64';
+  VCRedistRegistryKeyX86 = 'SOFTWARE\Microsoft\VisualStudio\14.0\VC\Runtimes\x86';
 
-function IsVCRedistInstalled: Boolean;
+function IsVCRedistInstalled(const RegistryKey: String): Boolean;
 var
   Installed: Cardinal;
 begin
-  Result := RegQueryDWordValue(HKLM, VCRedistRegistryKey, 'Installed', Installed) and (Installed = 1);
+  Result := RegQueryDWordValue(HKLM, RegistryKey, 'Installed', Installed) and (Installed = 1);
 end;
 
-function InstallPrerequisite(const Url, FileName, Parameters, Description: String): Boolean;
+function InstallBundledPrerequisite(const FileName, Parameters, Description: String): Boolean;
+var
+  InstallerPath: String;
+  ResultCode: Integer;
+begin
+  Result := True;
+
+  try
+    ExtractTemporaryFile(FileName);
+  except
+    MsgBox('Unable to extract ' + Description + ' from the installer package.', mbError, MB_OK);
+    Result := False;
+    exit;
+  end;
+
+  InstallerPath := ExpandConstant('{tmp}\' + FileName);
+
+  if not Exec(InstallerPath, Parameters, '', SW_HIDE, ewWaitUntilTerminated, ResultCode) then
+  begin
+    MsgBox('Unable to start the ' + Description + ' installer.', mbError, MB_OK);
+    Result := False;
+    exit;
+  end;
+
+  { 1638 means a compatible or newer VC++ runtime is already installed.
+    3010 means installation succeeded and a reboot is recommended. }
+  if (ResultCode <> 0) and (ResultCode <> 1638) and (ResultCode <> 3010) then
+  begin
+    MsgBox('Unable to install ' + Description + '. Installer exit code: ' + IntToStr(ResultCode) + '.', mbError, MB_OK);
+    Result := False;
+  end;
+end;
+
+function InstallDownloadedPrerequisite(const Url, FileName, Parameters, Description: String): Boolean;
 var
   InstallerPath: String;
   DownloadSize: Int64;
@@ -72,8 +107,6 @@ begin
     exit;
   end;
 
-  { 1638 means a compatible or newer VC++ runtime is already installed.
-    3010 means installation succeeded and a reboot is recommended. }
   if (ResultCode <> 0) and (ResultCode <> 1638) and (ResultCode <> 3010) then
   begin
     MsgBox('Unable to install ' + Description + '. Installer exit code: ' + IntToStr(ResultCode) + '.', mbError, MB_OK);
@@ -85,18 +118,25 @@ function InstallPrerequisites: Boolean;
 begin
   Result := True;
 
-  if not IsVCRedistInstalled then
+  if not IsVCRedistInstalled(VCRedistRegistryKeyX64) then
   begin
-    Result := InstallPrerequisite(
-      VCRedistUrl,
+    Result := InstallBundledPrerequisite(
       'vc_redist.x64.exe',
       '/install /quiet /norestart',
-      'the Microsoft Visual C++ runtime');
+      'the Microsoft Visual C++ x64 runtime');
+  end;
+
+  if Result and (not IsVCRedistInstalled(VCRedistRegistryKeyX86)) then
+  begin
+    Result := InstallBundledPrerequisite(
+      'vc_redist.x86.exe',
+      '/install /quiet /norestart',
+      'the Microsoft Visual C++ x86 runtime');
   end;
 
   if Result then
   begin
-    Result := InstallPrerequisite(
+    Result := InstallDownloadedPrerequisite(
       WebView2BootstrapperUrl,
       'MicrosoftEdgeWebview2Setup.exe',
       '/silent /install',

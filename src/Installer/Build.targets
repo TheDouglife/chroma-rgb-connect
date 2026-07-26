@@ -17,6 +17,10 @@
            Text="App publish output not found at $(AppPublishDir). Ensure publish completed before building installer." />
     <Error Condition="!Exists('$(ServicePublishDir)')"
            Text="Service publish output not found at $(ServicePublishDir). Ensure publish completed before building installer." />
+        <Error Condition="!Exists('$(MSBuildThisFileDirectory)..\..\VC_redist.x64.exe')"
+          Text="Missing VC++ redistributable at ../../VC_redist.x64.exe. Add VC_redist.x64.exe to the repository root before building the installer." />
+        <Error Condition="!Exists('$(MSBuildThisFileDirectory)..\..\VC_redist.x86.exe')"
+          Text="Missing VC++ redistributable at ../../VC_redist.x86.exe. Add VC_redist.x86.exe to the repository root before building the installer." />
 
     <RemoveDir Directories="$(InstallerInputDir)"
                Condition="Exists('$(InstallerInputDir)')" />
@@ -25,6 +29,8 @@
     <ItemGroup>
       <AppPublishFiles Include="$(AppPublishDir)**\*" />
       <ServicePublishFiles Include="$(ServicePublishDir)**\*" />
+      <VCRuntimePrereqFiles Include="$(MSBuildThisFileDirectory)..\..\VC_redist.x64.exe" />
+      <VCRuntimePrereqFiles Include="$(MSBuildThisFileDirectory)..\..\VC_redist.x86.exe" />
     </ItemGroup>
 
     <Copy SourceFiles="@(ServicePublishFiles)"
@@ -32,6 +38,9 @@
           SkipUnchangedFiles="true" />
         <Copy SourceFiles="@(AppPublishFiles)"
           DestinationFiles="@(AppPublishFiles->'$(InstallerInputDir)%(RecursiveDir)%(Filename)%(Extension)')"
+          SkipUnchangedFiles="true" />
+        <Copy SourceFiles="@(VCRuntimePrereqFiles)"
+          DestinationFolder="$(InstallerInputDir)"
           SkipUnchangedFiles="true" />
 
     <ItemGroup>

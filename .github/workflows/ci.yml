@@ -107,12 +107,17 @@ jobs:
           -c Release -r win-x64 --self-contained true
           /p:InnoSetupCompilerPath="${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe"
       - name: Sign release executables
-        if: startsWith(github.ref, 'refs/tags/v') && secrets.WINDOWS_CERTIFICATE_BASE64 != '' && secrets.WINDOWS_CERTIFICATE_PASSWORD != ''
+        if: startsWith(github.ref, 'refs/tags/v')
         shell: pwsh
         env:
           WINDOWS_CERTIFICATE_BASE64: ${{ secrets.WINDOWS_CERTIFICATE_BASE64 }}
           WINDOWS_CERTIFICATE_PASSWORD: ${{ secrets.WINDOWS_CERTIFICATE_PASSWORD }}
         run: |
+          if ([string]::IsNullOrWhiteSpace($env:WINDOWS_CERTIFICATE_BASE64) -or [string]::IsNullOrWhiteSpace($env:WINDOWS_CERTIFICATE_PASSWORD)) {
+            Write-Host 'Signing secrets are not configured; skipping signing for this tagged release.'
+            exit 0
+          }
+
           $certificatePath = Join-Path $env:RUNNER_TEMP 'chroma-rgb-connect-signing.pfx'
           [IO.File]::WriteAllBytes($certificatePath, [Convert]::FromBase64String($env:WINDOWS_CERTIFICATE_BASE64))
 

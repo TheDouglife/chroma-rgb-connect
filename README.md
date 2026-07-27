@@ -13,7 +13,7 @@
 
 Connect supported third-party RGB lighting hardware to Razer Synapse through OpenRGB, then manage it from one Windows desktop app.
 
-> **Current release:** `1.0.3` for Windows x64
+> **Current release:** `1.0.7` for Windows x64
 
 ## What it does
 

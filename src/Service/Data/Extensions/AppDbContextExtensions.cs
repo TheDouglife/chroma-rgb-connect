@@ -19,7 +19,28 @@ public static class AppDbContextExtensions
     /// <returns>A <see cref="JsonNode"/> config.</returns>
     public static async Task<JsonNode> GenerateConfig(this AppDbContext context)
     {
-        var config = JsonNode.Parse("{\"Detectors\":{\"detectors\":{}}}")!;
+        var detectorConfig = new JsonObject();
+
+        var config = new JsonObject
+        {
+            ["Detectors"] = new JsonObject
+            {
+                ["detectors"] = detectorConfig
+            },
+
+            ["QMKOpenRGBDevices"] = new JsonObject
+            {
+                ["devices"] = new JsonArray
+                {
+                    new JsonObject
+                    {
+                        ["name"] = "Keychron V6 Max",
+                        ["usb_pid"] = "0960",
+                        ["usb_vid"] = "3434"
+                    }
+                }
+            }
+        };
 
         var detectors = await context.DeviceDetectors
             .Select(d => new
@@ -31,7 +52,7 @@ public static class AppDbContextExtensions
 
         foreach (var detector in detectors)
         {
-            config["Detectors"]!["detectors"]![detector.Name] = detector.Enabled;
+            detectorConfig[detector.Name] = detector.Enabled;
         }
 
         return config;
